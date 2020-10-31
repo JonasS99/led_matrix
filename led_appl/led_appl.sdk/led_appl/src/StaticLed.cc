@@ -1,0 +1,10 @@
+/*
+ * StaticLedAnimations.cc
+ *
+ *  Created on: 29.10.2020
+ *      Author: Keller
+ */
+
+
+
+
