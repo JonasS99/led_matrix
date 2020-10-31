@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Sep 25 09:20:49 2020
+# Process ID: 4016
+# Current directory: C:/Users/Jonas/Desktop/Hochschule/7_Semester/Projekt/led_appl/led_appl.runs/design_led_appl_clk_wiz_1_0_synth_1
+# Command line: vivado.exe -log design_led_appl_clk_wiz_1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_led_appl_clk_wiz_1_0.tcl
+# Log file: C:/Users/Jonas/Desktop/Hochschule/7_Semester/Projekt/led_appl/led_appl.runs/design_led_appl_clk_wiz_1_0_synth_1/design_led_appl_clk_wiz_1_0.vds
+# Journal file: C:/Users/Jonas/Desktop/Hochschule/7_Semester/Projekt/led_appl/led_appl.runs/design_led_appl_clk_wiz_1_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source design_led_appl_clk_wiz_1_0.tcl -notrace

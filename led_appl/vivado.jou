@@ -1,0 +1,27 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Oct 29 09:03:58 2020
+# Process ID: 15228
+# Current directory: C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6424 C:\Users\Keller\Desktop\Harald\201022_Projekt_400_leds\led_appl\led_appl.xpr
+# Log file: C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/vivado.log
+# Journal file: C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.xpr
+update_compile_order -fileset sources_1
+update_module_reference design_led_appl_led_driver_0_0
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+launch_sdk -workspace C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.sdk -hwspec C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.sdk/design_led_appl_wrapper.hdf
+file copy -force C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/impl_1/design_led_appl_wrapper.sysdef C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.sdk/design_led_appl_wrapper.hdf
+
+launch_sdk -workspace C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.sdk -hwspec C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.sdk/design_led_appl_wrapper.hdf
+file copy -force C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/impl_1/design_led_appl_wrapper.sysdef C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.sdk/design_led_appl_wrapper.hdf
+
+launch_sdk -workspace C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.sdk -hwspec C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.sdk/design_led_appl_wrapper.hdf
+launch_sdk -workspace C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.sdk -hwspec C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.sdk/design_led_appl_wrapper.hdf
+launch_sdk -workspace C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.sdk -hwspec C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.sdk/design_led_appl_wrapper.hdf

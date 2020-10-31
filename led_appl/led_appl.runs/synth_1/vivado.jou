@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Oct 29 09:16:56 2020
+# Process ID: 2520
+# Current directory: C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1
+# Command line: vivado.exe -log design_led_appl_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_led_appl_wrapper.tcl
+# Log file: C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/design_led_appl_wrapper.vds
+# Journal file: C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source design_led_appl_wrapper.tcl -notrace

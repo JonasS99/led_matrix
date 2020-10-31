@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="false" key="design_led_appl_wrapper_hw_platform_0-partial_bit"/>
+	<item value="bootloop" key="design_led_appl_wrapper_hw_platform_0-microblaze_0-initElf"/>
+	<item value="false" key="design_led_appl_wrapper_hw_platform_1-partial_bit"/>
+	<item value="design_led_appl_wrapper.mmi" key="design_led_appl_wrapper_hw_platform_0-bmmFile"/>
+	<item value="Auto Detect" key="design_led_appl_wrapper_hw_platform_4-device"/>
+	<item value="design_led_appl_wrapper.bit" key="design_led_appl_wrapper_hw_platform_0-bitFile"/>
+	<item value="bootloop" key="design_led_appl_wrapper_hw_platform_1-microblaze_0-initElf"/>
+	<item value="design_led_appl_wrapper.mmi" key="design_led_appl_wrapper_hw_platform_4-bmmFile"/>
+	<item value="Local" key="design_led_appl_wrapper_hw_platform_0-target"/>
+	<item value="Digilent Nexys4DDR 210292A6ED0AA/1-xc7a100t" key="design_led_appl_wrapper_hw_platform_0-device"/>
+	<item value="design_led_appl_wrapper_hw_platform_0" key="programfpga.hwplatform"/>
+	<item value="Local" key="design_led_appl_wrapper_hw_platform_1-target"/>
+	<item value="Auto Detect" key="design_led_appl_wrapper_hw_platform_1-device"/>
+	<item value="design_led_appl_wrapper.bit" key="design_led_appl_wrapper_hw_platform_4-bitFile"/>
+	<item value="design_led_appl_wrapper.bit" key="design_led_appl_wrapper_hw_platform_1-bitFile"/>
+	<item value="Local" key="design_led_appl_wrapper_hw_platform_4-target"/>
+	<item value="false" key="design_led_appl_wrapper_hw_platform_4-partial_bit"/>
+	<item value="design_led_appl_wrapper.mmi" key="design_led_appl_wrapper_hw_platform_1-bmmFile"/>
+	<item value="bootloop" key="design_led_appl_wrapper_hw_platform_4-microblaze_0-initElf"/>
+</section>

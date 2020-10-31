@@ -1,0 +1,65 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port uart_rtl_0 -pg 1 -lvl 7 -x 2160 -y 480 -defaultsOSRD
+preplace port MTDS_SPI_Out -pg 1 -lvl 7 -x 2160 -y 460 -defaultsOSRD
+preplace port clk_100MHz -pg 1 -lvl 0 -x -150 -y 890 -defaultsOSRD
+preplace port reset_rtl_0 -pg 1 -lvl 0 -x -150 -y 800 -defaultsOSRD
+preplace port ser_data_out -pg 1 -lvl 7 -x 2160 -y 1190 -defaultsOSRD
+preplace port ser_data_out_en_disp -pg 1 -lvl 7 -x 2160 -y 1210 -defaultsOSRD
+preplace inst microblaze_0 -pg 1 -lvl 4 -x 960 -y 700 -defaultsOSRD
+preplace inst microblaze_0_local_memory -pg 1 -lvl 5 -x 1420 -y 710 -defaultsOSRD
+preplace inst microblaze_0_axi_periph -pg 1 -lvl 5 -x 1420 -y 260 -defaultsOSRD
+preplace inst microblaze_0_axi_intc -pg 1 -lvl 3 -x 570 -y 670 -defaultsOSRD
+preplace inst microblaze_0_xlconcat -pg 1 -lvl 2 -x 260 -y 680 -defaultsOSRD
+preplace inst mdm_1 -pg 1 -lvl 3 -x 570 -y 990 -defaultsOSRD
+preplace inst clk_wiz_1 -pg 1 -lvl 1 -x -30 -y 880 -defaultsOSRD
+preplace inst rst_clk_wiz_1_100M -pg 1 -lvl 2 -x 260 -y 820 -defaultsOSRD
+preplace inst axi_uartlite_0 -pg 1 -lvl 6 -x 1880 -y 930 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 6 -x 1880 -y 1220 -defaultsOSRD
+preplace inst axi_gpio_1 -pg 1 -lvl 6 -x 1880 -y 1070 -defaultsOSRD
+preplace inst PmodMTDS_0 -pg 1 -lvl 6 -x 1880 -y 530 -defaultsOSRD
+preplace inst led_ram_0 -pg 1 -lvl 5 -x 1420 -y 990 -defaultsOSRD
+preplace inst led_driver_0 -pg 1 -lvl 6 -x 1880 -y 1630 -defaultsOSRD
+preplace netloc microblaze_0_intr 1 2 1 NJ 680
+preplace netloc microblaze_0_Clk 1 1 5 60 620 440 790 720 790 1220 570 1600
+preplace netloc clk_wiz_1_locked 1 1 1 80 860n
+preplace netloc rst_clk_wiz_1_100M_mb_reset 1 2 2 450 780 710
+preplace netloc rst_clk_wiz_1_100M_bus_struct_reset 1 2 3 NJ 800 NJ 800 1210
+preplace netloc rst_clk_wiz_1_100M_peripheral_aresetn 1 2 4 430 560 NJ 560 1210 560 1610
+preplace netloc mdm_1_debug_sys_rst 1 0 4 -130 810 70 920 NJ 920 690
+preplace netloc clk_100MHz_1 1 0 1 NJ 890
+preplace netloc reset_rtl_0_1 1 0 2 NJ 800 NJ
+preplace netloc axi_uartlite_0_interrupt 1 1 6 80 550 NJ 550 NJ 550 NJ 550 1580J 630 2060
+preplace netloc Net 1 2 4 NJ 820 NJ 820 1200 880 1580J
+preplace netloc led_ram_0_data_out_led 1 5 1 1590 990n
+preplace netloc led_driver_0_adr_out 1 4 3 1260 850 NJ 850 2050
+preplace netloc axi_gpio_0_gpio_io_o 1 4 3 1230 820 NJ 820 2080
+preplace netloc axi_gpio_0_gpio2_io_o 1 4 3 1240 830 NJ 830 2070
+preplace netloc axi_gpio_1_gpio_io_o 1 4 3 1250 840 NJ 840 2040
+preplace netloc led_driver_0_ser_data_out 1 6 1 2090J 1190n
+preplace netloc led_driver_0_ser_data_out_en_disp 1 6 1 2100J 1210n
+preplace netloc microblaze_0_axi_periph_M01_AXI 1 5 1 1650 210n
+preplace netloc microblaze_0_debug 1 3 1 700 690n
+preplace netloc microblaze_0_interrupt 1 3 1 N 670
+preplace netloc microblaze_0_axi_periph_M03_AXI 1 5 1 1620 250n
+preplace netloc microblaze_0_axi_periph_M04_AXI 1 5 1 1660 270n
+preplace netloc microblaze_0_dlmb_1 1 4 1 N 680
+preplace netloc PmodMTDS_0_MTDS_SPI_Out 1 6 1 2040 460n
+preplace netloc microblaze_0_axi_periph_M02_AXI 1 5 1 1630 230n
+preplace netloc microblaze_0_axi_dp 1 4 1 1200 60n
+preplace netloc microblaze_0_intc_axi 1 2 4 450 0 NJ 0 NJ 0 1660
+preplace netloc axi_uartlite_0_UART 1 6 1 2090J 480n
+preplace netloc microblaze_0_ilmb_1 1 4 1 N 700
+preplace netloc microblaze_0_axi_periph_M06_AXI 1 5 1 1580 310n
+preplace netloc microblaze_0_axi_periph_M05_AXI 1 5 1 1640 290n
+levelinfo -pg 1 -150 -30 260 570 960 1420 1880 2160
+pagesize -pg 1 -db -bbox -sgen -280 -20 2360 2200
+"
+}
+{
+   "da_axi4_cnt":"7",
+   "da_board_cnt":"6",
+   "da_mb_cnt":"1"
+}
