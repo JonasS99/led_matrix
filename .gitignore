@@ -16,7 +16,7 @@
 *.jou
 *.backup.jou
 *.backup.log
-
+*.xmi
 #########
 #Source files:
 #########
