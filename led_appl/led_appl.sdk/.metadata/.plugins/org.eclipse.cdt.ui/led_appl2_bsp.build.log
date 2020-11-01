@@ -1,0 +1,104 @@
+11:59:35 **** Build of project led_appl2_bsp ****
+make -k all 
+"Running Make include in microblaze_0/libsrc/bram_v4_3/src"
+make -C microblaze_0/libsrc/bram_v4_3/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/cpu_v2_9/src"
+make -C microblaze_0/libsrc/cpu_v2_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/gpio_v4_4/src"
+make -C microblaze_0/libsrc/gpio_v4_4/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/intc_v3_9/src"
+make -C microblaze_0/libsrc/intc_v3_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/PmodMTDS_v1_0/src"
+make -C microblaze_0/libsrc/PmodMTDS_v1_0/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/standalone_v7_0/src"
+make -C microblaze_0/libsrc/standalone_v7_0/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/uartlite_v3_2/src"
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make libs in microblaze_0/libsrc/bram_v4_3/src"
+make -C microblaze_0/libsrc/bram_v4_3/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling bram"
+mb-ar: creating ../../../lib/libxil.a
+"Running Make libs in microblaze_0/libsrc/cpu_v2_9/src"
+make -C microblaze_0/libsrc/cpu_v2_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling cpu"
+"Running Make libs in microblaze_0/libsrc/gpio_v4_4/src"
+make -C microblaze_0/libsrc/gpio_v4_4/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling gpio"
+"Running Make libs in microblaze_0/libsrc/intc_v3_9/src"
+make -C microblaze_0/libsrc/intc_v3_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling intc"
+"Running Make libs in microblaze_0/libsrc/PmodMTDS_v1_0/src"
+make -C microblaze_0/libsrc/PmodMTDS_v1_0/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling PmodMTDS..."
+PmodMTDS.c:28:1: warning: "/*" within comment [-Wcomment]
+ /* for the PmodMTDS (insert name, duh).
+  
+PmodMTDS.c:29:1: warning: "/*" within comment [-Wcomment]
+ /*                  */
+  
+PmodMTDS.c:34:1: warning: "/*" within comment [-Wcomment]
+ /*                  */
+  
+xtmrctr_sinit.c: In function 'XTmrCtr_LookupConfig':
+xtmrctr_sinit.c:89:24: warning: comparison is always false due to limited range of data type [-Wtype-limits]
+  for (Index = 0; Index < XPAR_XTMRCTR_NUM_INSTANCES; Index++) {
+                        ^
+MtdsCore.cpp: In function 'bool MtdsReadRhdr(uint8_t*)':
+MtdsCore.cpp:332:15: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  while (cbCur < sizeof(RHDR)) {
+         ~~~~~~^~~~~~~~~~~~~~
+MtdsCore.cpp: In function 'bool MtdsReadDhdr(uint8_t*)':
+MtdsCore.cpp:422:15: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  while (cbCur < sizeof(DHDR)) {
+         ~~~~~~^~~~~~~~~~~~~~
+MtdsFs.cpp: In member function 'bool MTFS::GetCurrentDir(int, char*)':
+MtdsFs.cpp:200:30: warning: unused parameter 'cbMax' [-Wunused-parameter]
+ bool MTFS::GetCurrentDir(int cbMax, char * szDir) {
+                          ~~~~^~~~~
+MtdsFs.cpp: In member function 'bool MTFS::SetVolumeLabel(char*)':
+MtdsFs.cpp:244:34: warning: unused parameter 'szVol' [-Wunused-parameter]
+ bool MTFS::SetVolumeLabel(char * szVol) {
+                           ~~~~~~~^~~~~
+MtdsFs.cpp: In member function 'bool MTFS::GetVolumeLabel(int, char*)':
+MtdsFs.cpp:265:31: warning: unused parameter 'cbMax' [-Wunused-parameter]
+ bool MTFS::GetVolumeLabel(int cbMax, char * szVol) {
+                           ~~~~^~~~~
+MtdsFs.cpp:265:45: warning: unused parameter 'szVol' [-Wunused-parameter]
+ bool MTFS::GetVolumeLabel(int cbMax, char * szVol) {
+                                      ~~~~~~~^~~~~
+MtdsHal.cpp: In function 'void MtdsHalInit(int)':
+MtdsHal.cpp:110:22: warning: unused parameter 'pinSel' [-Wunused-parameter]
+ void MtdsHalInit(int pinSel) {
+                  ~~~~^~~~~~
+MtdsHal.cpp: In function 'void MtdsHalEnableStatusPin(int)':
+MtdsHal.cpp:147:33: warning: unused parameter 'idPin' [-Wunused-parameter]
+ void MtdsHalEnableStatusPin(int idPin) {
+                             ~~~~^~~~~
+MtdsHal.cpp: In function 'bool MtdsHalGetStatusPin(int)':
+MtdsHal.cpp:169:30: warning: unused parameter 'idPin' [-Wunused-parameter]
+ bool MtdsHalGetStatusPin(int idPin) {
+                          ~~~~^~~~~
+MtdsHal.cpp: In function 'bool MtdsHalResetDisplay(int)':
+MtdsHal.cpp:197:30: warning: unused parameter 'pinSel' [-Wunused-parameter]
+ bool MtdsHalResetDisplay(int pinSel) {
+                          ~~~~^~~~~~
+MtdsHal.cpp: In function 'void MtdsHalInitSpi(uint32_t, uint32_t)':
+MtdsHal.cpp:221:30: warning: unused parameter 'pspiInit' [-Wunused-parameter]
+ void MtdsHalInitSpi(uint32_t pspiInit, uint32_t frq) {
+                     ~~~~~~~~~^~~~~~~~
+MtdsHal.cpp:221:49: warning: unused parameter 'frq' [-Wunused-parameter]
+ void MtdsHalInitSpi(uint32_t pspiInit, uint32_t frq) {
+                                        ~~~~~~~~~^~~
+"Running Make libs in microblaze_0/libsrc/standalone_v7_0/src"
+make -C microblaze_0/libsrc/standalone_v7_0/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling standalone";
+microblaze_sleep.c:77:9: note: #pragma message: For the sleep routines, assembly instructions are used
+ #pragma message ("For the sleep routines, assembly instructions are used")
+         ^~~~~~~
+"Running Make libs in microblaze_0/libsrc/uartlite_v3_2/src"
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling uartlite"
+'Finished building libraries'
+
+12:00:25 Build Finished (took 50s.157ms)
+

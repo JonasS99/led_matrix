@@ -1,0 +1,75 @@
+/*
+ * MainFsm.cc
+ *
+ *  Created on: 29.10.2020
+ *      Author: Keller
+ */
+
+/* header file */
+#include "MyTypDefs.h"
+
+
+/* function declaration */
+void MainFsm_Init(void);
+void MainFsm_StateMachine(void);
+
+/* function*/
+void MainFsm_Init(void)
+{
+
+
+}
+
+void MainFsm_StateMachine(void)
+{
+	static fsm_t state = FSM_HOME;
+
+	switch(state)
+	{
+		case FSM_IDLE:
+		{
+
+			state = FSM_MAIN_DISP;
+			break;
+
+		}
+
+		case FSM_MAIN_DISP:
+		{
+			mydisp.drawImage("Menu/Menu.bmp", 0, 0);
+
+			if (mydisp.isTouched(BTN_ID_STATIC_LED))
+			{
+				/* Button is pressed */
+				GUI_EraseMenuButtons();
+				GUI_DisableMenuButtons();
+				mydisp.clearDisplay(clrBlack); /* Erase */
+				mydisp.enableButton(BTN_ID_TETRIS, true);
+				gui_fsm = FSM_STATIC_LED;
+			}
+			else
+			{
+				mydisp.drawButton(BTN_ID_STATIC_LED, BUTTON_UP);
+			}
+			mydisp.drawButton(BTN_ID_STATIC_LED, mydisp.isTouched(BTN_ID_STATIC_LED) ? BUTTON_DOWN : BUTTON_UP);
+			mydisp.drawButton(BTN_ID_TETRIS, mydisp.isTouched(BTN_ID_TETRIS) ? BUTTON_DOWN : BUTTON_UP);
+			mydisp.drawButton(BTN_ID_DYNAMIC_LED, mydisp.isTouched(BTN_ID_DYNAMIC_LED) ? BUTTON_DOWN : BUTTON_UP);
+			mydisp.drawButton(BTN_ID_WEL_FPGA, mydisp.isTouched(BTN_ID_WEL_FPGA) ? BUTTON_DOWN : BUTTON_UP);
+			break;
+		}
+
+		case FSM_STATIC_LED:
+		{
+			mydisp.drawButton(BTN_ID_TETRIS, mydisp.isTouched(1) ? BUTTON_DOWN : BUTTON_UP);
+			break;
+
+
+		}
+
+	}
+
+}
+
+
+
+

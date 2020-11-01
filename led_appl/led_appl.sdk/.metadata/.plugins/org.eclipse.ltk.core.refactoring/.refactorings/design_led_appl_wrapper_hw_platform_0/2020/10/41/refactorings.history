@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;Unbenannt.bmp&apos; to &apos;BmpLib&apos;" description="Move &apos;Unbenannt.bmp&apos; to &apos;BmpLib&apos;" destination="drivers/PmodMTDS_v1_0/examples/Resources/BmpLib" element1="/led_appl/src/Unbenannt.bmp" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1602243047360" updateReferences="true"/>
+</session>

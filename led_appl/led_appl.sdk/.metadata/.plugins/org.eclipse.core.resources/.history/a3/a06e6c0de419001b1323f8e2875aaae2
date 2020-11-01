@@ -1,0 +1,51 @@
+/*
+ * Empty C++ Application
+ */
+
+#include <stdio.h>
+#include "xparameters.h"
+#include "xil_cache.h"
+#include "xintc.h"
+#include "xgpio.h"
+#include "MainFsm.h"
+
+#include "GUI.h"
+#include "LedMatrixDriver.h"
+#define DATA_VALID 2
+#define LED_DATA 1
+#define ADDRESS 1
+
+int main()
+{
+
+
+
+	//GUI_Init();
+
+	Xil_ICacheEnable();
+    Xil_DCacheEnable();
+
+
+    LedMatrixDriver_Init();
+    LedMatrixDriver_SetLed(3,3,0xFF,0xFF,0xFF);
+
+	while(1)
+	{
+		LedMatrixDriver_Main();
+		 MainFsm_StateMachine();
+		//GUI_MainFunction();
+	}
+	Xil_DCacheDisable();
+    Xil_ICacheDisable();
+	return 0;
+
+}
+
+
+
+
+
+
+
+
+

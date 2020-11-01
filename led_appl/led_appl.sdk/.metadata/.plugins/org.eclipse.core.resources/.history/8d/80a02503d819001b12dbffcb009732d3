@@ -1,0 +1,27 @@
+/*
+ * LedMatrixDriver.cc
+ *
+ *  Created on: 29.10.2020
+ *      Author: Keller
+ */
+
+/* Header file */
+#include "LedMatrixDriver.h" /* Include own header file */
+#include "MyTypDefs.h"
+#include <stdio.h>
+#include "xparameters.h"
+#include "xil_cache.h"
+#include "xintc.h"
+#include "xgpio.h"
+
+/* Function declaration */
+
+
+/* Variable */
+XGpio GpioOutput0; /* The driver instance for GPIO Device configured as O/P */
+XGpio GpioOutput1; /* The driver instance for GPIO Device configured as O/P */
+
+
+/* Function*/
+
+

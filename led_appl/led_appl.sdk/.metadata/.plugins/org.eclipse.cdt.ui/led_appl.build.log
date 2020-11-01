@@ -1,0 +1,21 @@
+19:34:37 **** Auto Build of configuration Debug for project led_appl ****
+make all 
+'Building file: ../src/DisplayDriver.cc'
+'Invoking: MicroBlaze g++ compiler'
+mb-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/DisplayDriver.o" -I../../led_appl_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/DisplayDriver.d" -MT"src/DisplayDriver.o" -o "src/DisplayDriver.o" "../src/DisplayDriver.cc"
+'Finished building: ../src/DisplayDriver.cc'
+' '
+'Building target: led_appl.elf'
+'Invoking: MicroBlaze g++ linker'
+mb-g++ -Wl,-T -Wl,../src/lscript.ld -L../../led_appl_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "led_appl.elf"  ./src/DisplayDriver.o ./src/DynamicLed.o ./src/GUI.o ./src/LedMatrixDriver.o ./src/MainFsm.o ./src/StaticLed.o ./src/Tetris.o ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: led_appl.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size led_appl.elf  |tee "led_appl.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   4924	    356	   7576	  12856	   3238	led_appl.elf
+'Finished building: led_appl.elf.size'
+' '
+
+19:34:38 Build Finished (took 1s.64ms)
+

@@ -1,0 +1,83 @@
+/*
+ * Empty C++ Application
+ */
+
+#include <stdio.h>
+#include "xparameters.h"
+#include "xil_cache.h"
+#include "xintc.h"
+#include "xgpio.h"
+#include "MainFsm.h"
+
+#include "GUI.h"
+#include "LedMatrixDriver.h"
+#define DATA_VALID 2
+#define LED_DATA 1
+#define ADDRESS 1
+
+int main()
+{
+
+
+
+	GUI_Init();
+
+	Xil_ICacheEnable();
+    Xil_DCacheEnable();
+
+
+	/* Switch off all leds*/
+	for (u32 i = 0; i < 400; i++)
+	{
+	   // Set the GPIO outputs to low
+	   XGpio_DiscreteWrite(&GpioOutput1, ADDRESS,    i);
+	   XGpio_DiscreteWrite(&GpioOutput0, LED_DATA,   0x000000);
+	   XGpio_DiscreteWrite(&GpioOutput0, DATA_VALID, 0x1);
+	}
+	XGpio_DiscreteWrite(&GpioOutput0, DATA_VALID, 0x0);
+
+	u32 test_arr[3] = {0xFF0000, 0x00FF00, 0x0000FF };
+	for (u32 j  = 0; j<3; j++)
+	{
+		/* Switch on for test*/
+		for (u32 i = 0; i < 400; i++)
+		{
+		   // Set the GPIO outputs to low
+		   XGpio_DiscreteWrite(&GpioOutput1, ADDRESS,    i);
+		   XGpio_DiscreteWrite(&GpioOutput0, LED_DATA,   test_arr[j]);
+		   XGpio_DiscreteWrite(&GpioOutput0, DATA_VALID, 0x1);
+
+		   for (u32 i = 0; i < 100000; i++);
+		}
+		XGpio_DiscreteWrite(&GpioOutput0, DATA_VALID, 0x0);
+
+		/* Switch off all leds*/
+		for (u32 i = 0; i < 400; i++)
+		{
+		   // Set the GPIO outputs to low
+		   XGpio_DiscreteWrite(&GpioOutput1, ADDRESS,    i);
+		   XGpio_DiscreteWrite(&GpioOutput0, LED_DATA,   0x000000);
+		   XGpio_DiscreteWrite(&GpioOutput0, DATA_VALID, 0x1);
+		}
+		XGpio_DiscreteWrite(&GpioOutput0, DATA_VALID, 0x0);
+	}
+
+	while(1)
+	{
+		 MainFsm_StateMachine();
+		GUI_MainFunction();
+	}
+	Xil_DCacheDisable();
+    Xil_ICacheDisable();
+	return 0;
+
+}
+
+
+
+
+
+
+
+
+

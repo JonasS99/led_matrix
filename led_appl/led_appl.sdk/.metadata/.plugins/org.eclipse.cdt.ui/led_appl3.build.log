@@ -1,0 +1,24 @@
+12:24:32 **** Auto Build of configuration Debug for project led_appl3 ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: MicroBlaze g++ compiler'
+mb-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../led_appl3_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cc"
+../src/main.cc:196:11: warning: 'u8 ccwFsm()' defined but not used [-Wunused-function]
+ static u8 ccwFsm()
+           ^~~~~~
+'Finished building: ../src/main.cc'
+' '
+'Building target: led_appl3.elf'
+'Invoking: MicroBlaze g++ linker'
+mb-g++ -Wl,-T -Wl,../src/lscript.ld -L../../led_appl3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "led_appl3.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: led_appl3.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size led_appl3.elf  |tee "led_appl3.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   6240	    528	   3168	   9936	   26d0	led_appl3.elf
+'Finished building: led_appl3.elf.size'
+' '
+
+12:24:33 Build Finished (took 1s.176ms)
+

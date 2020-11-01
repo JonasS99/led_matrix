@@ -1,0 +1,66 @@
+/*
+ * GUI.cc
+ *
+ *  Created on: 15.10.2020
+ *      Author: Keller
+ */
+
+#include "GUI.h"
+
+#include <mtds.h>
+#include <MyDisp.h>
+
+void GUI_Init()
+{
+	mydisp.begin();
+	mydisp.createButton(BTN_ID_STATIC_LED,"GUI_Buttons/Tetris.bmp", 10, 90);
+	mydisp.createButton(BTN_ID_TETRIS,"GUI_Buttons/Tetris.bmp", 125, 90);
+	mydisp.createButton(BTN_ID_DYNAMIC_LED,"GUI_Buttons/Tetris.bmp", 10, 205);
+	mydisp.createButton(BTN_ID_WEL_FPGA,"GUI_Buttons/Tetris.bmp", 125, 205);
+	mydisp.enableButton(BTN_ID_STATIC_LED, true);
+	mydisp.enableButton(BTN_ID_TETRIS, true);
+	mydisp.enableButton(BTN_ID_DYNAMIC_LED, true);
+	mydisp.enableButton(BTN_ID_WEL_FPGA, true);
+}
+
+void GUI_MainFunction()
+{
+	mydisp.checkTouch();
+		static gui_fsm_t gui_fsm;
+		switch(gui_fsm)
+		{
+			case FSM_IDLE:
+			{
+				gui_fsm = FSM_MAIN_DISP;
+				break;
+
+			}
+
+			case FSM_MAIN_DISP:
+			{
+				drawImage("Menu/Menu.bmp", 0, 0);
+				mydisp.drawButton(BTN_ID_STATIC_LED, mydisp.isTouched(0) ? BUTTON_DOWN : BUTTON_UP);
+			    mydisp.drawButton(BTN_ID_TETRIS, mydisp.isTouched(1) ? BUTTON_DOWN : BUTTON_UP);
+			    mydisp.drawButton(BTN_ID_DYNAMIC_LED, mydisp.isTouched(2) ? BUTTON_DOWN : BUTTON_UP);
+			    mydisp.drawButton(BTN_ID_WEL_FPGA, mydisp.isTouched(3) ? BUTTON_DOWN : BUTTON_UP);
+				break;
+			}
+
+			case FSM_STATIC_LED:
+			{
+				break;
+			}
+
+		}
+
+
+
+
+
+
+}
+
+
+
+
+

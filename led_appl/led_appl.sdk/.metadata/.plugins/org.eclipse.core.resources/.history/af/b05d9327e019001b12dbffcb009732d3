@@ -1,0 +1,25 @@
+/*
+ * LedMatrixDriver.h
+ *
+ *  Created on: 29.10.2020
+ *      Author: Keller
+ */
+
+#ifndef SRC_LEDMATRIXDRIVER_H_
+#define SRC_LEDMATRIXDRIVER_H_
+
+#include <stdio.h>
+#include "xintc.h"
+#include "xparameters.h"
+/* Defines */
+#define DATA_VALID 2
+#define LED_DATA 1
+#define ADDRESS 1
+
+/* Function declaration */
+void LedMatrixDriver_Init(void);
+void LedMatrixDriver_SetLed(uint8_t PosX, uint8_t PosY, uint8_t R, uint8_t G, uint8_t B);
+
+
+
+#endif /* SRC_LEDMATRIXDRIVER_H_ */

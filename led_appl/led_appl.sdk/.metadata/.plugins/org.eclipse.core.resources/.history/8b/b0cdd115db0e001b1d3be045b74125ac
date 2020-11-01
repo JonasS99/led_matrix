@@ -1,0 +1,18 @@
+/*
+ * GUI.cc
+ *
+ *  Created on: 15.10.2020
+ *      Author: Keller
+ */
+
+#include "GUI.h"
+
+void GUI_MainFunction()
+	{
+
+	}
+
+
+
+
+

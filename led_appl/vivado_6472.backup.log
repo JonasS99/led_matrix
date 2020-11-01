@@ -1,0 +1,28 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Oct 15 09:16:13 2020
+# Process ID: 6472
+# Current directory: C:/Users/Keller/Desktop/201009_Projekt/led_appl
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11460 C:\Users\Keller\Desktop\201009_Projekt\led_appl\led_appl.xpr
+# Log file: C:/Users/Keller/Desktop/201009_Projekt/led_appl/vivado.log
+# Journal file: C:/Users/Keller/Desktop/201009_Projekt/led_appl\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Keller/Desktop/201009_Projekt/led_appl/led_appl.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/Keller/Desktop/Projekt/led_appl' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Keller/Desktop/201009_Projekt/vivado'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:36 ; elapsed = 00:00:24 . Memory (MB): peak = 763.336 ; gain = 163.363
+update_compile_order -fileset sources_1
+INFO: [Vivado 12-4158] Exported Hardware file is out of date. Exported hardware information may be inconsistent with respect to the current state of the design. It is recommended that you re-export the design and launch SDK otherwise SDK is launched with out of date hardware system file.
+launch_sdk -workspace C:/Users/Keller/Desktop/201009_Projekt/led_appl/led_appl.sdk -hwspec C:/Users/Keller/Desktop/201009_Projekt/led_appl/led_appl.sdk/design_led_appl_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace C:/Users/Keller/Desktop/201009_Projekt/led_appl/led_appl.sdk -hwspec C:/Users/Keller/Desktop/201009_Projekt/led_appl/led_appl.sdk/design_led_appl_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 15 15:26:02 2020...
