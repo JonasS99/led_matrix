@@ -18,6 +18,8 @@
 *.backup.log
 *.xmi
 *.wdf
+*.index
+*.pdom
 #########
 #Source files:
 #########
