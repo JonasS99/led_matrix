@@ -20,6 +20,9 @@
 *.wdf
 *.index
 *.pdom
+*.html
+*.xml
+*.wdm
 #########
 #Source files:
 #########
