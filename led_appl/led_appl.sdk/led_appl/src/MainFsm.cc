@@ -8,15 +8,15 @@
 /* Header file */
 #include "MainFsm.h" /* Include own header file */
 #include "MyTypDefs.h"
-
+#include "Tetris.h"
 /* Function declaration */
 
-
+Tetris Tetris_obj;
 
 /* Function*/
 void MainFsm_Init(void)
 {
-
+	Tetris_obj.Init();
 //ratatatatatatata
 	//hallllooooo
 }
@@ -38,6 +38,7 @@ void MainFsm_StateMachine(void)
 
 		case FSM_STATIC_LED:
 		{
+			Tetris_obj.CycleCall();
 			break;
 		}
 
