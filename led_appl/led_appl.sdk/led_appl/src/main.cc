@@ -19,6 +19,8 @@ int main()
 	Xil_ICacheEnable();
     Xil_DCacheEnable();
 
+    /* Harri is here*/
+
 
     LedMatrixDriver_Init();
     LedMatrixDriver_SetAllLed(100,150,100);
@@ -30,6 +32,7 @@ int main()
 		MainFsm_StateMachine();
 	}
 
+	// Test von Bastian
 	/* Disable Cache */
 	Xil_DCacheDisable();
     Xil_ICacheDisable();
