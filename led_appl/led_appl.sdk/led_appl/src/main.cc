@@ -8,8 +8,6 @@
 #include "xintc.h"
 #include "xgpio.h"
 #include "MainFsm.h"
-
-
 #include "LedMatrixDriver.h"
 
 
@@ -23,9 +21,9 @@ int main()
 
 
     LedMatrixDriver_Init();
-    LedMatrixDriver_SetAllLed(100,150,100);
+    MainFsm_Init();
 
-	while(1)
+    while(1)
 	{
 		LedMatrixDriver_Update();
 		for (u32 i = 0; i<100000;i++);

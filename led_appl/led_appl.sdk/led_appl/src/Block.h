@@ -16,7 +16,7 @@
 class Square : public IBlock
 {
 public:
-	Square(Tetris* Tetris_object, u32 posX, u32 posY, TetrisColorsT color);
+	Square(TetrisMatrix* TetrisMatrix_obj, u32 posX, u32 posY, TetrisColorsT color);
 	void CycleCall(void) 	override;
 	void ControlDown(void) 	override;
 	void ControlLeft(void) 	override;
@@ -25,7 +25,7 @@ private:
 	u32 positionX;
 	u32 positionY;
 	TetrisColorsT color;
-	Tetris* Tetris_obj;
+	TetrisMatrix* TetrisMatrix_obj;
 };
 
 

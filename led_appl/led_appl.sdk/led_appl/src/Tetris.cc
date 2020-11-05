@@ -10,7 +10,7 @@
 #include "Block.h"
 
 /************** PIXEL **************/
-void Pixel::SetColor(TetrisColorsT color)
+void TetrisPixel::SetColor(TetrisColorsT color)
 {
 	switch(color)
 	{
@@ -26,48 +26,25 @@ void Pixel::SetColor(TetrisColorsT color)
 	}
 }
 
-u8 Pixel::GetColorR(void)
+u8 TetrisPixel::GetColorR(void)
 {
 	return colorR;
 }
 
-u8 Pixel::GetColorG(void)
+u8 TetrisPixel::GetColorG(void)
 {
 	return colorG;
 }
 
-u8 Pixel::GetColorB(void)
+u8 TetrisPixel::GetColorB(void)
 {
 	return colorR;
 }
 
 /************** PIXEL END **************/
+/************** MATRIX *****************/
 
-
-/************** TETRIS *****************/
-void Tetris::Init(void)
-{
-	Blocks[0] = new Square(this, 10, 0, YELLOW);
-}
-
-
-
-void Tetris::CycleCall(void)
-{
-	ClearAllPixel();
-	for(u32 i; i <100; i++)
-	{
-		if(Blocks[i] != nullptr)
-		{
-			Blocks[i]->CycleCall();
-		}
-	}
-	WritePixelToMatrix();
-}
-
-
-
-void Tetris::ClearAllPixel(void)
+void TetrisMatrix::ClearAllPixel(void)
 {
 	for(u32 x = 0; x < 20; x++)
 	{
@@ -81,7 +58,7 @@ void Tetris::ClearAllPixel(void)
 
 
 
-void Tetris::SetPixel(u32 posX, u32 posY, TetrisColorsT color)
+void TetrisMatrix::SetPixel(u32 posX, u32 posY, TetrisColorsT color)
 {
 	Pixel_[posX][posY].SetColor(color);
 }
@@ -89,7 +66,7 @@ void Tetris::SetPixel(u32 posX, u32 posY, TetrisColorsT color)
 
 
 
-void Tetris::WritePixelToMatrix(void)
+void TetrisMatrix::WritePixelToMatrix(void)
 {
 	for(u32 x = 0; x < 20; x++)
 	{
@@ -99,6 +76,34 @@ void Tetris::WritePixelToMatrix(void)
 		}
 	}
 }
+
+
+/************** MATRIX END *************/
+/************** TETRIS *****************/
+void Tetris::Init(void)
+{
+
+
+}
+
+
+
+void Tetris::CycleCall(void)
+{
+	TetrisMatrix_obj->ClearAllPixel();
+	for(u32 i; i <100; i++)
+	{
+		if(Blocks[i] != nullptr)
+		{
+			Blocks[i]->CycleCall();
+		}
+	}
+	TetrisMatrix_obj->WritePixelToMatrix();
+}
+
+
+
+
 
 /************** TETRIS END ***************/
 

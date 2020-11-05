@@ -13,7 +13,7 @@
 #include "IBlock.h"
 
 
-class Pixel
+class TetrisPixel
 {
 public:
 	void SetColor(TetrisColorsT color);
@@ -27,6 +27,17 @@ private:
 };
 
 
+class TetrisMatrix
+{
+public:
+	void SetPixel(u32 posX, u32 posY, TetrisColorsT color);
+	void ClearAllPixel(void);
+	void WritePixelToMatrix(void);
+private:
+	TetrisPixel Pixel_[20][20];
+};
+
+
 
 class Tetris
 {
@@ -34,11 +45,8 @@ public:
 	Tetris(){}
 	void Init(void);
 	void CycleCall(void);
-	void ClearAllPixel(void);
-	void SetPixel(u32 posX, u32 posY, TetrisColorsT color);
-	void WritePixelToMatrix(void);
 private:
-	Pixel Pixel_[20][20];
+	TetrisMatrix* TetrisMatrix_obj;
 	IBlock* Blocks[100];
 };
 
