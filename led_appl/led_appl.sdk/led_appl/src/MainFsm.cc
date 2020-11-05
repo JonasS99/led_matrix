@@ -29,7 +29,7 @@ void MainFsm_StateMachine(void)
 		{
 			if (1)
 			{
-				state = FSM_STATIC_LED;
+				state = FSM_STATIC_LED_Shapes;
 			}
 			break;
 		}
