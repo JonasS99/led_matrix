@@ -8,45 +8,98 @@
 /* Header file */
 #include "MainFsm.h" /* Include own header file */
 #include "MyTypDefs.h"
-#include "Tetris.h"
+#include "DisplayDriver.h"
+#include "LedMatrixDriver.h"
+
 /* Function declaration */
 
-Tetris Tetris_obj;
+
 
 /* Function*/
 void MainFsm_Init(void)
 {
-	Tetris_obj.Init();
+	DisplayDriver_Init();
+	LedMatrixDriver_Init();
 }
 
 void MainFsm_StateMachine(void)
 {
-	static fsm_t state = FSM_HOME;
+	static fsm_t state = FSM_IDLE;
+	button_id_t button_touched;
+	LedMatrixDriver_Update();
 
 	switch(state)
 	{
+		case FSM_IDLE:
+		{
+			DisplayDriver_HomeEnableButtons(true);
+			state = FSM_HOME;
+
+			break;
+		}
 		case FSM_HOME:
 		{
-			if (1)
+			DisplayDriver_HomeDraw();
+			button_touched = DispalyDriver_CheckButtons();
+
+			if (button_touched >= 0)
 			{
-				state = FSM_TETRIS;
+				/* action if one button is pressed  */
+				DisplayDriver_HomeEnableButtons(false);
+				DisplayDriver_ClearDisp();
+
+				if (button_touched == BTN_ID_STATIC_LED)
+				{
+					/* Switch state to static led */
+					DisplayDriver_StaticLedEnableButtons(true);
+					state = FSM_STATIC_LED;
+				}
+				else if (button_touched == BTN_ID_TETRIS)
+				{
+					/* Switch state to tetris */
+					state = FSM_TETRIS;
+				}
+				else if (button_touched == BTN_ID_DYNAMIC_LED)
+				{
+					/* Switch state to dynamic led */
+					state = FSM_DYNMAMIC_LED;
+				}
+				else if (button_touched == BTN_ID_WEL_FPGA)
+				{
+					/* Switch state to fpga */
+					state = FSM_FPGA;
+				}
 			}
 			break;
 		}
 
-		case FSM_STATIC_LED:{
-			//Select ColorController or Shapes. After this change the state to 'FSM_STATIC_LED_ColorController' or 'FSM_STATIC_LED_Shapes'
-			break;
-		}
+		case FSM_STATIC_LED:
+		{
+			DisplayDriver_StaticLedDraw();
+			button_touched = DispalyDriver_CheckButtons();
+			if (button_touched >= 0)
+			{
+				/* action if one button is pressed  */
+				DisplayDriver_StaticLedEnableButtons(false);
+				DisplayDriver_ClearDisp();
 
-		case FSM_STATIC_LED_ColorController:{
-			//Control your color value with the Controller. Get the RGB Value from the Controller and do the following task:
-			StaticLED_ColorController(0, 0, 0);
-			break;
-		}
-
-		case FSM_STATIC_LED_Shapes:{
-			StaticLED_Shapes(StaticLED_state_ChristmasTree);
+				if (button_touched == BTN_ID_REGULATOR)
+				{
+					/* Switch state to color regulator */
+					state = FSM_REGULATOR;
+				}
+				else if (button_touched == BTN_ID_FORMS)
+				{
+					/* Switch state to forms */
+					state = FSM_FORMS;
+				}
+				else if (button_touched == BTN_ID_BACK)
+				{
+					/* Switch state to home */
+					DisplayDriver_HomeEnableButtons(true);
+					state = FSM_HOME;
+				}
+			}
 			break;
 		}
 
@@ -72,7 +125,6 @@ void MainFsm_StateMachine(void)
 
 		case FSM_TETRIS:
 		{
-			Tetris_obj.CycleCall();
 			break;
 		}
 	}

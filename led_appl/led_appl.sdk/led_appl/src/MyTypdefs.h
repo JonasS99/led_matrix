@@ -9,7 +9,8 @@
 #define SRC_MYTYPDEFS_H_
 
 typedef enum {
-	FSM_HOME =0,
+	FSM_IDLE = 0,
+	FSM_HOME,
 	FSM_STATIC_LED,
 	FSM_STATIC_LED_ColorController,
 	FSM_STATIC_LED_Shapes,
