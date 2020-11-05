@@ -19,9 +19,9 @@ void Pixel::SetColor(TetrisColorsT color)
 		colorG = 0x00;
 		colorB = 0x00;
 	default:
-		colorR = 0xFF;
+		colorR = 0x0F;
 		colorG = 0x00;
-		colorB = 0xFF;
+		colorB = 0x0F;
 		break;
 	}
 }
