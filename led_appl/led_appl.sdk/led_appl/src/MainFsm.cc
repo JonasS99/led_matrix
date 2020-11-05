@@ -24,7 +24,7 @@ void MainFsm_Init(void)
 
 void MainFsm_StateMachine(void)
 {
-	static fsm_t state = FSM_IDLE;
+	static fsm_t state = FSM_HOME;
 	button_id_t button_touched;
 	LedMatrixDriver_Update();
 
