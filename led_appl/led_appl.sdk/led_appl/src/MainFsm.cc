@@ -10,10 +10,11 @@
 #include "MyTypDefs.h"
 #include "DisplayDriver.h"
 #include "LedMatrixDriver.h"
+#include "DynamicLed.h"
 
 /* Function declaration */
-
-
+/* Variable declaration */
+static bool firstAccess = 0;
 
 /* Function*/
 void MainFsm_Init(void)
@@ -63,6 +64,7 @@ void MainFsm_StateMachine(void)
 				{
 					/* Switch state to dynamic led */
 					state = FSM_DYNMAMIC_LED;
+					firstAccess = 1;
 				}
 				else if (button_touched == BTN_ID_WEL_FPGA)
 				{
@@ -105,6 +107,8 @@ void MainFsm_StateMachine(void)
 
 		case FSM_DYNMAMIC_LED:
 		{
+			DynamicLed_animation(rainbow, firstAccess);
+			firstAccess = 0;
 			break;
 		}
 

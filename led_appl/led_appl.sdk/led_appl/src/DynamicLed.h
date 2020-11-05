@@ -10,10 +10,9 @@
 #include "MyTypdefs.h"
 
 /* Defines */
-#define ROT (u8 rot[] = {255,0,0})
 
 /* Function declaration */
-void DynamicLed_animation(dynamicLedMode_t animation);
+void DynamicLed_animation(dynamicLedMode_t animation, bool firstAccess);
 
 
 #endif /* SRC_DYNAMICLED_H_ */

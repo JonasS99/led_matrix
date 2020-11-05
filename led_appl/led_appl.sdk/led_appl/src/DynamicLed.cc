@@ -12,29 +12,31 @@ static void rainbowAnimation(void);
 static void lauflichtAnimation(void);
 static void stroboAnimation(void);
 static void weihnachtAnimation(void);
-
-void DynamicLed_animation(dynamicLedMode_t animation)
+/* Variable declaration */
+static bool firstAccessCheck;
+void DynamicLed_animation(dynamicLedMode_t animation, bool firstAccess)
 {
+	firstAccessCheck = firstAccess;
 	switch(animation)
 	{
 		case rainbow:
 		{
-			rainbowAnimation();
+			//rainbowAnimation();
 		}break;
 
 		case lauflicht:
 		{
-			lauflichtAnimation();
+			//lauflichtAnimation();
 		}break;
 
 		case strobo:
 		{
-			stroboAnimation();
+			//stroboAnimation();
 		}break;
 
 		case weihnachtsanimation:
 		{
-			weihnachtAnimation();
+			//weihnachtAnimation();
 		}break;
 		default: break;
 	}
@@ -50,17 +52,23 @@ static void rainbowAnimation(void)
 {
 	static u32 animationCount = 0;
 	static u8 colorCount = 0;
-	for(u8 y=0 ; y<20 ; y++)
+	if(firstAccessCheck==1)
 	{
-		colorCount = 0;
-		for(u8 x=0 ; x<20 ; x++)
+		for(u8 y=0 ; y<20 ; y++)
 		{
-			LedMatrixDriver_SetLed(x,y,colorArray[colorCount][0],colorArray[colorCount][1],colorArray[colorCount][2]);
-			if(x==4 || x==9 || x==14 || x==19) colorCount++;
+			colorCount = 0;
+			for(u8 x=0 ; x<20 ; x++)
+			{
+				LedMatrixDriver_SetLed(x,y,colorArray[colorCount][0],colorArray[colorCount][1],colorArray[colorCount][2]);
+				if(x==4 || x==9 || x==14 || x==19) colorCount++;
+			}
 		}
 	}
-	LedMatrixDriver_SlideAllLed();
-	LedMatrixDriver_Update();
+	if(animationCount>=5000)
+	{
+		LedMatrixDriver_SlideAllLed();
+		animationCount = 0;
+	}
 	animationCount++;
 }
 
