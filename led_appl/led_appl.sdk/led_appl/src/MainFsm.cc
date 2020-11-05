@@ -18,6 +18,7 @@ void MainFsm_Init(void)
 {
 
 //ratatatatatatata
+	//hallllooooo
 }
 
 void MainFsm_StateMachine(void)
