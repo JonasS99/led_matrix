@@ -18,7 +18,12 @@ typedef enum {
 	FSM_TETRIS
 } fsm_t;
 
-
+typedef enum {
+	rainbow = 0,
+	lauflicht,
+	strobo,
+	weihnachtsanimation
+}dynamicLedMode_t;
 
 
 #endif /* SRC_MYTYPDEFS_H_ */

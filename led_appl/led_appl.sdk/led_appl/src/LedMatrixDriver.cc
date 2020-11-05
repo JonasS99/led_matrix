@@ -108,10 +108,28 @@ void LedMatrixDriver_SetAllLed(u8 R, u8 G, u8 B)
 /*
  * Clear all led
  */
-void LedMatrixDriber_ClearAllLed(void)
+void LedMatrixDriver_ClearAllLed(void)
 {
 	for(u16 i=0; i<20; i++) for(u16 j=0; j<20; j++) LedMatrixDriver_ClearLed(i ,j);
 }
+
+/*
+ * Slide all led to the right
+ */
+void LedMatrixDriver_SlideAllLed(void)
+{
+	u32 last;
+	for(u8 y=0 ; y<20 ; y++)
+	{
+		last = ledMatrix[19][y];
+		for(u8 x=19 ; x>0 ; x--)
+		{
+			ledMatrix[x][y] = ledMatrix[x-1][y];
+		}
+		ledMatrix[0][y] = last;
+	}
+}
+
 
 
 
