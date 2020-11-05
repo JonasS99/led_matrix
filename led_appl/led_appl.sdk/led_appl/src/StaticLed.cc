@@ -22,6 +22,7 @@ void StaticLED_Shapes(shapes selection){
 			break;
 		}
 		case StaticLED_state_ChristmasTree:{
+			LedMatrixDriver_ClearAllLed();
 			StaticLED_ChristmasTree();
 			break;
 		}
