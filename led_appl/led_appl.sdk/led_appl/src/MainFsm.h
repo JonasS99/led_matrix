@@ -8,6 +8,8 @@
 #ifndef SRC_MAINFSM_H_
 #define SRC_MAINFSM_H_
 
+#include "StaticLED.h"
+
 /* Function declaration */
 void MainFsm_Init(void);
 void MainFsm_StateMachine(void);
