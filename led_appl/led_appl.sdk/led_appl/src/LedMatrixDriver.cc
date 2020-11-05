@@ -108,7 +108,7 @@ void LedMatrixDriver_SetAllLed(u8 R, u8 G, u8 B)
 /*
  * Clear all led
  */
-void LedMatrixDriber_ClearAllLed(void)
+void LedMatrixDriver_ClearAllLed(void)
 {
 	for(u16 i=0; i<20; i++) for(u16 j=0; j<20; j++) LedMatrixDriver_ClearLed(i ,j);
 }

@@ -17,8 +17,6 @@
 void MainFsm_Init(void)
 {
 
-//ratatatatatatata
-	//hallllooooo
 }
 
 void MainFsm_StateMachine(void)
@@ -36,8 +34,19 @@ void MainFsm_StateMachine(void)
 			break;
 		}
 
-		case FSM_STATIC_LED:
-		{
+		case FSM_STATIC_LED:{
+			//Select ColorController or Shapes. After this change the state to 'FSM_STATIC_LED_ColorController' or 'FSM_STATIC_LED_Shapes'
+			break;
+		}
+
+		case FSM_STATIC_LED_ColorController:{
+			//Control your color value with the Controller. Get the RGB Value from the Controller and do the following task:
+			StaticLED_ColorController(0, 0, 0);
+			break;
+		}
+
+		case FSM_STATIC_LED_Shapes:{
+			StaticLED_Shapes(StaticLED_state_ChristmasTree);
 			break;
 		}
 

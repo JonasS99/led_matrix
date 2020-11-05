@@ -11,6 +11,8 @@
 typedef enum {
 	FSM_HOME =0,
 	FSM_STATIC_LED,
+	FSM_STATIC_LED_ColorController,
+	FSM_STATIC_LED_Shapes,
 	FSM_DYNMAMIC_LED,
 	FSM_REGULATOR,
 	FSM_FORMS,
@@ -18,7 +20,10 @@ typedef enum {
 	FSM_TETRIS
 } fsm_t;
 
-
+typedef enum {
+	StaticLED_state_IDLE = 0,
+	StaticLED_state_ChristmasTree
+} shapes;
 
 
 #endif /* SRC_MYTYPDEFS_H_ */
