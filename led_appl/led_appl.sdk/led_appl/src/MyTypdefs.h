@@ -9,8 +9,10 @@
 #define SRC_MYTYPDEFS_H_
 
 typedef enum {
-	FSM_HOME = 0,
+	FSM_HOME =0,
 	FSM_STATIC_LED,
+	FSM_STATIC_LED_ColorController,
+	FSM_STATIC_LED_Shapes,
 	FSM_DYNMAMIC_LED,
 	FSM_REGULATOR,
 	FSM_FORMS,
@@ -29,6 +31,11 @@ typedef enum{
 	PURPLE
 }TetrisColorsT;
 
+
+typedef enum {
+	StaticLED_state_IDLE = 0,
+	StaticLED_state_ChristmasTree
+} shapes;
 
 
 

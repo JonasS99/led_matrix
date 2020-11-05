@@ -21,6 +21,6 @@ void LedMatrixDriver_Update(void);
 void LedMatrixDriver_SetLed(u8 PosX, u8 PosY, u8 R, u8 G, u8 B);
 void LedMatrixDriver_ClearLed(u8 PosX, u8 PosY);
 void LedMatrixDriver_SetAllLed(u8 R, u8 G, u8 B);
-void LedMatrixDriber_ClearAllLed(void);
+void LedMatrixDriver_ClearAllLed(void);
 
 #endif /* SRC_LEDMATRIXDRIVER_H_ */

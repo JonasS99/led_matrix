@@ -17,8 +17,6 @@ Tetris Tetris_obj;
 void MainFsm_Init(void)
 {
 	Tetris_obj.Init();
-//ratatatatatatata
-	//hallllooooo
 }
 
 void MainFsm_StateMachine(void)
@@ -31,14 +29,24 @@ void MainFsm_StateMachine(void)
 		{
 			if (1)
 			{
-				state = FSM_STATIC_LED;
+				state = FSM_TETRIS;
 			}
 			break;
 		}
 
-		case FSM_STATIC_LED:
-		{
-			Tetris_obj.CycleCall();
+		case FSM_STATIC_LED:{
+			//Select ColorController or Shapes. After this change the state to 'FSM_STATIC_LED_ColorController' or 'FSM_STATIC_LED_Shapes'
+			break;
+		}
+
+		case FSM_STATIC_LED_ColorController:{
+			//Control your color value with the Controller. Get the RGB Value from the Controller and do the following task:
+			StaticLED_ColorController(0, 0, 0);
+			break;
+		}
+
+		case FSM_STATIC_LED_Shapes:{
+			StaticLED_Shapes(StaticLED_state_ChristmasTree);
 			break;
 		}
 
@@ -64,6 +72,7 @@ void MainFsm_StateMachine(void)
 
 		case FSM_TETRIS:
 		{
+			Tetris_obj.CycleCall();
 			break;
 		}
 	}
