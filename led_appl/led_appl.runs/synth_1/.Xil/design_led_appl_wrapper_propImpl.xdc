@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/constrs_1/new/led_appl_constraints.xdc rfile:../../../led_appl.srcs/constrs_1/new/led_appl_constraints.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/constrs_1/new/led_appl_constraints.xdc rfile:../../../led_appl.srcs/constrs_1/new/led_appl_constraints.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:13 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN D14 [get_ports MTDS_SPI_Out_ss_io]
 set_property src_info {type:XDC file:1 line:14 export:INPUT save:INPUT read:READ} [current_design]

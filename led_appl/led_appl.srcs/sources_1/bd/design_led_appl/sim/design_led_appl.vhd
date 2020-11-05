@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Thu Oct 29 09:15:31 2020
+--Date        : Thu Nov  5 10:59:55 2020
 --Host        : DESKTOP-M2MR233 running 64-bit major release  (build 9200)
 --Command     : generate_target design_led_appl.bd
 --Design      : design_led_appl
@@ -3083,6 +3083,16 @@ architecture STRUCTURE of design_led_appl is
     s_axi_aresetn : in STD_LOGIC
   );
   end component design_led_appl_PmodMTDS_0_0;
+  component design_led_appl_led_driver_0_0 is
+  port (
+    adr_out : out STD_LOGIC_VECTOR ( 8 downto 0 );
+    data : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    ser_data_out : out STD_LOGIC;
+    ser_data_out_en_disp : out STD_LOGIC;
+    clk : in STD_LOGIC;
+    reset : in STD_LOGIC
+  );
+  end component design_led_appl_led_driver_0_0;
   component design_led_appl_led_ram_0_0 is
   port (
     data_in_mb : in STD_LOGIC_VECTOR ( 23 downto 0 );
@@ -3094,16 +3104,6 @@ architecture STRUCTURE of design_led_appl is
     data_out_led : out STD_LOGIC_VECTOR ( 23 downto 0 )
   );
   end component design_led_appl_led_ram_0_0;
-  component design_led_appl_led_driver_0_0 is
-  port (
-    adr_out : out STD_LOGIC_VECTOR ( 8 downto 0 );
-    data : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    ser_data_out : out STD_LOGIC;
-    ser_data_out_en_disp : out STD_LOGIC;
-    clk : in STD_LOGIC;
-    reset : in STD_LOGIC
-  );
-  end component design_led_appl_led_driver_0_0;
   signal Net : STD_LOGIC_VECTOR ( 0 to 0 );
   signal PmodMTDS_0_MTDS_SPI_Out_IO0_I : STD_LOGIC;
   signal PmodMTDS_0_MTDS_SPI_Out_IO0_O : STD_LOGIC;

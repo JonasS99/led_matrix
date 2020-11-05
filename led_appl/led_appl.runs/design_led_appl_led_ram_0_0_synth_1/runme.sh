@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/Keller/Desktop/201022_Projekt_400_leds/led_appl/led_appl.runs/design_led_appl_led_ram_0_0_synth_1'
+HD_PWD='C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/design_led_appl_led_ram_0_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

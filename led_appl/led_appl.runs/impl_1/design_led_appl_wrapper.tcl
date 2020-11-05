@@ -69,19 +69,19 @@ set rc [catch {
   create_project -in_memory -part xc7a100tcsg324-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.cache/wt [current_project]
-  set_property parent.project_path C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.xpr [current_project]
-  set_property ip_repo_paths C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/vivado [current_project]
+  set_property webtalk.parent_dir C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.cache/wt [current_project]
+  set_property parent.project_path C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.xpr [current_project]
+  set_property ip_repo_paths C:/Users/Keller/Desktop/Harald/git/vivado [current_project]
   update_ip_catalog
-  set_property ip_output_repo C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.cache/ip [current_project]
+  set_property ip_output_repo C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
-  add_files -quiet C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/design_led_appl_wrapper.dcp
+  add_files -quiet C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/design_led_appl_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/design_led_appl.bd
+  add_files C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/design_led_appl.bd
   set_param project.isImplRun false
-  read_xdc C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/constrs_1/new/led_appl_constraints.xdc
+  read_xdc C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/constrs_1/new/led_appl_constraints.xdc
   set_param project.isImplRun true
   link_design -top design_led_appl_wrapper -part xc7a100tcsg324-1
   set_param project.isImplRun false

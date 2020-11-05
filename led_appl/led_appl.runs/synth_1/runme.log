@@ -10,91 +10,90 @@
 
 source design_led_appl_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/vivado'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Keller/Desktop/Harald/git/vivado'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
-WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
-Current IP cache path is c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.cache/ip 
-add_files: Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 306.891 ; gain = 10.551
+update_ip_catalog: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 296.168 ; gain = 0.000
+add_files: Time (s): cpu = 00:00:08 ; elapsed = 00:00:19 . Memory (MB): peak = 306.063 ; gain = 9.895
 Command: synth_design -top design_led_appl_wrapper -part xc7a100tcsg324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 1612 
+INFO: Helper process launched with PID 17000 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 767.402 ; gain = 178.605
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 767.152 ; gain = 178.133
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'design_led_appl_wrapper' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/hdl/design_led_appl_wrapper.vhd:29]
-INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:36115' bound to instance 'MTDS_SPI_Out_io0_iobuf' of component 'IOBUF' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/hdl/design_led_appl_wrapper.vhd:73]
+INFO: [Synth 8-638] synthesizing module 'design_led_appl_wrapper' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/hdl/design_led_appl_wrapper.vhd:29]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:36115' bound to instance 'MTDS_SPI_Out_io0_iobuf' of component 'IOBUF' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/hdl/design_led_appl_wrapper.vhd:73]
 INFO: [Synth 8-6157] synthesizing module 'IOBUF' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:36115]
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
 INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (1#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:36115]
-INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:36115' bound to instance 'MTDS_SPI_Out_io1_iobuf' of component 'IOBUF' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/hdl/design_led_appl_wrapper.vhd:80]
-INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:36115' bound to instance 'MTDS_SPI_Out_sck_iobuf' of component 'IOBUF' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/hdl/design_led_appl_wrapper.vhd:87]
-INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:36115' bound to instance 'MTDS_SPI_Out_ss_iobuf' of component 'IOBUF' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/hdl/design_led_appl_wrapper.vhd:94]
-INFO: [Synth 8-3491] module 'design_led_appl' declared at 'C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:2785' bound to instance 'design_led_appl_i' of component 'design_led_appl' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/hdl/design_led_appl_wrapper.vhd:101]
-INFO: [Synth 8-638] synthesizing module 'design_led_appl' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:2812]
-INFO: [Synth 8-3491] module 'design_led_appl_PmodMTDS_0_0' declared at 'C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_PmodMTDS_0_0_stub.vhdl:5' bound to instance 'PmodMTDS_0' of component 'design_led_appl_PmodMTDS_0_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:3365]
-INFO: [Synth 8-638] synthesizing module 'design_led_appl_PmodMTDS_0_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_PmodMTDS_0_0_stub.vhdl:78]
-INFO: [Synth 8-3491] module 'design_led_appl_axi_gpio_0_0' declared at 'C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_axi_gpio_0_0_stub.vhdl:5' bound to instance 'axi_gpio_0' of component 'design_led_appl_axi_gpio_0_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:3435]
-INFO: [Synth 8-638] synthesizing module 'design_led_appl_axi_gpio_0_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_axi_gpio_0_0_stub.vhdl:32]
-INFO: [Synth 8-3491] module 'design_led_appl_axi_gpio_1_0' declared at 'C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_axi_gpio_1_0_stub.vhdl:5' bound to instance 'axi_gpio_1' of component 'design_led_appl_axi_gpio_1_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:3459]
-INFO: [Synth 8-638] synthesizing module 'design_led_appl_axi_gpio_1_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_axi_gpio_1_0_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'design_led_appl_axi_uartlite_0_0' declared at 'C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_axi_uartlite_0_0_stub.vhdl:5' bound to instance 'axi_uartlite_0' of component 'design_led_appl_axi_uartlite_0_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:3482]
-INFO: [Synth 8-638] synthesizing module 'design_led_appl_axi_uartlite_0_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_axi_uartlite_0_0_stub.vhdl:33]
-INFO: [Synth 8-3491] module 'design_led_appl_clk_wiz_1_0' declared at 'C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_clk_wiz_1_0_stub.vhdl:5' bound to instance 'clk_wiz_1' of component 'design_led_appl_clk_wiz_1_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:3507]
-INFO: [Synth 8-638] synthesizing module 'design_led_appl_clk_wiz_1_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_clk_wiz_1_0_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'design_led_appl_led_driver_0_0' declared at 'C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_led_driver_0_0_stub.vhdl:5' bound to instance 'led_driver_0' of component 'design_led_appl_led_driver_0_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:3514]
-INFO: [Synth 8-638] synthesizing module 'design_led_appl_led_driver_0_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_led_driver_0_0_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'design_led_appl_led_ram_0_0' declared at 'C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_led_ram_0_0_stub.vhdl:5' bound to instance 'led_ram_0' of component 'design_led_appl_led_ram_0_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:3523]
-INFO: [Synth 8-638] synthesizing module 'design_led_appl_led_ram_0_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_led_ram_0_0_stub.vhdl:18]
-INFO: [Synth 8-3491] module 'design_led_appl_mdm_1_0' declared at 'C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_mdm_1_0_stub.vhdl:5' bound to instance 'mdm_1' of component 'design_led_appl_mdm_1_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:3533]
-INFO: [Synth 8-638] synthesizing module 'design_led_appl_mdm_1_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_mdm_1_0_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'design_led_appl_microblaze_0_0' declared at 'C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_microblaze_0_0_stub.vhdl:5' bound to instance 'microblaze_0' of component 'design_led_appl_microblaze_0_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:3546]
-INFO: [Synth 8-638] synthesizing module 'design_led_appl_microblaze_0_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_microblaze_0_0_stub.vhdl:63]
-INFO: [Synth 8-3491] module 'design_led_appl_microblaze_0_axi_intc_0' declared at 'C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_microblaze_0_axi_intc_0_stub.vhdl:5' bound to instance 'microblaze_0_axi_intc' of component 'design_led_appl_microblaze_0_axi_intc_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:3632]
-INFO: [Synth 8-638] synthesizing module 'design_led_appl_microblaze_0_axi_intc_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_microblaze_0_axi_intc_0_stub.vhdl:36]
-INFO: [Synth 8-638] synthesizing module 'design_led_appl_microblaze_0_axi_periph_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:1683]
-INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_1NYHA7D' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:57]
-INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_1NYHA7D' (2#1) [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:57]
-INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_YUPO13' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:158]
-INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_YUPO13' (3#1) [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:158]
-INFO: [Synth 8-638] synthesizing module 'm02_couplers_imp_K3M08K' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:259]
-INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_K3M08K' (4#1) [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:259]
-INFO: [Synth 8-638] synthesizing module 'm03_couplers_imp_1U142BE' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:360]
-INFO: [Synth 8-256] done synthesizing module 'm03_couplers_imp_1U142BE' (5#1) [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:360]
-INFO: [Synth 8-638] synthesizing module 'm04_couplers_imp_9W8UMQ' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:461]
-INFO: [Synth 8-256] done synthesizing module 'm04_couplers_imp_9W8UMQ' (6#1) [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:461]
-INFO: [Synth 8-638] synthesizing module 'm05_couplers_imp_117STUK' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:562]
-INFO: [Synth 8-256] done synthesizing module 'm05_couplers_imp_117STUK' (7#1) [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:562]
-INFO: [Synth 8-638] synthesizing module 'm06_couplers_imp_1DVXZYN' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:663]
-INFO: [Synth 8-256] done synthesizing module 'm06_couplers_imp_1DVXZYN' (8#1) [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:663]
-INFO: [Synth 8-638] synthesizing module 'm07_couplers_imp_66JJGH' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:768]
-INFO: [Synth 8-256] done synthesizing module 'm07_couplers_imp_66JJGH' (9#1) [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:768]
-INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_1X0E9KH' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:1437]
-INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_1X0E9KH' (10#1) [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:1437]
-INFO: [Synth 8-3491] module 'design_led_appl_xbar_0' declared at 'C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'design_led_appl_xbar_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:2583]
-INFO: [Synth 8-638] synthesizing module 'design_led_appl_xbar_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_xbar_0_stub.vhdl:51]
-INFO: [Synth 8-256] done synthesizing module 'design_led_appl_microblaze_0_axi_periph_0' (11#1) [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:1683]
-INFO: [Synth 8-638] synthesizing module 'microblaze_0_local_memory_imp_11RNGAA' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:858]
-INFO: [Synth 8-3491] module 'design_led_appl_dlmb_bram_if_cntlr_0' declared at 'C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_dlmb_bram_if_cntlr_0_stub.vhdl:5' bound to instance 'dlmb_bram_if_cntlr' of component 'design_led_appl_dlmb_bram_if_cntlr_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:1072]
-INFO: [Synth 8-638] synthesizing module 'design_led_appl_dlmb_bram_if_cntlr_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_dlmb_bram_if_cntlr_0_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'design_led_appl_dlmb_v10_0' declared at 'C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_dlmb_v10_0_stub.vhdl:5' bound to instance 'dlmb_v10' of component 'design_led_appl_dlmb_v10_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:1126]
-INFO: [Synth 8-638] synthesizing module 'design_led_appl_dlmb_v10_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_dlmb_v10_0_stub.vhdl:36]
-INFO: [Synth 8-3491] module 'design_led_appl_ilmb_bram_if_cntlr_0' declared at 'C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_ilmb_bram_if_cntlr_0_stub.vhdl:5' bound to instance 'ilmb_bram_if_cntlr' of component 'design_led_appl_ilmb_bram_if_cntlr_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:1154]
-INFO: [Synth 8-638] synthesizing module 'design_led_appl_ilmb_bram_if_cntlr_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_ilmb_bram_if_cntlr_0_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'design_led_appl_ilmb_v10_0' declared at 'C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_ilmb_v10_0_stub.vhdl:5' bound to instance 'ilmb_v10' of component 'design_led_appl_ilmb_v10_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:1208]
-INFO: [Synth 8-638] synthesizing module 'design_led_appl_ilmb_v10_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_ilmb_v10_0_stub.vhdl:36]
-INFO: [Synth 8-3491] module 'design_led_appl_lmb_bram_0' declared at 'C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_lmb_bram_0_stub.vhdl:5' bound to instance 'lmb_bram' of component 'design_led_appl_lmb_bram_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:1236]
-INFO: [Synth 8-638] synthesizing module 'design_led_appl_lmb_bram_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_lmb_bram_0_stub.vhdl:27]
-INFO: [Synth 8-256] done synthesizing module 'microblaze_0_local_memory_imp_11RNGAA' (12#1) [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:858]
-INFO: [Synth 8-3491] module 'design_led_appl_microblaze_0_xlconcat_0' declared at 'c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_microblaze_0_xlconcat_0/synth/design_led_appl_microblaze_0_xlconcat_0.v:58' bound to instance 'microblaze_0_xlconcat' of component 'design_led_appl_microblaze_0_xlconcat_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:3865]
-INFO: [Synth 8-6157] synthesizing module 'design_led_appl_microblaze_0_xlconcat_0' [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_microblaze_0_xlconcat_0/synth/design_led_appl_microblaze_0_xlconcat_0.v:58]
-INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:36115' bound to instance 'MTDS_SPI_Out_io1_iobuf' of component 'IOBUF' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/hdl/design_led_appl_wrapper.vhd:80]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:36115' bound to instance 'MTDS_SPI_Out_sck_iobuf' of component 'IOBUF' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/hdl/design_led_appl_wrapper.vhd:87]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:36115' bound to instance 'MTDS_SPI_Out_ss_iobuf' of component 'IOBUF' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/hdl/design_led_appl_wrapper.vhd:94]
+INFO: [Synth 8-3491] module 'design_led_appl' declared at 'C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:2785' bound to instance 'design_led_appl_i' of component 'design_led_appl' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/hdl/design_led_appl_wrapper.vhd:101]
+INFO: [Synth 8-638] synthesizing module 'design_led_appl' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:2812]
+INFO: [Synth 8-3491] module 'design_led_appl_PmodMTDS_0_0' declared at 'C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_PmodMTDS_0_0_stub.vhdl:5' bound to instance 'PmodMTDS_0' of component 'design_led_appl_PmodMTDS_0_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:3365]
+INFO: [Synth 8-638] synthesizing module 'design_led_appl_PmodMTDS_0_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_PmodMTDS_0_0_stub.vhdl:78]
+INFO: [Synth 8-3491] module 'design_led_appl_axi_gpio_0_0' declared at 'C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_axi_gpio_0_0_stub.vhdl:5' bound to instance 'axi_gpio_0' of component 'design_led_appl_axi_gpio_0_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:3435]
+INFO: [Synth 8-638] synthesizing module 'design_led_appl_axi_gpio_0_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_axi_gpio_0_0_stub.vhdl:32]
+INFO: [Synth 8-3491] module 'design_led_appl_axi_gpio_1_0' declared at 'C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_axi_gpio_1_0_stub.vhdl:5' bound to instance 'axi_gpio_1' of component 'design_led_appl_axi_gpio_1_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:3459]
+INFO: [Synth 8-638] synthesizing module 'design_led_appl_axi_gpio_1_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_axi_gpio_1_0_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'design_led_appl_axi_uartlite_0_0' declared at 'C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_axi_uartlite_0_0_stub.vhdl:5' bound to instance 'axi_uartlite_0' of component 'design_led_appl_axi_uartlite_0_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:3482]
+INFO: [Synth 8-638] synthesizing module 'design_led_appl_axi_uartlite_0_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_axi_uartlite_0_0_stub.vhdl:33]
+INFO: [Synth 8-3491] module 'design_led_appl_clk_wiz_1_0' declared at 'C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_clk_wiz_1_0_stub.vhdl:5' bound to instance 'clk_wiz_1' of component 'design_led_appl_clk_wiz_1_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:3507]
+INFO: [Synth 8-638] synthesizing module 'design_led_appl_clk_wiz_1_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_clk_wiz_1_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_led_appl_led_driver_0_0' declared at 'C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_led_driver_0_0_stub.vhdl:5' bound to instance 'led_driver_0' of component 'design_led_appl_led_driver_0_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:3514]
+INFO: [Synth 8-638] synthesizing module 'design_led_appl_led_driver_0_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_led_driver_0_0_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'design_led_appl_led_ram_0_0' declared at 'C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_led_ram_0_0_stub.vhdl:5' bound to instance 'led_ram_0' of component 'design_led_appl_led_ram_0_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:3523]
+INFO: [Synth 8-638] synthesizing module 'design_led_appl_led_ram_0_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_led_ram_0_0_stub.vhdl:18]
+INFO: [Synth 8-3491] module 'design_led_appl_mdm_1_0' declared at 'C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_mdm_1_0_stub.vhdl:5' bound to instance 'mdm_1' of component 'design_led_appl_mdm_1_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:3533]
+INFO: [Synth 8-638] synthesizing module 'design_led_appl_mdm_1_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_mdm_1_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'design_led_appl_microblaze_0_0' declared at 'C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_microblaze_0_0_stub.vhdl:5' bound to instance 'microblaze_0' of component 'design_led_appl_microblaze_0_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:3546]
+INFO: [Synth 8-638] synthesizing module 'design_led_appl_microblaze_0_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_microblaze_0_0_stub.vhdl:63]
+INFO: [Synth 8-3491] module 'design_led_appl_microblaze_0_axi_intc_0' declared at 'C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_microblaze_0_axi_intc_0_stub.vhdl:5' bound to instance 'microblaze_0_axi_intc' of component 'design_led_appl_microblaze_0_axi_intc_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:3632]
+INFO: [Synth 8-638] synthesizing module 'design_led_appl_microblaze_0_axi_intc_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_microblaze_0_axi_intc_0_stub.vhdl:36]
+INFO: [Synth 8-638] synthesizing module 'design_led_appl_microblaze_0_axi_periph_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:1683]
+INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_1NYHA7D' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:57]
+INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_1NYHA7D' (2#1) [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:57]
+INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_YUPO13' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:158]
+INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_YUPO13' (3#1) [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:158]
+INFO: [Synth 8-638] synthesizing module 'm02_couplers_imp_K3M08K' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:259]
+INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_K3M08K' (4#1) [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:259]
+INFO: [Synth 8-638] synthesizing module 'm03_couplers_imp_1U142BE' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:360]
+INFO: [Synth 8-256] done synthesizing module 'm03_couplers_imp_1U142BE' (5#1) [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:360]
+INFO: [Synth 8-638] synthesizing module 'm04_couplers_imp_9W8UMQ' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:461]
+INFO: [Synth 8-256] done synthesizing module 'm04_couplers_imp_9W8UMQ' (6#1) [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:461]
+INFO: [Synth 8-638] synthesizing module 'm05_couplers_imp_117STUK' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:562]
+INFO: [Synth 8-256] done synthesizing module 'm05_couplers_imp_117STUK' (7#1) [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:562]
+INFO: [Synth 8-638] synthesizing module 'm06_couplers_imp_1DVXZYN' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:663]
+INFO: [Synth 8-256] done synthesizing module 'm06_couplers_imp_1DVXZYN' (8#1) [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:663]
+INFO: [Synth 8-638] synthesizing module 'm07_couplers_imp_66JJGH' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:768]
+INFO: [Synth 8-256] done synthesizing module 'm07_couplers_imp_66JJGH' (9#1) [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:768]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_1X0E9KH' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:1437]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_1X0E9KH' (10#1) [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:1437]
+INFO: [Synth 8-3491] module 'design_led_appl_xbar_0' declared at 'C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'design_led_appl_xbar_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:2583]
+INFO: [Synth 8-638] synthesizing module 'design_led_appl_xbar_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_xbar_0_stub.vhdl:51]
+INFO: [Synth 8-256] done synthesizing module 'design_led_appl_microblaze_0_axi_periph_0' (11#1) [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:1683]
+INFO: [Synth 8-638] synthesizing module 'microblaze_0_local_memory_imp_11RNGAA' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:858]
+INFO: [Synth 8-3491] module 'design_led_appl_dlmb_bram_if_cntlr_0' declared at 'C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_dlmb_bram_if_cntlr_0_stub.vhdl:5' bound to instance 'dlmb_bram_if_cntlr' of component 'design_led_appl_dlmb_bram_if_cntlr_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:1072]
+INFO: [Synth 8-638] synthesizing module 'design_led_appl_dlmb_bram_if_cntlr_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_dlmb_bram_if_cntlr_0_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'design_led_appl_dlmb_v10_0' declared at 'C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_dlmb_v10_0_stub.vhdl:5' bound to instance 'dlmb_v10' of component 'design_led_appl_dlmb_v10_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:1126]
+INFO: [Synth 8-638] synthesizing module 'design_led_appl_dlmb_v10_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_dlmb_v10_0_stub.vhdl:36]
+INFO: [Synth 8-3491] module 'design_led_appl_ilmb_bram_if_cntlr_0' declared at 'C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_ilmb_bram_if_cntlr_0_stub.vhdl:5' bound to instance 'ilmb_bram_if_cntlr' of component 'design_led_appl_ilmb_bram_if_cntlr_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:1154]
+INFO: [Synth 8-638] synthesizing module 'design_led_appl_ilmb_bram_if_cntlr_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_ilmb_bram_if_cntlr_0_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'design_led_appl_ilmb_v10_0' declared at 'C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_ilmb_v10_0_stub.vhdl:5' bound to instance 'ilmb_v10' of component 'design_led_appl_ilmb_v10_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:1208]
+INFO: [Synth 8-638] synthesizing module 'design_led_appl_ilmb_v10_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_ilmb_v10_0_stub.vhdl:36]
+INFO: [Synth 8-3491] module 'design_led_appl_lmb_bram_0' declared at 'C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_lmb_bram_0_stub.vhdl:5' bound to instance 'lmb_bram' of component 'design_led_appl_lmb_bram_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:1236]
+INFO: [Synth 8-638] synthesizing module 'design_led_appl_lmb_bram_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_lmb_bram_0_stub.vhdl:27]
+INFO: [Synth 8-256] done synthesizing module 'microblaze_0_local_memory_imp_11RNGAA' (12#1) [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:858]
+INFO: [Synth 8-3491] module 'design_led_appl_microblaze_0_xlconcat_0' declared at 'c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_microblaze_0_xlconcat_0/synth/design_led_appl_microblaze_0_xlconcat_0.v:57' bound to instance 'microblaze_0_xlconcat' of component 'design_led_appl_microblaze_0_xlconcat_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:3865]
+INFO: [Synth 8-6157] synthesizing module 'design_led_appl_microblaze_0_xlconcat_0' [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_microblaze_0_xlconcat_0/synth/design_led_appl_microblaze_0_xlconcat_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
 	Parameter IN0_WIDTH bound to: 1 - type: integer 
 	Parameter IN1_WIDTH bound to: 1 - type: integer 
 	Parameter IN2_WIDTH bound to: 1 - type: integer 
@@ -129,12 +128,12 @@ INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [c:/Users/Ke
 	Parameter IN31_WIDTH bound to: 1 - type: integer 
 	Parameter dout_width bound to: 1 - type: integer 
 	Parameter NUM_PORTS bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat' (13#1) [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'design_led_appl_microblaze_0_xlconcat_0' (14#1) [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_microblaze_0_xlconcat_0/synth/design_led_appl_microblaze_0_xlconcat_0.v:58]
-INFO: [Synth 8-3491] module 'design_led_appl_rst_clk_wiz_1_100M_0' declared at 'C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_rst_clk_wiz_1_100M_0_stub.vhdl:5' bound to instance 'rst_clk_wiz_1_100M' of component 'design_led_appl_rst_clk_wiz_1_100M_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:3870]
-INFO: [Synth 8-638] synthesizing module 'design_led_appl_rst_clk_wiz_1_100M_0' [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/.Xil/Vivado-2520-DESKTOP-M2MR233/realtime/design_led_appl_rst_clk_wiz_1_100M_0_stub.vhdl:21]
-INFO: [Synth 8-256] done synthesizing module 'design_led_appl' (15#1) [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:2812]
-INFO: [Synth 8-256] done synthesizing module 'design_led_appl_wrapper' (16#1) [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/hdl/design_led_appl_wrapper.vhd:29]
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat' (13#1) [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'design_led_appl_microblaze_0_xlconcat_0' (14#1) [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_microblaze_0_xlconcat_0/synth/design_led_appl_microblaze_0_xlconcat_0.v:57]
+INFO: [Synth 8-3491] module 'design_led_appl_rst_clk_wiz_1_100M_0' declared at 'C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_rst_clk_wiz_1_100M_0_stub.vhdl:5' bound to instance 'rst_clk_wiz_1_100M' of component 'design_led_appl_rst_clk_wiz_1_100M_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:3870]
+INFO: [Synth 8-638] synthesizing module 'design_led_appl_rst_clk_wiz_1_100M_0' [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/.Xil/Vivado-16776-DESKTOP-M2MR233/realtime/design_led_appl_rst_clk_wiz_1_100M_0_stub.vhdl:21]
+INFO: [Synth 8-256] done synthesizing module 'design_led_appl' (15#1) [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/synth/design_led_appl.vhd:2812]
+INFO: [Synth 8-256] done synthesizing module 'design_led_appl_wrapper' (16#1) [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/hdl/design_led_appl_wrapper.vhd:29]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In1[0]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In2[0]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In3[0]
@@ -221,7 +220,7 @@ WARNING: [Synth 8-3331] design design_led_appl_microblaze_0_axi_periph_0 has unc
 WARNING: [Synth 8-3331] design design_led_appl_microblaze_0_axi_periph_0 has unconnected port S00_ACLK
 WARNING: [Synth 8-3331] design design_led_appl_microblaze_0_axi_periph_0 has unconnected port S00_ARESETN
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 839.805 ; gain = 251.008
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 840.480 ; gain = 251.461
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -234,10 +233,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 839.805 ; gain = 251.008
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 840.480 ; gain = 251.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 839.805 ; gain = 251.008
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 840.480 ; gain = 251.461
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -245,70 +244,70 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_microblaze_0_0/design_led_appl_microblaze_0_0/design_led_appl_microblaze_0_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0'
-Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_microblaze_0_0/design_led_appl_microblaze_0_0/design_led_appl_microblaze_0_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0'
-Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_dlmb_v10_0/design_led_appl_dlmb_v10_0/design_led_appl_dlmb_v10_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_local_memory/dlmb_v10'
-Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_dlmb_v10_0/design_led_appl_dlmb_v10_0/design_led_appl_dlmb_v10_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_local_memory/dlmb_v10'
-Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_ilmb_v10_0/design_led_appl_ilmb_v10_0/design_led_appl_dlmb_v10_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_local_memory/ilmb_v10'
-Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_ilmb_v10_0/design_led_appl_ilmb_v10_0/design_led_appl_dlmb_v10_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_local_memory/ilmb_v10'
-Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_dlmb_bram_if_cntlr_0/design_led_appl_dlmb_bram_if_cntlr_0/design_led_appl_dlmb_bram_if_cntlr_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_local_memory/dlmb_bram_if_cntlr'
-Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_dlmb_bram_if_cntlr_0/design_led_appl_dlmb_bram_if_cntlr_0/design_led_appl_dlmb_bram_if_cntlr_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_local_memory/dlmb_bram_if_cntlr'
-Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_ilmb_bram_if_cntlr_0/design_led_appl_ilmb_bram_if_cntlr_0/design_led_appl_ilmb_bram_if_cntlr_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_local_memory/ilmb_bram_if_cntlr'
-Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_ilmb_bram_if_cntlr_0/design_led_appl_ilmb_bram_if_cntlr_0/design_led_appl_ilmb_bram_if_cntlr_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_local_memory/ilmb_bram_if_cntlr'
-Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_lmb_bram_0/design_led_appl_lmb_bram_0/design_led_appl_lmb_bram_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_local_memory/lmb_bram'
-Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_lmb_bram_0/design_led_appl_lmb_bram_0/design_led_appl_lmb_bram_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_local_memory/lmb_bram'
-Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_xbar_0/design_led_appl_xbar_0/design_led_appl_xbar_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_axi_periph/xbar'
-Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_xbar_0/design_led_appl_xbar_0/design_led_appl_xbar_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_axi_periph/xbar'
-Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_microblaze_0_axi_intc_0/design_led_appl_microblaze_0_axi_intc_0/design_led_appl_microblaze_0_axi_intc_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_axi_intc'
-Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_microblaze_0_axi_intc_0/design_led_appl_microblaze_0_axi_intc_0/design_led_appl_microblaze_0_axi_intc_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_axi_intc'
-Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_mdm_1_0/design_led_appl_mdm_1_0/design_led_appl_mdm_1_0_in_context.xdc] for cell 'design_led_appl_i/mdm_1'
-Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_mdm_1_0/design_led_appl_mdm_1_0/design_led_appl_mdm_1_0_in_context.xdc] for cell 'design_led_appl_i/mdm_1'
-Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_clk_wiz_1_0/design_led_appl_clk_wiz_1_0/design_led_appl_clk_wiz_1_0_in_context.xdc] for cell 'design_led_appl_i/clk_wiz_1'
-Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_clk_wiz_1_0/design_led_appl_clk_wiz_1_0/design_led_appl_clk_wiz_1_0_in_context.xdc] for cell 'design_led_appl_i/clk_wiz_1'
-Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_rst_clk_wiz_1_100M_0/design_led_appl_rst_clk_wiz_1_100M_0/design_led_appl_rst_clk_wiz_1_100M_0_in_context.xdc] for cell 'design_led_appl_i/rst_clk_wiz_1_100M'
-Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_rst_clk_wiz_1_100M_0/design_led_appl_rst_clk_wiz_1_100M_0/design_led_appl_rst_clk_wiz_1_100M_0_in_context.xdc] for cell 'design_led_appl_i/rst_clk_wiz_1_100M'
-Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_axi_uartlite_0_0/design_led_appl_axi_uartlite_0_0/design_led_appl_axi_uartlite_0_0_in_context.xdc] for cell 'design_led_appl_i/axi_uartlite_0'
-Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_axi_uartlite_0_0/design_led_appl_axi_uartlite_0_0/design_led_appl_axi_uartlite_0_0_in_context.xdc] for cell 'design_led_appl_i/axi_uartlite_0'
-Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_axi_gpio_0_0/design_led_appl_axi_gpio_0_0/design_led_appl_axi_gpio_0_0_in_context.xdc] for cell 'design_led_appl_i/axi_gpio_0'
-Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_axi_gpio_0_0/design_led_appl_axi_gpio_0_0/design_led_appl_axi_gpio_0_0_in_context.xdc] for cell 'design_led_appl_i/axi_gpio_0'
-Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_axi_gpio_1_0/design_led_appl_axi_gpio_1_0/design_led_appl_axi_gpio_1_0_in_context.xdc] for cell 'design_led_appl_i/axi_gpio_1'
-Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_axi_gpio_1_0/design_led_appl_axi_gpio_1_0/design_led_appl_axi_gpio_1_0_in_context.xdc] for cell 'design_led_appl_i/axi_gpio_1'
-Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_led_driver_0_0/design_led_appl_led_driver_0_0/design_led_appl_led_driver_0_0_in_context.xdc] for cell 'design_led_appl_i/led_driver_0'
-Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_led_driver_0_0/design_led_appl_led_driver_0_0/design_led_appl_led_driver_0_0_in_context.xdc] for cell 'design_led_appl_i/led_driver_0'
-Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_led_ram_0_0/design_led_appl_led_ram_0_0/design_led_appl_led_ram_0_0_in_context.xdc] for cell 'design_led_appl_i/led_ram_0'
-Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_led_ram_0_0/design_led_appl_led_ram_0_0/design_led_appl_led_ram_0_0_in_context.xdc] for cell 'design_led_appl_i/led_ram_0'
-Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_PmodMTDS_0_0/design_led_appl_PmodMTDS_0_0/design_led_appl_PmodMTDS_0_0_in_context.xdc] for cell 'design_led_appl_i/PmodMTDS_0'
-Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_PmodMTDS_0_0/design_led_appl_PmodMTDS_0_0/design_led_appl_PmodMTDS_0_0_in_context.xdc] for cell 'design_led_appl_i/PmodMTDS_0'
-Parsing XDC File [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/constrs_1/new/led_appl_constraints.xdc]
-Finished Parsing XDC File [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/constrs_1/new/led_appl_constraints.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/constrs_1/new/led_appl_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_led_appl_wrapper_propImpl.xdc].
+Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_microblaze_0_0/design_led_appl_microblaze_0_0/design_led_appl_microblaze_0_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0'
+Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_microblaze_0_0/design_led_appl_microblaze_0_0/design_led_appl_microblaze_0_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0'
+Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_dlmb_v10_0/design_led_appl_dlmb_v10_0/design_led_appl_dlmb_v10_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_local_memory/dlmb_v10'
+Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_dlmb_v10_0/design_led_appl_dlmb_v10_0/design_led_appl_dlmb_v10_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_local_memory/dlmb_v10'
+Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_ilmb_v10_0/design_led_appl_ilmb_v10_0/design_led_appl_dlmb_v10_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_local_memory/ilmb_v10'
+Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_ilmb_v10_0/design_led_appl_ilmb_v10_0/design_led_appl_dlmb_v10_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_local_memory/ilmb_v10'
+Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_dlmb_bram_if_cntlr_0/design_led_appl_dlmb_bram_if_cntlr_0/design_led_appl_dlmb_bram_if_cntlr_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_local_memory/dlmb_bram_if_cntlr'
+Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_dlmb_bram_if_cntlr_0/design_led_appl_dlmb_bram_if_cntlr_0/design_led_appl_dlmb_bram_if_cntlr_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_local_memory/dlmb_bram_if_cntlr'
+Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_ilmb_bram_if_cntlr_0/design_led_appl_ilmb_bram_if_cntlr_0/design_led_appl_ilmb_bram_if_cntlr_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_local_memory/ilmb_bram_if_cntlr'
+Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_ilmb_bram_if_cntlr_0/design_led_appl_ilmb_bram_if_cntlr_0/design_led_appl_ilmb_bram_if_cntlr_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_local_memory/ilmb_bram_if_cntlr'
+Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_lmb_bram_0/design_led_appl_lmb_bram_0/design_led_appl_lmb_bram_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_local_memory/lmb_bram'
+Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_lmb_bram_0/design_led_appl_lmb_bram_0/design_led_appl_lmb_bram_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_local_memory/lmb_bram'
+Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_xbar_0/design_led_appl_xbar_0/design_led_appl_xbar_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_axi_periph/xbar'
+Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_xbar_0/design_led_appl_xbar_0/design_led_appl_xbar_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_axi_periph/xbar'
+Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_microblaze_0_axi_intc_0/design_led_appl_microblaze_0_axi_intc_0/design_led_appl_microblaze_0_axi_intc_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_axi_intc'
+Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_microblaze_0_axi_intc_0/design_led_appl_microblaze_0_axi_intc_0/design_led_appl_microblaze_0_axi_intc_0_in_context.xdc] for cell 'design_led_appl_i/microblaze_0_axi_intc'
+Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_mdm_1_0/design_led_appl_mdm_1_0/design_led_appl_mdm_1_0_in_context.xdc] for cell 'design_led_appl_i/mdm_1'
+Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_mdm_1_0/design_led_appl_mdm_1_0/design_led_appl_mdm_1_0_in_context.xdc] for cell 'design_led_appl_i/mdm_1'
+Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_clk_wiz_1_0/design_led_appl_clk_wiz_1_0/design_led_appl_clk_wiz_1_0_in_context.xdc] for cell 'design_led_appl_i/clk_wiz_1'
+Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_clk_wiz_1_0/design_led_appl_clk_wiz_1_0/design_led_appl_clk_wiz_1_0_in_context.xdc] for cell 'design_led_appl_i/clk_wiz_1'
+Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_rst_clk_wiz_1_100M_0/design_led_appl_rst_clk_wiz_1_100M_0/design_led_appl_rst_clk_wiz_1_100M_0_in_context.xdc] for cell 'design_led_appl_i/rst_clk_wiz_1_100M'
+Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_rst_clk_wiz_1_100M_0/design_led_appl_rst_clk_wiz_1_100M_0/design_led_appl_rst_clk_wiz_1_100M_0_in_context.xdc] for cell 'design_led_appl_i/rst_clk_wiz_1_100M'
+Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_axi_uartlite_0_0/design_led_appl_axi_uartlite_0_0/design_led_appl_axi_uartlite_0_0_in_context.xdc] for cell 'design_led_appl_i/axi_uartlite_0'
+Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_axi_uartlite_0_0/design_led_appl_axi_uartlite_0_0/design_led_appl_axi_uartlite_0_0_in_context.xdc] for cell 'design_led_appl_i/axi_uartlite_0'
+Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_axi_gpio_0_0/design_led_appl_axi_gpio_0_0/design_led_appl_axi_gpio_0_0_in_context.xdc] for cell 'design_led_appl_i/axi_gpio_0'
+Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_axi_gpio_0_0/design_led_appl_axi_gpio_0_0/design_led_appl_axi_gpio_0_0_in_context.xdc] for cell 'design_led_appl_i/axi_gpio_0'
+Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_axi_gpio_1_0/design_led_appl_axi_gpio_1_0/design_led_appl_axi_gpio_1_0_in_context.xdc] for cell 'design_led_appl_i/axi_gpio_1'
+Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_axi_gpio_1_0/design_led_appl_axi_gpio_1_0/design_led_appl_axi_gpio_1_0_in_context.xdc] for cell 'design_led_appl_i/axi_gpio_1'
+Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_led_driver_0_0/design_led_appl_led_driver_0_0/design_led_appl_led_driver_0_0_in_context.xdc] for cell 'design_led_appl_i/led_driver_0'
+Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_led_driver_0_0/design_led_appl_led_driver_0_0/design_led_appl_led_driver_0_0_in_context.xdc] for cell 'design_led_appl_i/led_driver_0'
+Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_led_ram_0_0/design_led_appl_led_ram_0_0/design_led_appl_led_ram_0_0_in_context.xdc] for cell 'design_led_appl_i/led_ram_0'
+Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_led_ram_0_0/design_led_appl_led_ram_0_0/design_led_appl_led_ram_0_0_in_context.xdc] for cell 'design_led_appl_i/led_ram_0'
+Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_PmodMTDS_0_0/design_led_appl_PmodMTDS_0_0/design_led_appl_PmodMTDS_0_0_in_context.xdc] for cell 'design_led_appl_i/PmodMTDS_0'
+Finished Parsing XDC File [c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_PmodMTDS_0_0/design_led_appl_PmodMTDS_0_0/design_led_appl_PmodMTDS_0_0_in_context.xdc] for cell 'design_led_appl_i/PmodMTDS_0'
+Parsing XDC File [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/constrs_1/new/led_appl_constraints.xdc]
+Finished Parsing XDC File [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/constrs_1/new/led_appl_constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/constrs_1/new/led_appl_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_led_appl_wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/design_led_appl_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/dont_touch.xdc]
+Parsing XDC File [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 918.773 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 916.770 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 4 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 4 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 918.773 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 916.770 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'design_led_appl_i/microblaze_0_local_memory/lmb_bram' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 920.770 ; gain = 331.973
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 918.762 ; gain = 329.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 920.770 ; gain = 331.973
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 918.762 ; gain = 329.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for clk_100MHz. (constraint file  c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_clk_wiz_1_0/design_led_appl_clk_wiz_1_0/design_led_appl_clk_wiz_1_0_in_context.xdc, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_100MHz. (constraint file  c:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_clk_wiz_1_0/design_led_appl_clk_wiz_1_0/design_led_appl_clk_wiz_1_0_in_context.xdc, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for clk_100MHz. (constraint file  c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_clk_wiz_1_0/design_led_appl_clk_wiz_1_0/design_led_appl_clk_wiz_1_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_100MHz. (constraint file  c:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.srcs/sources_1/bd/design_led_appl/ip/design_led_appl_clk_wiz_1_0/design_led_appl_clk_wiz_1_0/design_led_appl_clk_wiz_1_0_in_context.xdc, line 4).
 Applied set_property DONT_TOUCH = true for design_led_appl_i. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_led_appl_i/microblaze_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_led_appl_i/microblaze_0_local_memory/dlmb_v10. (constraint file  auto generated constraint, line ).
@@ -330,10 +329,10 @@ Applied set_property DONT_TOUCH = true for design_led_appl_i/led_driver_0. (cons
 Applied set_property DONT_TOUCH = true for design_led_appl_i/led_ram_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_led_appl_i/PmodMTDS_0. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 920.770 ; gain = 331.973
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 918.762 ; gain = 329.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 920.770 ; gain = 331.973
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 918.762 ; gain = 329.742
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -385,7 +384,7 @@ WARNING: [Synth 8-3331] design design_led_appl_microblaze_0_axi_periph_0 has unc
 WARNING: [Synth 8-3331] design design_led_appl_microblaze_0_axi_periph_0 has unconnected port M07_ACLK
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 920.770 ; gain = 331.973
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 918.762 ; gain = 329.742
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -403,13 +402,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'design_led_appl_i/mdm_1/D
 INFO: [Synth 8-5578] Moved timing constraint from pin 'design_led_appl_i/clk_wiz_1/clk_out1' to pin 'design_led_appl_i/clk_wiz_1/bbstub_clk_out1/O'
 INFO: [Synth 8-5819] Moved 5 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 920.770 ; gain = 331.973
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:45 . Memory (MB): peak = 918.762 ; gain = 329.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 920.770 ; gain = 331.973
+Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:45 . Memory (MB): peak = 918.762 ; gain = 329.742
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -421,7 +420,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 921.367 ; gain = 332.570
+Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:45 . Memory (MB): peak = 918.762 ; gain = 329.742
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -445,7 +444,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 935.184 ; gain = 346.387
+Finished IO Insertion : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 931.906 ; gain = 342.887
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -458,7 +457,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 935.184 ; gain = 346.387
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 931.906 ; gain = 342.887
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -470,25 +469,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 935.184 ; gain = 346.387
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 931.906 ; gain = 342.887
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 935.184 ; gain = 346.387
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 931.906 ; gain = 342.887
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 935.184 ; gain = 346.387
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 931.906 ; gain = 342.887
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 935.184 ; gain = 346.387
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 931.906 ; gain = 342.887
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -554,28 +553,28 @@ Report Instance Areas:
 |5     |    microblaze_0_local_memory |microblaze_0_local_memory_imp_11RNGAA     |   496|
 +------+------------------------------+------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 935.184 ; gain = 346.387
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 931.906 ; gain = 342.887
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 18 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:36 . Memory (MB): peak = 935.184 ; gain = 265.422
-Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 935.184 ; gain = 346.387
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:41 . Memory (MB): peak = 931.906 ; gain = 264.605
+Synthesis Optimization Complete : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 931.906 ; gain = 342.887
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 961.738 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 956.836 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 4 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 4 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-96 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
+96 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:48 ; elapsed = 00:00:53 . Memory (MB): peak = 961.738 ; gain = 654.848
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 961.738 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:55 ; elapsed = 00:01:03 . Memory (MB): peak = 956.836 ; gain = 650.773
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 956.836 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.runs/synth_1/design_led_appl_wrapper.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.runs/synth_1/design_led_appl_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_led_appl_wrapper_utilization_synth.rpt -pb design_led_appl_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Oct 29 09:18:12 2020...
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 11:03:51 2020...
