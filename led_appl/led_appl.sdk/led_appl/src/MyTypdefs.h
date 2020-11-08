@@ -37,7 +37,8 @@ typedef enum {
     StaticLED_state_ChristmasTree,
 	StaticLED_state_EmojiSmile,
 	StaticLED_state_EmojiSad,
-	StaticLED_state_Mario
+	StaticLED_state_Mario,
+	StaticLED_state_Minion
 } shapes;
 
 typedef enum {
