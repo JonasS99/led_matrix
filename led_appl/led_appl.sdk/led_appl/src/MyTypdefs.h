@@ -34,7 +34,10 @@ typedef enum{
 
 typedef enum {
     StaticLED_state_IDLE = 0,
-    StaticLED_state_ChristmasTree
+    StaticLED_state_ChristmasTree,
+	StaticLED_state_EmojiSmile,
+	StaticLED_state_EmojiSad,
+	StaticLED_state_Mario
 } shapes;
 
 typedef enum {
