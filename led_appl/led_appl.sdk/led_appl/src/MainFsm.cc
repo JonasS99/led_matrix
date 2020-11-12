@@ -119,15 +119,7 @@ void MainFsm_StateMachine(void)
 			button_touched = DispalyDriver_CheckButtons();
 			//test program
 			StaticLED_Shapes(StaticLED_state_ChristmasTree);
-			StaticLED_Wait(20000000);
-			StaticLED_Shapes(StaticLED_state_EmojiSmile);
-			StaticLED_Wait(20000000);
-			StaticLED_Shapes(StaticLED_state_EmojiSad);
-			StaticLED_Wait(20000000);
-			StaticLED_Shapes(StaticLED_state_Mario);
-			StaticLED_Wait(20000000);
-			StaticLED_Shapes(StaticLED_state_Minion);
-			StaticLED_Wait(20000000);
+
 
 			if (button_touched >= 0)
 			{
