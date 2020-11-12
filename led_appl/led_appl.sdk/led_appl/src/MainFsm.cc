@@ -35,14 +35,16 @@ void MainFsm_StateMachine(void)
 		case FSM_IDLE:
 		{
 //			DisplayDriver_HomeEnableButtons(true);
-			state = FSM_HOME;
+			state = FSM_STATIC_LED;
 			firstAccess = 1;
 			break;
 		}
 		case FSM_HOME:
 		{
-			DynamicLed_animation(weihnachtsanimation, firstAccess);
-		    firstAccess = 0;
+
+			DynamicLed_animation(rainbow, firstAccess);
+		DynamicLed_animation(weihnachtsanimation, firstAccess);
+			firstAccess = 0;
 //			DisplayDriver_HomeDraw();
 //			button_touched = DispalyDriver_CheckButtons();
 //
@@ -75,6 +77,39 @@ void MainFsm_StateMachine(void)
 //					state = FSM_FPGA;
 //				}
 //			}
+
+			DisplayDriver_HomeDraw();
+			button_touched = DispalyDriver_CheckButtons();
+
+			if (button_touched >= 0)
+			{
+				/* action if one button is pressed  */
+				DisplayDriver_HomeEnableButtons(false);
+				DisplayDriver_ClearDisp();
+
+				if (button_touched == BTN_ID_STATIC_LED)
+				{
+					/* Switch state to static led */
+					DisplayDriver_StaticLedEnableButtons(true);
+					state = FSM_STATIC_LED;
+				}
+				else if (button_touched == BTN_ID_TETRIS)
+				{
+					/* Switch state to tetris */
+					state = FSM_TETRIS;
+				}
+				else if (button_touched == BTN_ID_DYNAMIC_LED)
+				{
+					/* Switch state to dynamic led */
+					state = FSM_DYNMAMIC_LED;
+					firstAccess = 1;
+				}
+				else if (button_touched == BTN_ID_WEL_FPGA)
+				{
+					/* Switch state to FPGA */
+					state = FSM_FPGA;
+				}
+			}
 			break;
 		}
 
@@ -82,7 +117,10 @@ void MainFsm_StateMachine(void)
 		{
 			DisplayDriver_StaticLedDraw();
 			button_touched = DispalyDriver_CheckButtons();
-			StaticLED_Minion();
+			//test program
+			StaticLED_Shapes(StaticLED_state_Minion);
+
+
 			if (button_touched >= 0)
 			{
 				/* action if one button is pressed  */
@@ -136,7 +174,6 @@ void MainFsm_StateMachine(void)
 			break;
 		}
 	}
-
 }
 
 
