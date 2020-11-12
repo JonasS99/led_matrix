@@ -56,6 +56,7 @@ void StaticLED_Shapes(shapes selection){
 
 void StaticLED_ChristmasTree(void){
 	u16 i, j;
+	LEDMatrixDriver_SetLEDs_ForLoop(9, 10, 0, 1, 255, 255, 0);
 	for( i=9; i<=10; i++) for( j=0; j<=1; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 0);
 	for( i=8; i<=11; i++) for( j=2; j<=3; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);
 	for( i=7; i<=12; i++) for( j=4; j<=5; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);

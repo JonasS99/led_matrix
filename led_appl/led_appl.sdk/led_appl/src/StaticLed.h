@@ -23,7 +23,6 @@ void StaticLED_Mario(void);
 void StaticLED_Minion(void);
 
 
-
 #endif /* SRC_STATICLED_H_ */
 
 
