@@ -135,7 +135,7 @@ void StaticLED_EmojiSad(void){
 	LEDMatrixDriver_SetLEDs_ForLoop(6, 7, 13, 13, 255, 255, 255);
 	LEDMatrixDriver_SetLEDs_ForLoop(12, 13, 13, 13, 255, 255, 255);
 	LEDMatrixDriver_SetLEDs_ForLoop(5, 6, 14, 14, 255, 255, 255);
-	LEDMatrixDriver_SetLEDs_ForLoop(13, 14, 14, 13, 255, 255, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(13, 14, 14, 14, 255, 255, 255);
 	LEDMatrixDriver_SetLEDs_ForLoop(5, 5, 15, 15, 255, 255, 255);
 	LEDMatrixDriver_SetLEDs_ForLoop(14, 14, 15, 15, 255, 255, 255);
 }
@@ -178,17 +178,17 @@ void StaticLED_Mario(void){
 	LedMatrixDriver_SetLed(13, 7, 43, 17, 0);
 	LedMatrixDriver_SetLed(14, 7, 43, 17, 0);
 	//T-shirt
-	LEDMatrixDriver_SetLEDs_ForLoop(6, 10, 9, 9, 29, 29, 255);
-	LEDMatrixDriver_SetLEDs_ForLoop(5, 13, 10, 10, 29, 29, 255);
-	LEDMatrixDriver_SetLEDs_ForLoop(4, 14, 11, 11, 29, 29, 255);
-	LEDMatrixDriver_SetLEDs_ForLoop(6, 12, 12, 12, 29, 29, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(6, 11, 9, 9, 29, 29, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(5, 14, 10, 10, 29, 29, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(4, 15, 11, 11, 29, 29, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(6, 13, 12, 12, 29, 29, 255);
 	//Hands
 	LEDMatrixDriver_SetLEDs_ForLoop(4, 5, 12, 12, 255, 179, 128);
 	LEDMatrixDriver_SetLEDs_ForLoop(4, 6, 13, 13, 255, 179, 128);
 	LEDMatrixDriver_SetLEDs_ForLoop(4, 5, 14, 14, 255, 179, 128);
-	LEDMatrixDriver_SetLEDs_ForLoop(13, 14, 15, 15, 255, 179, 128);
-	LEDMatrixDriver_SetLEDs_ForLoop(12, 14, 16, 16, 255, 179, 128);
-	LEDMatrixDriver_SetLEDs_ForLoop(13, 14, 17, 17, 255, 179, 128);
+	LEDMatrixDriver_SetLEDs_ForLoop(14, 14, 12, 12, 255, 179, 128);
+	LEDMatrixDriver_SetLEDs_ForLoop(13, 14, 13, 13, 255, 179, 128);
+	LEDMatrixDriver_SetLEDs_ForLoop(14, 14, 14, 14, 255, 179, 128);
 	//Hands
 	//trousers
 	LedMatrixDriver_SetLed(8, 9, 255, 0, 0);
@@ -209,7 +209,7 @@ void StaticLED_Mario(void){
 	LedMatrixDriver_SetLed(11, 13, 255, 255, 0);
 	//shoes
 	LEDMatrixDriver_SetLEDs_ForLoop(5, 7, 17, 17, 80, 45, 22);
-	LEDMatrixDriver_SetLEDs_ForLoop(10, 12, 17, 17, 80, 45, 22);
+	LEDMatrixDriver_SetLEDs_ForLoop(12, 14, 17, 17, 80, 45, 22);
 	//Green gras
 	LEDMatrixDriver_SetLEDs_ForLoop(0, 19, 18, 18, 0, 200, 0);
 	LEDMatrixDriver_SetLEDs_ForLoop(0, 19, 19, 19, 0, 200, 0);
