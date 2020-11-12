@@ -42,7 +42,7 @@ void MainFsm_StateMachine(void)
 		case FSM_HOME:
 		{
 
-			DynamicLed_animation(rainbow, firstAccess);
+		//DynamicLed_animation(rainbow, firstAccess);
 		DynamicLed_animation(weihnachtsanimation, firstAccess);
 			firstAccess = 0;
 //			DisplayDriver_HomeDraw();
