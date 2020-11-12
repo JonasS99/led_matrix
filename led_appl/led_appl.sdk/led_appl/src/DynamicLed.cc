@@ -62,7 +62,7 @@ static void rainbowAnimation(void)
 			for(u8 x=0 ; x<20 ; x++)
 			{
 				LedMatrixDriver_SetLed(x,y,colorArray[colorCount][0],colorArray[colorCount][1],colorArray[colorCount][2]);
-				if(x==4 || x==9 || x==14 || x==19) colorCount++;
+				if(x==4 || x==8 || x==12 || x==16) colorCount++;
 			}
 		}
 	}
