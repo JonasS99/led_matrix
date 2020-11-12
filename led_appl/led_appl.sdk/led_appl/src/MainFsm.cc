@@ -118,7 +118,7 @@ void MainFsm_StateMachine(void)
 			DisplayDriver_StaticLedDraw();
 			button_touched = DispalyDriver_CheckButtons();
 			//test program
-			StaticLED_Shapes(StaticLED_state_EmojiSad);
+			StaticLED_Shapes(StaticLED_state_Mario);
 
 
 			if (button_touched >= 0)
