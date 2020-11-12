@@ -41,9 +41,10 @@ void MainFsm_StateMachine(void)
 		}
 		case FSM_HOME:
 		{
-<<<<<<< Updated upstream
+
 			DynamicLed_animation(rainbow, firstAccess);
-		    firstAccess = 0;
+		DynamicLed_animation(weihnachtsanimation, firstAccess);
+			firstAccess = 0;
 //			DisplayDriver_HomeDraw();
 //			button_touched = DispalyDriver_CheckButtons();
 //
@@ -76,7 +77,7 @@ void MainFsm_StateMachine(void)
 //					state = FSM_FPGA;
 //				}
 //			}
-=======
+
 			DisplayDriver_HomeDraw();
 			button_touched = DispalyDriver_CheckButtons();
 
@@ -108,8 +109,7 @@ void MainFsm_StateMachine(void)
 					/* Switch state to FPGA */
 					state = FSM_FPGA;
 				}
-			}
->>>>>>> Stashed changes
+
 			break;
 		}
 
