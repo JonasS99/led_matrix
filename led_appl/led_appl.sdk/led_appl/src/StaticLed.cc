@@ -46,92 +46,99 @@ void StaticLED_Shapes(shapes selection){
 			StaticLED_Minion();
 			break;
 		}
+		default:{
+			//do nothing
+			break;
+		}
 	}
 }
 
 
 void StaticLED_ChristmasTree(void){
-	for(u16 i=9; i<=10; i++) for(u16 j=0; j<=1; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 0);
-	for(u16 i=8; i<=11; i++) for(u16 j=2; j<=3; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);
-	for(u16 i=7; i<=12; i++) for(u16 j=4; j<=5; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);
-	for(u16 i=6; i<=13; i++) for(u16 j=6; j<=7; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);
-	for(u16 i=5; i<=14; i++) for(u16 j=8; j<=9; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);
-	for(u16 i=4; i<=15; i++) for(u16 j=10; j<=11; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);
-	for(u16 i=3; i<=16; i++) for(u16 j=12; j<=13; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);
-	for(u16 i=2; i<=17; i++) for(u16 j=14; j<=15; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);
-	for(u16 i=1; i<=18; i++) for(u16 j=16; j<=17; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);
-	for(u16 i=8; i<=11; i++) for(u16 j=18; j<=19; j++) LedMatrixDriver_SetLed(i, j, 105, 65, 0);
+	u16 i, j;
+	for( i=9; i<=10; i++) for( j=0; j<=1; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 0);
+	for( i=8; i<=11; i++) for( j=2; j<=3; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);
+	for( i=7; i<=12; i++) for( j=4; j<=5; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);
+	for( i=6; i<=13; i++) for( j=6; j<=7; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);
+	for( i=5; i<=14; i++) for( j=8; j<=9; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);
+	for( i=4; i<=15; i++) for( j=10; j<=11; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);
+	for( i=3; i<=16; i++) for( j=12; j<=13; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);
+	for( i=2; i<=17; i++) for( j=14; j<=15; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);
+	for( i=1; i<=18; i++) for( j=16; j<=17; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);
+	for( i=8; i<=11; i++) for( j=18; j<=19; j++) LedMatrixDriver_SetLed(i, j, 105, 65, 0);
 }
 
 void StaticLED_EmojiSmile(void){
+	u16 i, j;
 	//Set the Yellow circle for the emoji (Yellow)
-	for(u16 i=7; i<=12; i++) for(u16 j=0; j<=0; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for(u16 i=5; i<=14; i++) for(u16 j=1; j<=1; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for(u16 i=4; i<=15; i++) for(u16 j=2; j<=2; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for(u16 i=3; i<=16; i++) for(u16 j=3; j<=3; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for(u16 i=2; i<=17; i++) for(u16 j=4; j<=4; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for(u16 i=1; i<=18; i++) for(u16 j=5; j<=6; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for(u16 i=0; i<=19; i++) for(u16 j=7; j<=12; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for(u16 i=1; i<=18; i++) for(u16 j=13; j<=14; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for(u16 i=2; i<=17; i++) for(u16 j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for(u16 i=3; i<=16; i++) for(u16 j=16; j<=16; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for(u16 i=4; i<=15; i++) for(u16 j=17; j<=17; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for(u16 i=5; i<=14; i++) for(u16 j=18; j<=18; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for(u16 i=7; i<=12; i++) for(u16 j=19; j<=19; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for( i=7; i<=12; i++) for( j=0; j<=0; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for( i=5; i<=14; i++) for( j=1; j<=1; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for( i=4; i<=15; i++) for( j=2; j<=2; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for( i=3; i<=16; i++) for( j=3; j<=3; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for( i=2; i<=17; i++) for( j=4; j<=4; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for( i=1; i<=18; i++) for( j=5; j<=6; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for( i=0; i<=19; i++) for( j=7; j<=12; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for( i=1; i<=18; i++) for( j=13; j<=14; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for( i=2; i<=17; i++) for( j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for( i=3; i<=16; i++) for( j=16; j<=16; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for( i=4; i<=15; i++) for( j=17; j<=17; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for( i=5; i<=14; i++) for( j=18; j<=18; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for( i=7; i<=12; i++) for( j=19; j<=19; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
 	//Set the eyes from the emoji (broun)
 	//Left eye
-	for(u16 i=6; i<=7; i++) for(u16 j=4; j<=4; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
-	for(u16 i=5; i<=8; i++) for(u16 j=5; j<=6; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
-	for(u16 i=6; i<=7; i++) for(u16 j=7; j<=7; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
+	for( i=6; i<=7; i++) for( j=4; j<=4; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
+	for( i=5; i<=8; i++) for( j=5; j<=6; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
+	for( i=6; i<=7; i++) for( j=7; j<=7; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
 	//right Eye
-	for(u16 i=12; i<=13; i++) for(u16 j=4; j<=4; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
-	for(u16 i=11; i<=14; i++) for(u16 j=5; j<=6; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
-	for(u16 i=12; i<=13; i++) for(u16 j=7; j<=7; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
+	for( i=12; i<=13; i++) for( j=4; j<=4; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
+	for( i=11; i<=14; i++) for( j=5; j<=6; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
+	for( i=12; i<=13; i++) for( j=7; j<=7; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
 	//Set the mouth (White)
-	for(u16 i=5; i<=5; i++) for(u16 j=10; j<=10; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for(u16 i=14; i<=14; i++) for(u16 j=10; j<=10; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for(u16 i=5; i<=7; i++) for(u16 j=11; j<=11; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for(u16 i=12; i<=14; i++) for(u16 j=11; j<=11; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for(u16 i=5; i<=14; i++) for(u16 j=12; j<=12; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for(u16 i=6; i<=13; i++) for(u16 j=13; j<=13; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for(u16 i=7; i<=12; i++) for(u16 j=14; j<=14; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for(u16 i=8; i<=11; i++) for(u16 j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
+	for( i=5; i<=5; i++) for( j=10; j<=10; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
+	for( i=14; i<=14; i++) for( j=10; j<=10; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
+	for( i=5; i<=7; i++) for( j=11; j<=11; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
+	for( i=12; i<=14; i++) for( j=11; j<=11; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
+	for( i=5; i<=14; i++) for( j=12; j<=12; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
+	for( i=6; i<=13; i++) for( j=13; j<=13; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
+	for( i=7; i<=12; i++) for( j=14; j<=14; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
+	for( i=8; i<=11; i++) for( j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
 }
 
 void StaticLED_EmojiSad(void){
+	u16 i, j;
 	//Set the Yellow circle for the emoji (Yellow)
-	for(u16 i=7; i<=12; i++) for(u16 j=0; j<=0; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for(u16 i=5; i<=14; i++) for(u16 j=1; j<=1; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for(u16 i=4; i<=15; i++) for(u16 j=2; j<=2; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for(u16 i=3; i<=16; i++) for(u16 j=3; j<=3; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for(u16 i=2; i<=17; i++) for(u16 j=4; j<=4; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for(u16 i=1; i<=18; i++) for(u16 j=5; j<=6; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for(u16 i=0; i<=19; i++) for(u16 j=7; j<=12; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for(u16 i=1; i<=18; i++) for(u16 j=13; j<=14; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for(u16 i=2; i<=17; i++) for(u16 j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for(u16 i=3; i<=16; i++) for(u16 j=16; j<=16; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for(u16 i=4; i<=15; i++) for(u16 j=17; j<=17; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for(u16 i=5; i<=14; i++) for(u16 j=18; j<=18; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for(u16 i=7; i<=12; i++) for(u16 j=19; j<=19; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for(i=7; i<=12; i++) for( j=0; j<=0; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for( i=5; i<=14; i++) for( j=1; j<=1; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for( i=4; i<=15; i++) for( j=2; j<=2; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for( i=3; i<=16; i++) for( j=3; j<=3; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for( i=2; i<=17; i++) for( j=4; j<=4; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for( i=1; i<=18; i++) for( j=5; j<=6; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for( i=0; i<=19; i++) for( j=7; j<=12; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for( i=1; i<=18; i++) for( j=13; j<=14; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for( i=2; i<=17; i++) for( j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for( i=3; i<=16; i++) for( j=16; j<=16; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for( i=4; i<=15; i++) for( j=17; j<=17; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for( i=5; i<=14; i++) for( j=18; j<=18; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
+	for( i=7; i<=12; i++) for( j=19; j<=19; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
 	//Set the eyes from the emoji (brown)
 	//Left eye
-	for(u16 i=6; i<=7; i++) for(u16 j=4; j<=4; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
-	for(u16 i=5; i<=8; i++) for(u16 j=5; j<=6; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
-	for(u16 i=6; i<=7; i++) for(u16 j=7; j<=7; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
+	for( i=6; i<=7; i++) for( j=4; j<=4; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
+	for( i=5; i<=8; i++) for( j=5; j<=6; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
+	for( i=6; i<=7; i++) for( j=7; j<=7; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
 	//right Eye
-	for(u16 i=12; i<=13; i++) for(u16 j=4; j<=4; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
-	for(u16 i=11; i<=14; i++) for(u16 j=5; j<=6; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
-	for(u16 i=12; i<=13; i++) for(u16 j=7; j<=7; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
+	for( i=12; i<=13; i++) for( j=4; j<=4; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
+	for( i=11; i<=14; i++) for( j=5; j<=6; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
+	for( i=12; i<=13; i++) for( j=7; j<=7; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
 	//Set the mouth (White)
-	for(u16 i=8; i<=11; i++) for(u16 j=11; j<=11; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for(u16 i=7; i<=12; i++) for(u16 j=12; j<=12; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
+	for( i=8; i<=11; i++) for( j=11; j<=11; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
+	for( i=7; i<=12; i++) for( j=12; j<=12; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
 
-	for(u16 i=6; i<=7; i++) for(u16 j=13; j<=13; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for(u16 i=12; i<=13; i++) for(u16 j=13; j<=13; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for(u16 i=5; i<=6; i++) for(u16 j=14; j<=14; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for(u16 i=13; i<=14; i++) for(u16 j=14; j<=14; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for(u16 i=5; i<=5; i++) for(u16 j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for(u16 i=14; i<=14; i++) for(u16 j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
+	for( i=6; i<=7; i++) for( j=13; j<=13; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
+	for( i=12; i<=13; i++) for( j=13; j<=13; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
+	for( i=5; i<=6; i++) for( j=14; j<=14; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
+	for( i=13; i<=14; i++) for( j=14; j<=14; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
+	for( i=5; i<=5; i++) for( j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
+	for( i=14; i<=14; i++) for( j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
 }
 
 void StaticLED_Mario(void){
@@ -144,15 +151,16 @@ void StaticLED_Mario(void){
  	(80, 45, 22); brown shoes
 	*/
 	//Cap
-	for(u16 i=7; i<=11; i++) for(u16 j=2; j<=2; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
-	for(u16 i=6; i<=14; i++) for(u16 j=3; j<=3; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
-	for(u16 i=12; i<=12; i++) for(u16 j=4; j<=4; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
+	u16 i, j;
+	for(i=7; i<=11; i++) for(j=2; j<=2; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
+	for(i=6; i<=14; i++) for(j=3; j<=3; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
+	for(i=12; i<=12; i++) for( j=4; j<=4; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
 	//Face skin color
-	for(u16 i=6; i<=11; i++) for(u16 j=4; j<=4; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
-	for(u16 i=5; i<=13; i++) for(u16 j=5; j<=5; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
-	for(u16 i=5; i<=14; i++) for(u16 j=6; j<=6; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
-	for(u16 i=5; i<=13; i++) for(u16 j=7; j<=7; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
-	for(u16 i=7; i<=12; i++) for(u16 j=8; j<=8; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
+	for( i=6; i<=11; i++) for( j=4; j<=4; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
+	for( i=5; i<=13; i++) for( j=5; j<=5; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
+	for( i=5; i<=14; i++) for( j=6; j<=6; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
+	for( i=5; i<=13; i++) for( j=7; j<=7; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
+	for( i=7; i<=12; i++) for( j=8; j<=8; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
 	//Hairs + Face
 	LedMatrixDriver_SetLed(6, 4, 43, 17, 0);
 	LedMatrixDriver_SetLed(7, 4, 43, 17, 0);
@@ -172,17 +180,17 @@ void StaticLED_Mario(void){
 	LedMatrixDriver_SetLed(13, 7, 43, 17, 0);
 	LedMatrixDriver_SetLed(14, 7, 43, 17, 0);
 	//T-shirt
-	for(u16 i=6; i<=10; i++) for(u16 j=9; j<=9; j++) LedMatrixDriver_SetLed(i, j, 29, 29, 255);
-	for(u16 i=5; i<=13; i++) for(u16 j=10; j<=10; j++) LedMatrixDriver_SetLed(i, j, 29, 29, 255);
-	for(u16 i=4; i<=14; i++) for(u16 j=11; j<=11; j++) LedMatrixDriver_SetLed(i, j, 29, 29, 255);
-	for(u16 i=6; i<=12; i++) for(u16 j=12; j<=12; j++) LedMatrixDriver_SetLed(i, j, 29, 29, 255);
+	for( i=6; i<=10; i++) for( j=9; j<=9; j++) LedMatrixDriver_SetLed(i, j, 29, 29, 255);
+	for( i=5; i<=13; i++) for( j=10; j<=10; j++) LedMatrixDriver_SetLed(i, j, 29, 29, 255);
+	for( i=4; i<=14; i++) for( j=11; j<=11; j++) LedMatrixDriver_SetLed(i, j, 29, 29, 255);
+	for( i=6; i<=12; i++) for( j=12; j<=12; j++) LedMatrixDriver_SetLed(i, j, 29, 29, 255);
 	//Hands
-	for(u16 i=4; i<=5; i++) for(u16 j=12; j<=12; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
-	for(u16 i=4; i<=6; i++) for(u16 j=13; j<=13; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
-	for(u16 i=4; i<=5; i++) for(u16 j=14; j<=14; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
-	for(u16 i=13; i<=14; i++) for(u16 j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
-	for(u16 i=12; i<=14; i++) for(u16 j=16; j<=16; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
-	for(u16 i=13; i<=14; i++) for(u16 j=17; j<=17; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
+	for( i=4; i<=5; i++) for( j=12; j<=12; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
+	for( i=4; i<=6; i++) for( j=13; j<=13; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
+	for( i=4; i<=5; i++) for( j=14; j<=14; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
+	for( i=13; i<=14; i++) for( j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
+	for( i=12; i<=14; i++) for( j=16; j<=16; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
+	for( i=13; i<=14; i++) for( j=17; j<=17; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
 	//trousers
 	LedMatrixDriver_SetLed(8, 9, 255, 0, 0);
 	LedMatrixDriver_SetLed(8, 10, 255, 0, 0);
@@ -191,37 +199,38 @@ void StaticLED_Mario(void){
 	LedMatrixDriver_SetLed(11, 10, 255, 0, 0);
 	LedMatrixDriver_SetLed(11, 11, 255, 0, 0);
 	LedMatrixDriver_SetLed(11, 12, 255, 0, 0);
-	for(u16 i=7; i<=12; i++) for(u16 j=13; j<=13; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
-	for(u16 i=6; i<=13; i++) for(u16 j=14; j<=14; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
-	for(u16 i=6; i<=8; i++) for(u16 j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
-	for(u16 i=6; i<=8; i++) for(u16 j=16; j<=16; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
-	for(u16 i=11; i<=13; i++) for(u16 j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
-	for(u16 i=11; i<=13; i++) for(u16 j=16; j<=16; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
+	for( i=7; i<=12; i++) for( j=13; j<=13; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
+	for( i=6; i<=13; i++) for( j=14; j<=14; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
+	for( i=6; i<=8; i++) for( j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
+	for( i=6; i<=8; i++) for( j=16; j<=16; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
+	for( i=11; i<=13; i++) for( j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
+	for( i=11; i<=13; i++) for( j=16; j<=16; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
 	LedMatrixDriver_SetLed(8, 13, 255, 255, 0); //Yellow dots
 	LedMatrixDriver_SetLed(11, 13, 255, 255, 0); //Yellow dots
 	//shoes
-	for(u16 i=5; i<=7; i++) for(u16 j=17; j<=17; j++) LedMatrixDriver_SetLed(i, j, 80, 45, 22);
-	for(u16 i=10; i<=12; i++) for(u16 j=17; j<=17; j++) LedMatrixDriver_SetLed(i, j, 80, 45, 22);
+	for( i=5; i<=7; i++) for( j=17; j<=17; j++) LedMatrixDriver_SetLed(i, j, 80, 45, 22);
+	for( i=10; i<=12; i++) for( j=17; j<=17; j++) LedMatrixDriver_SetLed(i, j, 80, 45, 22);
 	//Green gras
-	for(u16 i=0; i<=19; i++) for(u16 j=18; j<=18; j++) LedMatrixDriver_SetLed(i, j, 0, 200, 0);
-	for(u16 i=0; i<=19; i++) for(u16 j=19; j<=19; j++) LedMatrixDriver_SetLed(i, j, 0, 200, 0);
+	for( i=0; i<=19; i++) for( j=18; j<=18; j++) LedMatrixDriver_SetLed(i, j, 0, 200, 0);
+	for( i=0; i<=19; i++) for( j=19; j<=19; j++) LedMatrixDriver_SetLed(i, j, 0, 200, 0);
 }
 
 void StaticLED_Minion(void){
+	u16 i, j;
 	//Background grey-brown
-	for(u16 i=0; i<=19; i++) for(u16 j=0; j<=19; j++) LedMatrixDriver_SetLed(i, j, 209, 193, 158);
+	for( i=0; i<=19; i++) for( j=0; j<=19; j++) LedMatrixDriver_SetLed(i, j, 209, 193, 158);
 	//Minion, yellow
-	for(u16 i=7; i<=12; i++) for(u16 j=1; j<=1; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 0);
-	for(u16 i=6; i<=13; i++) for(u16 j=2; j<=2; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 0);
-	for(u16 i=5; i<=14; i++) for(u16 j=3; j<=14; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 0);
+	for( i=7; i<=12; i++) for( j=1; j<=1; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 0);
+	for( i=6; i<=13; i++) for( j=2; j<=2; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 0);
+	for( i=5; i<=14; i++) for( j=3; j<=14; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 0);
 	//eyes, grey
-	for(u16 i=6; i<=7; i++) for(u16 j=3; j<=3; j++) LedMatrixDriver_SetLed(i, j, 209, 199, 214);
-	for(u16 i=9; i<=10; i++) for(u16 j=3; j<=3; j++) LedMatrixDriver_SetLed(i, j, 209, 199, 214);
-	for(u16 i=5; i<=11; i++) for(u16 j=4; j<=5; j++) LedMatrixDriver_SetLed(i, j, 209, 199, 214);
-	for(u16 i=6; i<=7; i++) for(u16 j=6; j<=6; j++) LedMatrixDriver_SetLed(i, j, 209, 199, 214);
-	for(u16 i=9; i<=10; i++) for(u16 j=6; j<=6; j++) LedMatrixDriver_SetLed(i, j, 209, 199, 214);
+	for( i=6; i<=7; i++) for( j=3; j<=3; j++) LedMatrixDriver_SetLed(i, j, 209, 199, 214);
+	for( i=9; i<=10; i++) for( j=3; j<=3; j++) LedMatrixDriver_SetLed(i, j, 209, 199, 214);
+	for( i=5; i<=11; i++) for( j=4; j<=5; j++) LedMatrixDriver_SetLed(i, j, 209, 199, 214);
+	for( i=6; i<=7; i++) for( j=6; j<=6; j++) LedMatrixDriver_SetLed(i, j, 209, 199, 214);
+	for( i=9; i<=10; i++) for( j=6; j<=6; j++) LedMatrixDriver_SetLed(i, j, 209, 199, 214);
 	// black
-	for(u16 i=12; i<=14; i++) for(u16 j=4; j<=5; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
+	for( i=12; i<=14; i++) for( j=4; j<=5; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
 	//black
 	LedMatrixDriver_SetLed(6, 5, 0, 0, 0);
 	LedMatrixDriver_SetLed(9, 5, 0, 0, 0);
@@ -234,22 +243,22 @@ void StaticLED_Minion(void){
 	LedMatrixDriver_SetLed(11, 4, 255, 255, 255);
 	//mouth, black
 	LedMatrixDriver_SetLed(10, 8, 0, 0, 0);
-	for(u16 i=7; i<=9; i++) for(u16 j=9; j<=9; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
+	for( i=7; i<=9; i++) for( j=9; j<=9; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
 	//trousers
 	LedMatrixDriver_SetLed(5, 10, 0, 0, 255);
 	LedMatrixDriver_SetLed(14, 10, 0, 0, 255);
-	for(u16 i=6; i<=13; i++) for(u16 j=11; j<=11; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 255);
-	for(u16 i=7; i<=12; i++) for(u16 j=12; j<=13; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 255);
-	for(u16 i=6; i<=13; i++) for(u16 j=14; j<=16; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 255);
+	for( i=6; i<=13; i++) for( j=11; j<=11; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 255);
+	for( i=7; i<=12; i++) for( j=12; j<=13; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 255);
+	for( i=6; i<=13; i++) for( j=14; j<=16; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 255);
 	//legs, black
-	for(u16 i=4; i<=5; i++) for(u16 j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
-	for(u16 i=14; i<=15; i++) for(u16 j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
-	for(u16 i=5; i<=5; i++) for(u16 j=16; j<=16; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
-	for(u16 i=14; i<=14; i++) for(u16 j=16; j<=16; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
-	for(u16 i=7; i<=8; i++) for(u16 j=17; j<=17; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
-	for(u16 i=11; i<=12; i++) for(u16 j=17; j<=17; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
-	for(u16 i=6; i<=8; i++) for(u16 j=18; j<=18; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
-	for(u16 i=11; i<=13; i++) for(u16 j=18; j<=18; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
+	for( i=4; i<=5; i++) for( j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
+	for( i=14; i<=15; i++) for( j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
+	for( i=5; i<=5; i++) for( j=16; j<=16; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
+	for( i=14; i<=14; i++) for( j=16; j<=16; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
+	for( i=7; i<=8; i++) for( j=17; j<=17; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
+	for( i=11; i<=12; i++) for( j=17; j<=17; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
+	for( i=6; i<=8; i++) for( j=18; j<=18; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
+	for( i=11; i<=13; i++) for( j=18; j<=18; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
 
 }
 

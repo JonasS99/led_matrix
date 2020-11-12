@@ -12,6 +12,7 @@
 #include "LedMatrixDriver.h"
 #include "DynamicLed.h"
 
+
 /* Function declaration */
 /* Variable declaration */
 static bool firstAccess = 0;
@@ -34,7 +35,7 @@ void MainFsm_StateMachine(void)
 		case FSM_IDLE:
 		{
 			DisplayDriver_HomeEnableButtons(true);
-			state = FSM_HOME;
+			state = FSM_STATIC_LED;
 
 			break;
 		}
@@ -79,6 +80,7 @@ void MainFsm_StateMachine(void)
 		{
 			DisplayDriver_StaticLedDraw();
 			button_touched = DispalyDriver_CheckButtons();
+			StaticLED_Minion();
 			if (button_touched >= 0)
 			{
 				/* action if one button is pressed  */
