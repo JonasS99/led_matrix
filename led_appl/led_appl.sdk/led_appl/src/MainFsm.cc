@@ -118,7 +118,7 @@ void MainFsm_StateMachine(void)
 			DisplayDriver_StaticLedDraw();
 			button_touched = DispalyDriver_CheckButtons();
 			//test program
-			StaticLED_Shapes(StaticLED_state_EmojiSmile);
+			StaticLED_Shapes(StaticLED_state_EmojiSad);
 
 
 			if (button_touched >= 0)
