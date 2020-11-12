@@ -109,7 +109,7 @@ void MainFsm_StateMachine(void)
 					/* Switch state to FPGA */
 					state = FSM_FPGA;
 				}
-
+			}
 			break;
 		}
 
@@ -182,7 +182,6 @@ void MainFsm_StateMachine(void)
 			break;
 		}
 	}
-
 }
 
 
