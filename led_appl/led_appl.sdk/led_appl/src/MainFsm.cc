@@ -35,7 +35,7 @@ void MainFsm_StateMachine(void)
 		case FSM_IDLE:
 		{
 //			DisplayDriver_HomeEnableButtons(true);
-			state = FSM_HOME;
+			state = FSM_STATIC_LED;
 			firstAccess = 1;
 			break;
 		}
