@@ -46,7 +46,7 @@ public:
 	void Init(void);
 	void CycleCall(void);
 private:
-	TetrisMatrix* TetrisMatrix_obj;
+	TetrisMatrix TetrisMatrix_obj;
 	IBlock* Blocks[100];
 };
 

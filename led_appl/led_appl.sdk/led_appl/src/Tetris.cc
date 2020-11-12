@@ -82,15 +82,19 @@ void TetrisMatrix::WritePixelToMatrix(void)
 /************** TETRIS *****************/
 void Tetris::Init(void)
 {
-
-
+	for(u16 i = 0; i<100; i++)
+	{
+		Blocks[i] = nullptr;
+	}
+	Square firstSquare(&TetrisMatrix_obj, 10, 10, BLUE);
+	Blocks[0] = &firstSquare;
 }
 
 
 
 void Tetris::CycleCall(void)
 {
-	TetrisMatrix_obj->ClearAllPixel();
+	TetrisMatrix_obj.ClearAllPixel();
 	for(u32 i; i <100; i++)
 	{
 		if(Blocks[i] != nullptr)
@@ -98,7 +102,7 @@ void Tetris::CycleCall(void)
 			Blocks[i]->CycleCall();
 		}
 	}
-	TetrisMatrix_obj->WritePixelToMatrix();
+	TetrisMatrix_obj.WritePixelToMatrix();
 }
 
 
