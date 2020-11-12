@@ -67,7 +67,7 @@ static void rainbowAnimation(void)
 		}
 	}
 	firstAccessCheck = 0;
-	if(animationCount>=10)
+	if(animationCount>=40)
 	{
 		LedMatrixDriver_SlideAllLed();
 		animationCount = 0;
