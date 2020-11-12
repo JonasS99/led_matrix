@@ -130,6 +130,10 @@ void LedMatrixDriver_SlideAllLed(void)
 	}
 }
 
+void LEDMatrixDriver_SetLEDs_ForLoop(u16 i1,u16 i2,u16 j1,u16 j2,u16 r,u16 g,u16 b){
+	for(u16 i=i1; i<=i2; i++) for(u16 j=j1; j<=j2; j++) LedMatrixDriver_SetLed(i, j, r, g, b);
+}
+
 
 
 
