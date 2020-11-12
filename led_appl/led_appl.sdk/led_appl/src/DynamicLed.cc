@@ -87,7 +87,7 @@ static void weihnachtAnimation(void)
 	{
 		for (u8 x = 0 ; x<20 ; x++)
 		{
-			LedMatrixDriver_SetLed(x,y,weihnachtsmann[0],weihnachtsmann[1],weihnachtsmann[2]);
+			LedMatrixDriver_SetLed(x,y,weihnachtsmann[r],weihnachtsmann[g],weihnachtsmann[b]);
 			r = r + 3;
 			g = g + 3;
 			b = b + 3;
