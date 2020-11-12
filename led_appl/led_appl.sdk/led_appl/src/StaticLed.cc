@@ -186,9 +186,9 @@ void StaticLED_Mario(void){
 	LEDMatrixDriver_SetLEDs_ForLoop(4, 5, 12, 12, 255, 179, 128);
 	LEDMatrixDriver_SetLEDs_ForLoop(4, 6, 13, 13, 255, 179, 128);
 	LEDMatrixDriver_SetLEDs_ForLoop(4, 5, 14, 14, 255, 179, 128);
-	LEDMatrixDriver_SetLEDs_ForLoop(14, 14, 12, 12, 255, 179, 128);
-	LEDMatrixDriver_SetLEDs_ForLoop(13, 14, 13, 13, 255, 179, 128);
-	LEDMatrixDriver_SetLEDs_ForLoop(14, 14, 14, 14, 255, 179, 128);
+	LEDMatrixDriver_SetLEDs_ForLoop(14, 15, 12, 12, 255, 179, 128);
+	LEDMatrixDriver_SetLEDs_ForLoop(13, 15, 13, 13, 255, 179, 128);
+	LEDMatrixDriver_SetLEDs_ForLoop(14, 15, 14, 14, 255, 179, 128);
 	//Hands
 	//trousers
 	LedMatrixDriver_SetLed(8, 9, 255, 0, 0);
