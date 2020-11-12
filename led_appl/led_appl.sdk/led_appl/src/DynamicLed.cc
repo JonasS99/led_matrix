@@ -14,6 +14,7 @@ static void stroboAnimation(void);
 static void weihnachtAnimation(void);
 /* Variable declaration */
 static bool firstAccessCheck;
+
 void DynamicLed_animation(dynamicLedMode_t animation, bool firstAccess)
 {
 	firstAccessCheck = firstAccess;
@@ -21,7 +22,7 @@ void DynamicLed_animation(dynamicLedMode_t animation, bool firstAccess)
 	{
 		case rainbow:
 		{
-			//rainbowAnimation();
+			rainbowAnimation();
 		}break;
 
 		case lauflicht:
@@ -47,13 +48,14 @@ void DynamicLed_animation(dynamicLedMode_t animation, bool firstAccess)
 //0,180,0 irgendein gruen
 //180,180,0 irgendein gelb
 //180,0,0 irgendein rot
-u32 colorArray[5][3] = {{139,139,139},{0,0,180},{0,180,0},{180,180,0},{180,0,0}};
+u32 colorArray[5][3] = {{139,139,139},{0,0,180},{0,180,0},{180,180,0},{255,0,0}};
 static void rainbowAnimation(void)
 {
 	static u32 animationCount = 0;
 	static u8 colorCount = 0;
 	if(firstAccessCheck==1)
 	{
+		LedMatrixDriver_ClearAllLed();
 		for(u8 y=0 ; y<20 ; y++)
 		{
 			colorCount = 0;
@@ -64,7 +66,8 @@ static void rainbowAnimation(void)
 			}
 		}
 	}
-	if(animationCount>=5000)
+	firstAccessCheck = 0;
+	if(animationCount>=100)
 	{
 		LedMatrixDriver_SlideAllLed();
 		animationCount = 0;

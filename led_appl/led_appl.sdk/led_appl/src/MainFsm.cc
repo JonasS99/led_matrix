@@ -34,45 +34,47 @@ void MainFsm_StateMachine(void)
 	{
 		case FSM_IDLE:
 		{
-			DisplayDriver_HomeEnableButtons(true);
-			state = FSM_STATIC_LED;
-
+//			DisplayDriver_HomeEnableButtons(true);
+			state = FSM_HOME;
+			firstAccess = 1;
 			break;
 		}
 		case FSM_HOME:
 		{
-			DisplayDriver_HomeDraw();
-			button_touched = DispalyDriver_CheckButtons();
-
-			if (button_touched >= 0)
-			{
-				/* action if one button is pressed  */
-				DisplayDriver_HomeEnableButtons(false);
-				DisplayDriver_ClearDisp();
-
-				if (button_touched == BTN_ID_STATIC_LED)
-				{
-					/* Switch state to static led */
-					DisplayDriver_StaticLedEnableButtons(true);
-					state = FSM_STATIC_LED;
-				}
-				else if (button_touched == BTN_ID_TETRIS)
-				{
-					/* Switch state to tetris */
-					state = FSM_TETRIS;
-				}
-				else if (button_touched == BTN_ID_DYNAMIC_LED)
-				{
-					/* Switch state to dynamic led */
-					state = FSM_DYNMAMIC_LED;
-					firstAccess = 1;
-				}
-				else if (button_touched == BTN_ID_WEL_FPGA)
-				{
-					/* Switch state to fpga */
-					state = FSM_FPGA;
-				}
-			}
+			DynamicLed_animation(rainbow, firstAccess);
+		    firstAccess = 0;
+//			DisplayDriver_HomeDraw();
+//			button_touched = DispalyDriver_CheckButtons();
+//
+//			if (button_touched >= 0)
+//			{
+//				/* action if one button is pressed  */
+//				DisplayDriver_HomeEnableButtons(false);
+//				DisplayDriver_ClearDisp();
+//
+//				if (button_touched == BTN_ID_STATIC_LED)
+//				{
+//					/* Switch state to static led */
+//					DisplayDriver_StaticLedEnableButtons(true);
+//					state = FSM_STATIC_LED;
+//				}
+//				else if (button_touched == BTN_ID_TETRIS)
+//				{
+//					/* Switch state to tetris */
+//					state = FSM_TETRIS;
+//				}
+//				else if (button_touched == BTN_ID_DYNAMIC_LED)
+//				{
+//					/* Switch state to dynamic led */
+//					state = FSM_DYNMAMIC_LED;
+//					firstAccess = 1;
+//				}
+//				else if (button_touched == BTN_ID_WEL_FPGA)
+//				{
+//					/* Switch state to fpga */
+//					state = FSM_FPGA;
+//				}
+//			}
 			break;
 		}
 
