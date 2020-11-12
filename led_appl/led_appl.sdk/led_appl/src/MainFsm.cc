@@ -41,6 +41,7 @@ void MainFsm_StateMachine(void)
 		}
 		case FSM_HOME:
 		{
+<<<<<<< Updated upstream
 			DynamicLed_animation(rainbow, firstAccess);
 		    firstAccess = 0;
 //			DisplayDriver_HomeDraw();
@@ -75,6 +76,40 @@ void MainFsm_StateMachine(void)
 //					state = FSM_FPGA;
 //				}
 //			}
+=======
+			DisplayDriver_HomeDraw();
+			button_touched = DispalyDriver_CheckButtons();
+
+			if (button_touched >= 0)
+			{
+				/* action if one button is pressed  */
+				DisplayDriver_HomeEnableButtons(false);
+				DisplayDriver_ClearDisp();
+
+				if (button_touched == BTN_ID_STATIC_LED)
+				{
+					/* Switch state to static led */
+					DisplayDriver_StaticLedEnableButtons(true);
+					state = FSM_STATIC_LED;
+				}
+				else if (button_touched == BTN_ID_TETRIS)
+				{
+					/* Switch state to tetris */
+					state = FSM_TETRIS;
+				}
+				else if (button_touched == BTN_ID_DYNAMIC_LED)
+				{
+					/* Switch state to dynamic led */
+					state = FSM_DYNMAMIC_LED;
+					firstAccess = 1;
+				}
+				else if (button_touched == BTN_ID_WEL_FPGA)
+				{
+					/* Switch state to FPGA */
+					state = FSM_FPGA;
+				}
+			}
+>>>>>>> Stashed changes
 			break;
 		}
 
@@ -82,7 +117,18 @@ void MainFsm_StateMachine(void)
 		{
 			DisplayDriver_StaticLedDraw();
 			button_touched = DispalyDriver_CheckButtons();
-			StaticLED_Minion();
+			//test program
+			StaticLED_Shapes(StaticLED_state_ChristmasTree);
+			StaticLED_Wait(20000);
+			StaticLED_Shapes(StaticLED_state_EmojiSmile);
+			StaticLED_Wait(20000);
+			StaticLED_Shapes(StaticLED_state_EmojiSad);
+			StaticLED_Wait(20000);
+			StaticLED_Shapes(StaticLED_state_Mario);
+			StaticLED_Wait(20000);
+			StaticLED_Shapes(StaticLED_state_Minion);
+			StaticLED_Wait(20000);
+
 			if (button_touched >= 0)
 			{
 				/* action if one button is pressed  */
