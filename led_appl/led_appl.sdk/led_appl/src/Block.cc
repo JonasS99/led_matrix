@@ -18,7 +18,15 @@ void Block_Set_Array(){
 }
 
 void Block_Clear_Array(){
-	pixel_Array[20][20][3] = {0};
+	for(u8 i = 0; i<20; i++)
+	{
+		for(u8 p = 0; p<20; p++)
+		{
+			pixel_Array[i][p][0] = 0;
+			pixel_Array[i][p][1] = 0;
+			pixel_Array[i][p][2] = 0;
+		}
+	}
 }
 
 void Block_Smashboy(u16 Rotation, u8 PositionX, u8 PositionY){
