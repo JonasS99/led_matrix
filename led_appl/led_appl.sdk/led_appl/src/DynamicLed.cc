@@ -7,13 +7,13 @@
 #include "DynamicLed.h"
 #include "LedMatrixDriver.h"
 
-/* Function declaration */
+/* module global function declaration */
 static void rainbowAnimation(void);
-static void lauflichtAnimation(void);
+static void spiralAnimation(void);
 static void stroboAnimation(void);
 static void weihnachtAnimation(void);
 
-/* Variable declaration */
+/* variable declaration */
 static bool firstAccessCheck;
 
 void DynamicLed_animation(dynamicLedMode_t animation, bool firstAccess)
@@ -26,9 +26,9 @@ void DynamicLed_animation(dynamicLedMode_t animation, bool firstAccess)
 			rainbowAnimation();
 		}break;
 
-		case lauflicht:
+		case spiral:
 		{
-			//lauflichtAnimation();
+			spiral();
 		}break;
 
 		case strobo:
@@ -74,6 +74,16 @@ static void rainbowAnimation(void)
 		animationCount = 0;
 	}
 	animationCount++;
+}
+
+static void weihnachtAnimation(void)
+{
+
+}
+
+static void spiralAnimation(void)
+{
+
 }
 
 
