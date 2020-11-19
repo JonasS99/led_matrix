@@ -136,6 +136,7 @@ void StaticLED_EmojiSad(void){
 	LEDMatrixDriver_SetLEDs_ForLoop(12, 13, 13, 13, 255, 255, 255);
 	LEDMatrixDriver_SetLEDs_ForLoop(5, 6, 14, 14, 255, 255, 255);
 	LEDMatrixDriver_SetLEDs_ForLoop(13, 14, 14, 14, 255, 255, 255);
+
 	LEDMatrixDriver_SetLEDs_ForLoop(5, 5, 15, 15, 255, 255, 255);
 	LEDMatrixDriver_SetLEDs_ForLoop(14, 14, 15, 15, 255, 255, 255);
 }
@@ -182,6 +183,7 @@ void StaticLED_Mario(void){
 	LEDMatrixDriver_SetLEDs_ForLoop(5, 14, 10, 10, 29, 29, 255);
 	LEDMatrixDriver_SetLEDs_ForLoop(4, 15, 11, 11, 29, 29, 255);
 	LEDMatrixDriver_SetLEDs_ForLoop(6, 13, 12, 12, 29, 29, 255);
+
 	//Hands
 	LEDMatrixDriver_SetLEDs_ForLoop(4, 5, 12, 12, 255, 179, 128);
 	LEDMatrixDriver_SetLEDs_ForLoop(4, 6, 13, 13, 255, 179, 128);
@@ -189,6 +191,7 @@ void StaticLED_Mario(void){
 	LEDMatrixDriver_SetLEDs_ForLoop(14, 15, 12, 12, 255, 179, 128);
 	LEDMatrixDriver_SetLEDs_ForLoop(13, 15, 13, 13, 255, 179, 128);
 	LEDMatrixDriver_SetLEDs_ForLoop(14, 15, 14, 14, 255, 179, 128);
+
 	//Hands
 	//trousers
 	LedMatrixDriver_SetLed(8, 9, 255, 0, 0);
@@ -210,6 +213,8 @@ void StaticLED_Mario(void){
 	//shoes
 	LEDMatrixDriver_SetLEDs_ForLoop(5, 7, 17, 17, 80, 45, 22);
 	LEDMatrixDriver_SetLEDs_ForLoop(12, 14, 17, 17, 80, 45, 22);
+	LEDMatrixDriver_SetLEDs_ForLoop(12, 14, 17, 17, 80, 45, 22);
+
 	//Green gras
 	LEDMatrixDriver_SetLEDs_ForLoop(0, 19, 18, 18, 0, 200, 0);
 	LEDMatrixDriver_SetLEDs_ForLoop(0, 19, 19, 19, 0, 200, 0);

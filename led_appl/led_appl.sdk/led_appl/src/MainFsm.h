@@ -9,6 +9,8 @@
 #define SRC_MAINFSM_H_
 
 #include "StaticLED.h"
+#include "Block.h"
+
 
 /* Function declaration */
 void MainFsm_Init(void);

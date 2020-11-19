@@ -35,7 +35,7 @@ void MainFsm_StateMachine(void)
 		case FSM_IDLE:
 		{
 //			DisplayDriver_HomeEnableButtons(true);
-			state = FSM_STATIC_LED;
+			state = FSM_TETRIS;
 			firstAccess = 1;
 			break;
 		}
@@ -169,8 +169,13 @@ void MainFsm_StateMachine(void)
 			break;
 		}
 
-		case FSM_TETRIS:
-		{
+		case FSM_TETRIS:{
+			u8 i = 1;
+			if(i==1){
+				Block_Smashboy(0, 3, 5);
+				i = 0;
+			}
+			Block_cicle();
 			break;
 		}
 	}
