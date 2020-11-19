@@ -21,6 +21,7 @@ XGpio GpioOutput0; /* The driver instance for GPIO Device configured as O/P */
 XGpio GpioOutput1; /* The driver instance for GPIO Device configured as O/P */
 u32 ledMatrix[20][20] = {0}; /* Led matrix rgb data */
 u16 ledPosLut[400][2] = {0}; /* Look up table for matrix */
+static 	u32 colorArray[5][3] = {{255,0,255},{0,0,255},{0,255,0},{255,255,0},{255,0,0}};
 
 
 /* Function*/
@@ -139,11 +140,9 @@ void LedMatrixDriver_SlideAllLed(void)
  */
 void LedMatrixDriver_CreateSquare(u8 startX, u8 startY, u8 size)
 {
-	static u8 r = 255;
-	static u8 g = 0;
-	static u8 b = 255;
+	static u8 colorCount = 0;
 	static u8 x,y = 0;
-	LedMatrixDriver_ClearAllLed();
+	//LedMatrixDriver_ClearAllLed();
 	u8 side = 0;
 	x = startX;
 	y = startY;
@@ -151,11 +150,13 @@ void LedMatrixDriver_CreateSquare(u8 startX, u8 startY, u8 size)
 	{
 		for(u8 a=0 ; a<size ; a++)
 		{
-			if(side==0) LedMatrixDriver_SetLed(x+a,y,r,g,b);
-			else if(side==1) LedMatrixDriver_SetLed(x+size-1,y+a,r,g,b);
-			else if(side==2) LedMatrixDriver_SetLed(x+a,y+size-1,r,g,b);
-			else if(side==3) LedMatrixDriver_SetLed(x,y+a,r,g,b);
+			if(side==0) LedMatrixDriver_SetLed(x+a,y,colorArray[colorCount][0],colorArray[colorCount][1],colorArray[colorCount][2]);
+			else if(side==1) LedMatrixDriver_SetLed(x+size-1,y+a,colorArray[colorCount][0],colorArray[colorCount][1],colorArray[colorCount][2]);
+			else if(side==2) LedMatrixDriver_SetLed(x+a,y+size-1,colorArray[colorCount][0],colorArray[colorCount][1],colorArray[colorCount][2]);
+			else if(side==3) LedMatrixDriver_SetLed(x,y+a,colorArray[colorCount][0],colorArray[colorCount][1],colorArray[colorCount][2]);
 		}
+		if(colorCount > 4) colorCount = 0;
+		else colorCount++;
 		side++;
 	}
 }

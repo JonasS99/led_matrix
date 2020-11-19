@@ -84,14 +84,19 @@ static void weihnachtAnimation(void)
 static void spiralAnimation(void)
 {
 	static u32 animationCount = 0;
-	static u8 size[3] = {5,10,20};
-	if(animationCount>=80)
+	u8 size = 4;
+	u8 position = 0;
+	if(animationCount>=150)
 	{
 		animationCount = 0;
 		static u8 index = 0;
-		LedMatrixDriver_CreateSquare(0,0,size[index]);
-		if(index>1) index = 0;
-		else index++;
+		while(size<21)
+		{
+			LedMatrixDriver_CreateSquare(position,position,size);
+			if(index>1) index = 0;
+			else index++;
+			size = size + 2;
+		}
 	}
 	animationCount++;
 }
