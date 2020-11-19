@@ -16,6 +16,10 @@ void Block_Clear_Array();
 void Block_Smashboy(u16 Rotation, u8 PositionX, u8 PositionY);
 void Block_Hero(u16 Rotation, u8 PositionX, u8 PositionY);
 void Block_Teewee(u16 Rotation, u8 PositionX, u8 PositionY);
+void Block_Orange_Ricky(u16 Rotation, u8 PositionX, u8 PositionY);
+void Block_Blue_Ricky(u16 Rotation, u8 PositionX, u8 PositionY);
+void Block_Cleveland_Z(u16 Rotation, u8 PositionX, u8 PositionY);
+void Block_Rhode_Island_Z(u16 Rotation, u8 PositionX, u8 PositionY);
 
 
 

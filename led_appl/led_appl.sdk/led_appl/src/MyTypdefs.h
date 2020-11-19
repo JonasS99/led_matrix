@@ -43,9 +43,10 @@ typedef enum {
 
 typedef enum {
 	rainbow = 0,
+	square,
 	spiral,
-	strobo,
-	weihnachtsanimation
+	weihnachtsanimation,
+	strobo
 }dynamicLedMode_t;
 
 
