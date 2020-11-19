@@ -35,7 +35,7 @@ void MainFsm_StateMachine(void)
 		case FSM_IDLE:
 		{
 //			DisplayDriver_HomeEnableButtons(true);
-			state = FSM_HOME;
+			state = FSM_STATIC_LED;
 			firstAccess = 1;
 			break;
 		}
@@ -118,7 +118,7 @@ void MainFsm_StateMachine(void)
 			DisplayDriver_StaticLedDraw();
 			button_touched = DispalyDriver_CheckButtons();
 			//test program
-			StaticLED_Shapes(StaticLED_state_Mario);
+			StaticLED_Shapes(StaticLED_state_Minion);
 
 
 			if (button_touched >= 0)
