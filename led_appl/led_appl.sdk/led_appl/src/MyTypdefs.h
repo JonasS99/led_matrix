@@ -50,9 +50,9 @@ typedef enum {
 
 
 typedef enum{
-	BLOCK_SQUARE,
-	BLOCK_L,
-	BLOCK_I
+	BLOCK_HERO,
+	BLOCK_TEEWEE,
+	BLOCK_SMASHBOY
 }TetrisBlockT;
 
 #endif /* SRC_MYTYPDEFS_H_ */

@@ -11,6 +11,7 @@
 #include "DisplayDriver.h"
 #include "LedMatrixDriver.h"
 #include "DynamicLed.h"
+#include "Tetris.h"
 
 
 /* Function declaration */
@@ -35,7 +36,7 @@ void MainFsm_StateMachine(void)
 		case FSM_IDLE:
 		{
 //			DisplayDriver_HomeEnableButtons(true);
-			state = FSM_DYNMAMIC_LED;
+			state = FSM_TETRIS;
 			firstAccess = 1;
 			break;
 		}
@@ -171,7 +172,7 @@ void MainFsm_StateMachine(void)
 
 		case FSM_TETRIS:{
 			Block_Clear_Array();
-			//Tetris cicle
+			Tetris_CycleCall();
 			Block_Set_Array();
 			break;
 		}
