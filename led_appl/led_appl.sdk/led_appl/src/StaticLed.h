@@ -21,7 +21,7 @@ void StaticLED_EmojiSmile(void);
 void StaticLED_EmojiSad(void);
 void StaticLED_Mario(void);
 void StaticLED_Minion(void);
-
+void StaticLED_Wait(u32 k);
 
 #endif /* SRC_STATICLED_H_ */
 

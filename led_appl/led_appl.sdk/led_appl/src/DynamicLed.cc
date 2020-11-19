@@ -7,12 +7,13 @@
 #include "DynamicLed.h"
 #include "LedMatrixDriver.h"
 
-/* Function declaration */
+/* module global function declaration */
 static void rainbowAnimation(void);
-static void lauflichtAnimation(void);
+static void spiralAnimation(void);
 static void stroboAnimation(void);
 static void weihnachtAnimation(void);
-/* Variable declaration */
+
+/* variable declaration */
 static bool firstAccessCheck;
 
 void DynamicLed_animation(dynamicLedMode_t animation, bool firstAccess)
@@ -25,9 +26,9 @@ void DynamicLed_animation(dynamicLedMode_t animation, bool firstAccess)
 			rainbowAnimation();
 		}break;
 
-		case lauflicht:
+		case spiral:
 		{
-			//lauflichtAnimation();
+			spiral();
 		}break;
 
 		case strobo:
@@ -37,7 +38,7 @@ void DynamicLed_animation(dynamicLedMode_t animation, bool firstAccess)
 
 		case weihnachtsanimation:
 		{
-			//weihnachtAnimation();
+//			weihnachtAnimation();
 		}break;
 		default: break;
 	}
@@ -48,7 +49,7 @@ void DynamicLed_animation(dynamicLedMode_t animation, bool firstAccess)
 //0,180,0 irgendein gruen
 //180,180,0 irgendein gelb
 //180,0,0 irgendein rot
-u32 colorArray[5][3] = {{139,0,139},{0,0,180},{0,180,0},{180,180,0},{255,0,0}};
+u32 colorArray[5][3] = {{255,0,255},{0,0,255},{0,255,0},{255,255,0},{255,0,0}};
 static void rainbowAnimation(void)
 {
 	static u32 animationCount = 0;
@@ -74,5 +75,16 @@ static void rainbowAnimation(void)
 	}
 	animationCount++;
 }
+
+static void weihnachtAnimation(void)
+{
+
+}
+
+static void spiralAnimation(void)
+{
+
+}
+
 
 

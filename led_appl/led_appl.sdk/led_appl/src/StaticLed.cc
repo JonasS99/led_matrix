@@ -55,91 +55,89 @@ void StaticLED_Shapes(shapes selection){
 
 
 void StaticLED_ChristmasTree(void){
-	u16 i, j;
+	//Star on the top, yellow
 	LEDMatrixDriver_SetLEDs_ForLoop(9, 10, 0, 1, 255, 255, 0);
-	for( i=9; i<=10; i++) for( j=0; j<=1; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 0);
-	for( i=8; i<=11; i++) for( j=2; j<=3; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);
-	for( i=7; i<=12; i++) for( j=4; j<=5; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);
-	for( i=6; i<=13; i++) for( j=6; j<=7; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);
-	for( i=5; i<=14; i++) for( j=8; j<=9; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);
-	for( i=4; i<=15; i++) for( j=10; j<=11; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);
-	for( i=3; i<=16; i++) for( j=12; j<=13; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);
-	for( i=2; i<=17; i++) for( j=14; j<=15; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);
-	for( i=1; i<=18; i++) for( j=16; j<=17; j++) LedMatrixDriver_SetLed(i, j, 0, 120, 0);
-	for( i=8; i<=11; i++) for( j=18; j<=19; j++) LedMatrixDriver_SetLed(i, j, 105, 65, 0);
+	//main part of the tree, green
+	LEDMatrixDriver_SetLEDs_ForLoop(8, 11, 2, 3, 0, 120, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(7, 12, 4, 5, 0, 120, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(6, 13, 6, 7, 0, 120, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(5, 14, 8, 9, 0, 120, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(4, 15, 10, 11, 0, 120, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(3, 16, 12, 13, 0, 120, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(2, 17, 14, 15, 0, 120, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(1, 18, 16, 17, 0, 120, 0);
+	//trunk, brown
+	LEDMatrixDriver_SetLEDs_ForLoop(8, 11, 18, 19, 105, 65, 0);
 }
 
 void StaticLED_EmojiSmile(void){
-	u16 i, j;
 	//Set the Yellow circle for the emoji (Yellow)
-	for( i=7; i<=12; i++) for( j=0; j<=0; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for( i=5; i<=14; i++) for( j=1; j<=1; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for( i=4; i<=15; i++) for( j=2; j<=2; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for( i=3; i<=16; i++) for( j=3; j<=3; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for( i=2; i<=17; i++) for( j=4; j<=4; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for( i=1; i<=18; i++) for( j=5; j<=6; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for( i=0; i<=19; i++) for( j=7; j<=12; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for( i=1; i<=18; i++) for( j=13; j<=14; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for( i=2; i<=17; i++) for( j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for( i=3; i<=16; i++) for( j=16; j<=16; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for( i=4; i<=15; i++) for( j=17; j<=17; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for( i=5; i<=14; i++) for( j=18; j<=18; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for( i=7; i<=12; i++) for( j=19; j<=19; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	//Set the eyes from the emoji (broun)
+	LEDMatrixDriver_SetLEDs_ForLoop(7, 12, 0, 0, 255, 188, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(5, 14, 1, 1, 255, 188, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(4, 15, 2, 2, 255, 188, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(3, 16, 3, 3, 255, 188, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(2, 17, 4, 4, 255, 188, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(1, 18, 5, 6, 255, 188, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(0, 19, 7, 12, 255, 188, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(1, 18, 13, 14, 255, 188, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(2, 17, 15, 15, 255, 188, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(3, 16, 16, 16, 255, 188, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(4, 15, 17, 17, 255, 188, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(5, 14, 18, 18, 255, 188, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(7, 12, 19, 19, 255, 188, 0);
+	//Set the eyes from the emoji (brown)
 	//Left eye
-	for( i=6; i<=7; i++) for( j=4; j<=4; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
-	for( i=5; i<=8; i++) for( j=5; j<=6; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
-	for( i=6; i<=7; i++) for( j=7; j<=7; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(6, 7, 4, 4, 70, 25, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(5, 8, 5, 6, 70, 25, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(6, 7, 7, 7, 70, 25, 0);
 	//right Eye
-	for( i=12; i<=13; i++) for( j=4; j<=4; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
-	for( i=11; i<=14; i++) for( j=5; j<=6; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
-	for( i=12; i<=13; i++) for( j=7; j<=7; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(12, 13, 4, 4, 70, 25, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(11, 14, 5, 6, 70, 25, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(12, 13, 7, 7, 70, 25, 0);
 	//Set the mouth (White)
-	for( i=5; i<=5; i++) for( j=10; j<=10; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for( i=14; i<=14; i++) for( j=10; j<=10; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for( i=5; i<=7; i++) for( j=11; j<=11; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for( i=12; i<=14; i++) for( j=11; j<=11; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for( i=5; i<=14; i++) for( j=12; j<=12; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for( i=6; i<=13; i++) for( j=13; j<=13; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for( i=7; i<=12; i++) for( j=14; j<=14; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for( i=8; i<=11; i++) for( j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(5, 5, 10, 10, 255, 255, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(14, 14, 10, 10, 255, 255, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(5, 7, 11, 11, 255, 255, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(12, 14, 11, 11, 255, 255, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(5, 14, 12, 12, 255, 255, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(6, 13, 13, 13, 255, 255, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(7, 12, 14, 14, 255, 255, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(8, 11, 15, 15, 255, 255, 255);
 }
 
 void StaticLED_EmojiSad(void){
-	u16 i, j;
-	//Set the Yellow circle for the emoji (Yellow)
-	for(i=7; i<=12; i++) for( j=0; j<=0; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for( i=5; i<=14; i++) for( j=1; j<=1; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for( i=4; i<=15; i++) for( j=2; j<=2; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for( i=3; i<=16; i++) for( j=3; j<=3; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for( i=2; i<=17; i++) for( j=4; j<=4; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for( i=1; i<=18; i++) for( j=5; j<=6; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for( i=0; i<=19; i++) for( j=7; j<=12; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for( i=1; i<=18; i++) for( j=13; j<=14; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for( i=2; i<=17; i++) for( j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for( i=3; i<=16; i++) for( j=16; j<=16; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for( i=4; i<=15; i++) for( j=17; j<=17; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for( i=5; i<=14; i++) for( j=18; j<=18; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	for( i=7; i<=12; i++) for( j=19; j<=19; j++) LedMatrixDriver_SetLed(i, j, 255, 188, 0);
-	//Set the eyes from the emoji (brown)
+	//Set the Yellow circle for the Emoji (Yellow)
+	LEDMatrixDriver_SetLEDs_ForLoop(7, 12, 0, 0, 255, 188, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(5, 14, 1, 1, 255, 188, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(4, 15, 2, 2, 255, 188, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(3, 16, 3, 3, 255, 188, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(2, 17, 4, 4, 255, 188, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(1, 18, 5, 6, 255, 188, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(0, 19, 7, 12, 255, 188, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(1, 18, 13, 14, 255, 188, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(2, 17, 15, 15, 255, 188, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(3, 16, 16, 16, 255, 188, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(4, 15, 17, 17, 255, 188, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(5, 14, 18, 18, 255, 188, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(7, 12, 19, 19, 255, 188, 0);
+	//Set the eyes from the Emoji (brown)
 	//Left eye
-	for( i=6; i<=7; i++) for( j=4; j<=4; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
-	for( i=5; i<=8; i++) for( j=5; j<=6; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
-	for( i=6; i<=7; i++) for( j=7; j<=7; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(6, 7, 4, 4, 70, 25, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(5, 8, 5, 6, 70, 25, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(6, 7, 7, 7, 70, 25, 0);
 	//right Eye
-	for( i=12; i<=13; i++) for( j=4; j<=4; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
-	for( i=11; i<=14; i++) for( j=5; j<=6; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
-	for( i=12; i<=13; i++) for( j=7; j<=7; j++) LedMatrixDriver_SetLed(i, j, 70, 25, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(12, 13, 4, 4, 70, 25, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(11, 14, 5, 6, 70, 25, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(12, 13, 7, 7, 70, 25, 0);
 	//Set the mouth (White)
-	for( i=8; i<=11; i++) for( j=11; j<=11; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for( i=7; i<=12; i++) for( j=12; j<=12; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-
-	for( i=6; i<=7; i++) for( j=13; j<=13; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for( i=12; i<=13; i++) for( j=13; j<=13; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for( i=5; i<=6; i++) for( j=14; j<=14; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for( i=13; i<=14; i++) for( j=14; j<=14; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for( i=5; i<=5; i++) for( j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
-	for( i=14; i<=14; i++) for( j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(8, 11, 11, 11, 255, 255, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(7, 12, 12, 12, 255, 255, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(6, 7, 13, 13, 255, 255, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(12, 13, 13, 13, 255, 255, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(5, 6, 14, 14, 255, 255, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(13, 14, 14, 14, 255, 255, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(5, 5, 15, 15, 255, 255, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(14, 14, 15, 15, 255, 255, 255);
 }
 
 void StaticLED_Mario(void){
@@ -149,19 +147,18 @@ void StaticLED_Mario(void){
 	(255, 179, 128); skin color
 	(29, 29, 255); Blue
 	(255, 255, 0); yellow
- 	(80, 45, 22); brown shoes
-	*/
+ 	(80, 45, 22); brown shoes*/
+
 	//Cap
-	u16 i, j;
-	for(i=7; i<=11; i++) for(j=2; j<=2; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
-	for(i=6; i<=14; i++) for(j=3; j<=3; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
-	for(i=12; i<=12; i++) for( j=4; j<=4; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(7, 11, 2, 2, 255, 0, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(6, 14, 3, 3, 255, 0, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(12, 12, 4, 4, 255, 0, 0);
 	//Face skin color
-	for( i=6; i<=11; i++) for( j=4; j<=4; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
-	for( i=5; i<=13; i++) for( j=5; j<=5; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
-	for( i=5; i<=14; i++) for( j=6; j<=6; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
-	for( i=5; i<=13; i++) for( j=7; j<=7; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
-	for( i=7; i<=12; i++) for( j=8; j<=8; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
+	LEDMatrixDriver_SetLEDs_ForLoop(6, 11, 4, 4, 255, 179, 128);
+	LEDMatrixDriver_SetLEDs_ForLoop(5, 13, 5, 5, 255, 179, 128);
+	LEDMatrixDriver_SetLEDs_ForLoop(5, 14, 6, 6, 255, 179, 128);
+	LEDMatrixDriver_SetLEDs_ForLoop(5, 13, 7, 7, 255, 179, 128);
+	LEDMatrixDriver_SetLEDs_ForLoop(7, 12, 8, 8, 255, 179, 128);
 	//Hairs + Face
 	LedMatrixDriver_SetLed(6, 4, 43, 17, 0);
 	LedMatrixDriver_SetLed(7, 4, 43, 17, 0);
@@ -181,17 +178,18 @@ void StaticLED_Mario(void){
 	LedMatrixDriver_SetLed(13, 7, 43, 17, 0);
 	LedMatrixDriver_SetLed(14, 7, 43, 17, 0);
 	//T-shirt
-	for( i=6; i<=10; i++) for( j=9; j<=9; j++) LedMatrixDriver_SetLed(i, j, 29, 29, 255);
-	for( i=5; i<=13; i++) for( j=10; j<=10; j++) LedMatrixDriver_SetLed(i, j, 29, 29, 255);
-	for( i=4; i<=14; i++) for( j=11; j<=11; j++) LedMatrixDriver_SetLed(i, j, 29, 29, 255);
-	for( i=6; i<=12; i++) for( j=12; j<=12; j++) LedMatrixDriver_SetLed(i, j, 29, 29, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(6, 11, 9, 9, 29, 29, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(5, 14, 10, 10, 29, 29, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(4, 15, 11, 11, 29, 29, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(6, 13, 12, 12, 29, 29, 255);
 	//Hands
-	for( i=4; i<=5; i++) for( j=12; j<=12; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
-	for( i=4; i<=6; i++) for( j=13; j<=13; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
-	for( i=4; i<=5; i++) for( j=14; j<=14; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
-	for( i=13; i<=14; i++) for( j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
-	for( i=12; i<=14; i++) for( j=16; j<=16; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
-	for( i=13; i<=14; i++) for( j=17; j<=17; j++) LedMatrixDriver_SetLed(i, j, 255, 179, 128);
+	LEDMatrixDriver_SetLEDs_ForLoop(4, 5, 12, 12, 255, 179, 128);
+	LEDMatrixDriver_SetLEDs_ForLoop(4, 6, 13, 13, 255, 179, 128);
+	LEDMatrixDriver_SetLEDs_ForLoop(4, 5, 14, 14, 255, 179, 128);
+	LEDMatrixDriver_SetLEDs_ForLoop(14, 15, 12, 12, 255, 179, 128);
+	LEDMatrixDriver_SetLEDs_ForLoop(13, 15, 13, 13, 255, 179, 128);
+	LEDMatrixDriver_SetLEDs_ForLoop(14, 15, 14, 14, 255, 179, 128);
+	//Hands
 	//trousers
 	LedMatrixDriver_SetLed(8, 9, 255, 0, 0);
 	LedMatrixDriver_SetLed(8, 10, 255, 0, 0);
@@ -200,38 +198,38 @@ void StaticLED_Mario(void){
 	LedMatrixDriver_SetLed(11, 10, 255, 0, 0);
 	LedMatrixDriver_SetLed(11, 11, 255, 0, 0);
 	LedMatrixDriver_SetLed(11, 12, 255, 0, 0);
-	for( i=7; i<=12; i++) for( j=13; j<=13; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
-	for( i=6; i<=13; i++) for( j=14; j<=14; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
-	for( i=6; i<=8; i++) for( j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
-	for( i=6; i<=8; i++) for( j=16; j<=16; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
-	for( i=11; i<=13; i++) for( j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
-	for( i=11; i<=13; i++) for( j=16; j<=16; j++) LedMatrixDriver_SetLed(i, j, 255, 0, 0);
-	LedMatrixDriver_SetLed(8, 13, 255, 255, 0); //Yellow dots
-	LedMatrixDriver_SetLed(11, 13, 255, 255, 0); //Yellow dots
+	LEDMatrixDriver_SetLEDs_ForLoop(7, 12, 13, 13, 255, 0, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(6, 13, 14, 14, 255, 0, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(6, 8, 15, 15, 255, 0, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(6, 8, 16, 16, 255, 0, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(11, 13, 15, 15, 255, 0, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(11, 13, 16, 16, 255, 0, 0);
+	//Yellow dots
+	LedMatrixDriver_SetLed(8, 13, 255, 255, 0);
+	LedMatrixDriver_SetLed(11, 13, 255, 255, 0);
 	//shoes
-	for( i=5; i<=7; i++) for( j=17; j<=17; j++) LedMatrixDriver_SetLed(i, j, 80, 45, 22);
-	for( i=10; i<=12; i++) for( j=17; j<=17; j++) LedMatrixDriver_SetLed(i, j, 80, 45, 22);
+	LEDMatrixDriver_SetLEDs_ForLoop(5, 7, 17, 17, 80, 45, 22);
+	LEDMatrixDriver_SetLEDs_ForLoop(12, 14, 17, 17, 80, 45, 22);
 	//Green gras
-	for( i=0; i<=19; i++) for( j=18; j<=18; j++) LedMatrixDriver_SetLed(i, j, 0, 200, 0);
-	for( i=0; i<=19; i++) for( j=19; j<=19; j++) LedMatrixDriver_SetLed(i, j, 0, 200, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(0, 19, 18, 18, 0, 200, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(0, 19, 19, 19, 0, 200, 0);
 }
 
 void StaticLED_Minion(void){
-	u16 i, j;
 	//Background grey-brown
-	for( i=0; i<=19; i++) for( j=0; j<=19; j++) LedMatrixDriver_SetLed(i, j, 209, 193, 158);
+	LEDMatrixDriver_SetLEDs_ForLoop(0, 19, 0, 19, 209, 193, 158);
 	//Minion, yellow
-	for( i=7; i<=12; i++) for( j=1; j<=1; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 0);
-	for( i=6; i<=13; i++) for( j=2; j<=2; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 0);
-	for( i=5; i<=14; i++) for( j=3; j<=14; j++) LedMatrixDriver_SetLed(i, j, 255, 255, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(7, 12, 1, 1, 255, 255, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(6, 13, 2, 2, 255, 255, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(5, 14, 3, 14, 255, 255, 0);
 	//eyes, grey
-	for( i=6; i<=7; i++) for( j=3; j<=3; j++) LedMatrixDriver_SetLed(i, j, 209, 199, 214);
-	for( i=9; i<=10; i++) for( j=3; j<=3; j++) LedMatrixDriver_SetLed(i, j, 209, 199, 214);
-	for( i=5; i<=11; i++) for( j=4; j<=5; j++) LedMatrixDriver_SetLed(i, j, 209, 199, 214);
-	for( i=6; i<=7; i++) for( j=6; j<=6; j++) LedMatrixDriver_SetLed(i, j, 209, 199, 214);
-	for( i=9; i<=10; i++) for( j=6; j<=6; j++) LedMatrixDriver_SetLed(i, j, 209, 199, 214);
+	LEDMatrixDriver_SetLEDs_ForLoop(6, 7, 3, 3, 209, 199, 214);
+	LEDMatrixDriver_SetLEDs_ForLoop(9, 10, 3, 3, 209, 199, 214);
+	LEDMatrixDriver_SetLEDs_ForLoop(5, 11, 4, 5, 209, 199, 214);
+	LEDMatrixDriver_SetLEDs_ForLoop(6, 7, 6, 6, 209, 199, 214);
+	LEDMatrixDriver_SetLEDs_ForLoop(9, 10, 6, 6, 209, 199, 214);
 	// black
-	for( i=12; i<=14; i++) for( j=4; j<=5; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(12, 14, 4, 5, 0, 0, 0);
 	//black
 	LedMatrixDriver_SetLed(6, 5, 0, 0, 0);
 	LedMatrixDriver_SetLed(9, 5, 0, 0, 0);
@@ -244,26 +242,28 @@ void StaticLED_Minion(void){
 	LedMatrixDriver_SetLed(11, 4, 255, 255, 255);
 	//mouth, black
 	LedMatrixDriver_SetLed(10, 8, 0, 0, 0);
-	for( i=7; i<=9; i++) for( j=9; j<=9; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(7, 9, 9, 9, 0, 0, 0);
 	//trousers
 	LedMatrixDriver_SetLed(5, 10, 0, 0, 255);
 	LedMatrixDriver_SetLed(14, 10, 0, 0, 255);
-	for( i=6; i<=13; i++) for( j=11; j<=11; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 255);
-	for( i=7; i<=12; i++) for( j=12; j<=13; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 255);
-	for( i=6; i<=13; i++) for( j=14; j<=16; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(6, 13, 11, 11, 0, 0, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(7, 12, 12, 13, 0, 0, 255);
+	LEDMatrixDriver_SetLEDs_ForLoop(6, 13, 14, 16, 0, 0, 255);
 	//legs, black
-	for( i=4; i<=5; i++) for( j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
-	for( i=14; i<=15; i++) for( j=15; j<=15; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
-	for( i=5; i<=5; i++) for( j=16; j<=16; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
-	for( i=14; i<=14; i++) for( j=16; j<=16; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
-	for( i=7; i<=8; i++) for( j=17; j<=17; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
-	for( i=11; i<=12; i++) for( j=17; j<=17; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
-	for( i=6; i<=8; i++) for( j=18; j<=18; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
-	for( i=11; i<=13; i++) for( j=18; j<=18; j++) LedMatrixDriver_SetLed(i, j, 0, 0, 0);
-
+	LEDMatrixDriver_SetLEDs_ForLoop(4, 5, 15, 15, 0, 0, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(14, 15, 15, 15, 0, 0, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(5, 5, 16, 16, 0, 0, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(14, 14, 16, 16, 0, 0, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(7, 8, 17, 17, 0, 0, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(11, 12, 17, 17, 0, 0, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(6, 8, 18, 18, 0, 0, 0);
+	LEDMatrixDriver_SetLEDs_ForLoop(11, 13, 18, 18, 0, 0, 0);
 }
 
-
-
-
+void StaticLED_Wait(u32 k){
+	u32 i=0;
+	while(i<=k){
+		i++;
+	}
+}
 
