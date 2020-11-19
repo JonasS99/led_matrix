@@ -23,7 +23,6 @@
 *.html
 *.xml
 *.wdm
-led_appl/led_appl.sdk/led_appl/Debug
 #########
 #Source files:
 #########
@@ -91,7 +90,6 @@ led_appl/led_appl.sdk/led_appl/Debug
 #########
 !*.c
 !*.h
-!*.elf
 !*.bmm
 !*.xmp
 !*.cc
