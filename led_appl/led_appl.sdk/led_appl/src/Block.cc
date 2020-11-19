@@ -109,3 +109,115 @@ void Block_Teewee(u16 Rotation, u8 PositionX, u8 PositionY){
 			break;
 	}
 }
+
+void Block_Orange_Ricky(u16 Rotation, u8 PositionX, u8 PositionY){
+	switch(Rotation){
+		case 0:
+			pixel_Array[PositionX+2][PositionY][0] = 255;
+			pixel_Array[PositionX+2][PositionY][1] = 130;
+			pixel_Array[PositionX][PositionY+1][0] = 255;
+			pixel_Array[PositionX][PositionY+1][1] = 130;
+			pixel_Array[PositionX+1][PositionY+1][0] = 255;
+			pixel_Array[PositionX+1][PositionY+1][1] = 130;
+			pixel_Array[PositionX+2][PositionY+1][0] = 255;
+			pixel_Array[PositionX+2][PositionY+1][1] = 130;
+			break;
+		case 90:
+			pixel_Array[PositionX][PositionY][0] = 255;
+			pixel_Array[PositionX][PositionY][1] = 130;
+			pixel_Array[PositionX][PositionY+1][0] = 255;
+			pixel_Array[PositionX][PositionY+1][1] = 130;
+			pixel_Array[PositionX][PositionY+2][0] = 255;
+			pixel_Array[PositionX][PositionY+2][1] = 130;
+			pixel_Array[PositionX+1][PositionY+2][0] = 255;
+			pixel_Array[PositionX+1][PositionY+2][1] = 130;
+			break;
+		case 180:
+			pixel_Array[PositionX][PositionY][0] = 255;
+			pixel_Array[PositionX][PositionY][1] = 130;
+			pixel_Array[PositionX][PositionY+1][0] = 255;
+			pixel_Array[PositionX][PositionY+1][1] = 130;
+			pixel_Array[PositionX+1][PositionY][0] = 255;
+			pixel_Array[PositionX+1][PositionY][1] = 130;
+			pixel_Array[PositionX+2][PositionY][0] = 255;
+			pixel_Array[PositionX+2][PositionY][1] = 130;
+			break;
+		case 270:
+			pixel_Array[PositionX][PositionY][0] = 255;
+			pixel_Array[PositionX][PositionY][1] = 130;
+			pixel_Array[PositionX+1][PositionY][0] = 255;
+			pixel_Array[PositionX+1][PositionY][1] = 130;
+			pixel_Array[PositionX+1][PositionY+1][0] = 255;
+			pixel_Array[PositionX+1][PositionY+1][1] = 130;
+			pixel_Array[PositionX+1][PositionY+2][0] = 255;
+			pixel_Array[PositionX+1][PositionY+2][1] = 130;
+			break;
+	}
+}
+
+void Block_Blue_Ricky(u16 Rotation, u8 PositionX, u8 PositionY){
+	switch(Rotation){
+		case 0:
+			pixel_Array[PositionX][PositionY][2] = 255;
+			pixel_Array[PositionX][PositionY+1][2] = 255;
+			pixel_Array[PositionX+1][PositionY+1][2] = 255;
+			pixel_Array[PositionX+2][PositionY+1][2] = 255;
+			break;
+		case 90:
+			pixel_Array[PositionX][PositionY][2] = 255;
+			pixel_Array[PositionX+1][PositionY][2] = 255;
+			pixel_Array[PositionX][PositionY+1][2] = 255;
+			pixel_Array[PositionX][PositionY+2][2] = 255;
+			break;
+		case 180:
+			pixel_Array[PositionX][PositionY][2] = 255;
+			pixel_Array[PositionX+1][PositionY][2] = 255;
+			pixel_Array[PositionX+2][PositionY][2] = 255;
+			pixel_Array[PositionX+2][PositionY+1][2] = 255;
+			break;
+		case 270:
+			pixel_Array[PositionX][PositionY+2][2] = 255;
+			pixel_Array[PositionX+1][PositionY][2] = 255;
+			pixel_Array[PositionX+1][PositionY+1][2] = 255;
+			pixel_Array[PositionX+1][PositionY+2][2] = 255;
+			break;
+	}
+}
+
+void Block_Cleveland_Z(u16 Rotation, u8 PositionX, u8 PositionY){
+	switch(Rotation){
+		case 0:
+		case 180:
+			pixel_Array[PositionX][PositionY][0] = 255;
+			pixel_Array[PositionX+1][PositionY][0] = 255;
+			pixel_Array[PositionX+1][PositionY + 1][0] = 255;
+			pixel_Array[PositionX+1][PositionY + 1][0] = 255;
+			break;
+		case 90:
+		case 270:
+			pixel_Array[PositionX+1][PositionY][0] = 255;
+			pixel_Array[PositionX+1][PositionY+1][0] = 255;
+			pixel_Array[PositionX][PositionY+1][0] = 255;
+			pixel_Array[PositionX][PositionY+2][0] = 255;
+			break;
+	}
+}
+
+void Block_Rhode_Island_Z(u16 Rotation, u8 PositionX, u8 PositionY){
+	switch(Rotation){
+		case 0:
+		case 180:
+			pixel_Array[PositionX+1][PositionY][1] = 255;
+			pixel_Array[PositionX+2][PositionY][1] = 255;
+			pixel_Array[PositionX][PositionY+1][1] = 255;
+			pixel_Array[PositionX+1][PositionY+1][1] = 255;
+			break;
+		case 90:
+		case 270:
+			pixel_Array[PositionX][PositionY][1] = 255;
+			pixel_Array[PositionX][PositionY+1][1] = 255;
+			pixel_Array[PositionX+1][PositionY+1][1] = 255;
+			pixel_Array[PositionX+1][PositionY+2][1] = 255;
+			break;
+	}
+}
