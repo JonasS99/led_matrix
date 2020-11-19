@@ -173,8 +173,8 @@ void MainFsm_StateMachine(void)
 			Block_Smashboy(0, 2, 2);
 			Block_Hero(0, 10, 2);
 			Block_Teewee(0, 2, 8);
-			Block_Hero(90, 10, 2);
-			Block_Teewee(90, 2, 8);
+			Block_Hero(90, 10, 8);
+			Block_Teewee(90, 2, 15);
 			Block_cicle();
 			break;
 		}
