@@ -35,7 +35,7 @@ void MainFsm_StateMachine(void)
 		case FSM_IDLE:
 		{
 //			DisplayDriver_HomeEnableButtons(true);
-			state = FSM_HOME;
+			state = FSM_TETRIS;
 			firstAccess = 1;
 			break;
 		}
@@ -170,11 +170,11 @@ void MainFsm_StateMachine(void)
 		}
 
 		case FSM_TETRIS:{
-			u8 i = 1;
-			if(i==1){
-				Block_Smashboy(0, 3, 5);
-				i = 0;
-			}
+			Block_Smashboy(0, 2, 2);
+			Block_Hero(0, 10, 2);
+			Block_Teewee(0, 2, 8);
+			Block_Hero(90, 10, 8);
+			Block_Teewee(90, 2, 15);
 			Block_cicle();
 			break;
 		}
