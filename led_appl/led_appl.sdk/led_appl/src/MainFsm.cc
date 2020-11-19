@@ -43,7 +43,7 @@ void MainFsm_StateMachine(void)
 		{
 
 		//DynamicLed_animation(rainbow, firstAccess);
-		DynamicLed_animation(weihnachtsanimation, firstAccess);
+		DynamicLed_animation(rainbow, firstAccess);
 			firstAccess = 0;
 //			DisplayDriver_HomeDraw();
 //			button_touched = DispalyDriver_CheckButtons();
