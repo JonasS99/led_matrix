@@ -26,7 +26,7 @@ void Block_cicle(){
 		pixel_Array[i][0][1] = 0;
 		pixel_Array[i][0][2] = 0;
 	}
-	//wait...
+	//wait.....
 	for(u32 k = 0 ; k<200000 ; k++){}
 }
 
