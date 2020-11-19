@@ -26,6 +26,8 @@ void LedMatrixDriver_SlideAllLed(void);
 void LedMatrixDriver_CreateSquare(u8 startX, u8 startY, u8 size);
 void LEDMatrixDriver_SetLEDs_ForLoop(u16 i1,u16 i2,u16 j1,u16 j2,u16 r,u16 g,u16 b);
 void LEDMatrixDriver_Pixelmatrix(void);
+void LEDMatrixDriver_Set_Pixel_Array(u8 Pixel_Array[20][20][3]);
+
 
 
 #endif /* SRC_LEDMATRIXDRIVER_H_ */
