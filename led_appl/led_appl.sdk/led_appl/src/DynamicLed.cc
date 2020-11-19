@@ -28,7 +28,7 @@ void DynamicLed_animation(dynamicLedMode_t animation, bool firstAccess)
 
 		case spiral:
 		{
-			spiral();
+			spiralAnimation();
 		}break;
 
 		case strobo:
@@ -83,6 +83,7 @@ static void weihnachtAnimation(void)
 
 static void spiralAnimation(void)
 {
+	LedMatrixDriver_CreateSquare(0,0,20);
 
 }
 

@@ -142,24 +142,26 @@ void LedMatrixDriver_CreateSquare(u8 startX, u8 startY, u8 size)
 	static u8 r = 255;
 	static u8 g = 0;
 	static u8 b = 255;
+	static u8 x,y = 0;
 	LedMatrixDriver_ClearAllLed();
 	u8 side = 0;
+	x = startX;
+	y = startY;
 	while(side<4)
 	{
 		for(u8 a=0 ; a<=size ; a++)
 		{
-			if(side==0 | side ==2)
-			{
-				ledMatrixDriver_SetLed(x+a,y,r,g,b);
-			}
-			else if(side==1 | side==3)
-			{
-				LedMatrixDriver_SetLed(x,y+a,r,g,b);
-			}
+			if(side==0) LedMatrixDriver_SetLed(x+a,startY,r,g,b);
+			else if(side==1) LedMatrixDriver_SetLed(x+size,y+a,r,g,b);
+			else if(side==2) LedMatrixDriver_SetLed(x+a,y+size,r,g,b);
+			else if(side==3) LedMatrixDriver_SetLed(x,y+a,r,g,b);
 		}
 		side++;
 	}
 }
+/*
+ * change rgb color smoothly
+ */
 void LEDMatrixDriver_SetLEDs_ForLoop(u16 i1,u16 i2,u16 j1,u16 j2,u16 r,u16 g,u16 b){
 	for(u16 i=i1; i<=i2; i++) for(u16 j=j1; j<=j2; j++) LedMatrixDriver_SetLed(i, j, r, g, b);
 }
