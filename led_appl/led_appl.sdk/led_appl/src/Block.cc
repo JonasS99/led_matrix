@@ -27,7 +27,7 @@ void Block_cicle(){
 		pixel_Array[i][0][2] = 0;
 	}
 	//wait.....
-	for(u32 k = 0 ; k<200000 ; k++){}
+	for(u32 k = 0 ; k<2000 ; k++){}
 }
 
 void Block_Smashboy(u16 Rotation, u8 PositionX, u8 PositionY){
