@@ -85,8 +85,9 @@ static void spiralAnimation(void)
 {
 	static u32 animationCount = 0;
 	static u8 size[3] = {5,10,20};
-	if(animationCount>=40)
+	if(animationCount>=80)
 	{
+		animationCount = 0;
 		static u8 index = 0;
 		LedMatrixDriver_CreateSquare(0,0,size[index]);
 		if(index>1) index = 0;
