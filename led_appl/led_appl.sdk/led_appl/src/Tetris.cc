@@ -56,9 +56,9 @@ void Tetris_CycleCall(void)
 	}
 
 
-	if(DelayCounter == 15000)
+	if(DelayCounter == 50)
 	{
-		if(PlayerBlock->PositionY >=19)
+		if(PlayerBlock->PositionY >=18)
 		{
 			PlayerBlock = nullptr;
 		}
@@ -72,7 +72,7 @@ void Tetris_CycleCall(void)
 	{
 		DelayCounter++;
 	}
-	DelayCounter %= 15001;
+	DelayCounter %= 51;
 
 }
 
