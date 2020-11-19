@@ -28,7 +28,7 @@ void Tetris_CycleCall(void)
 {
 	/* pick PlayBlock */
 	static BlockT* PlayerBlock;
-	static u8 DelayCounter = 0;
+	static u16 DelayCounter = 0;
 
 	if(PlayerBlock==nullptr)
 	{
@@ -58,7 +58,7 @@ void Tetris_CycleCall(void)
 	}
 
 
-	if(DelayCounter == 10000)
+	if(DelayCounter == 5000)
 	{
 		PlayerBlock->PositionY += 1;
 	}
@@ -66,7 +66,7 @@ void Tetris_CycleCall(void)
 	{
 		DelayCounter++;
 	}
-	DelayCounter %= 10001;
+	DelayCounter %= 5001;
 
 }
 
