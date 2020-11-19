@@ -49,7 +49,7 @@ void DynamicLed_animation(dynamicLedMode_t animation, bool firstAccess)
 //0,180,0 irgendein gruen
 //180,180,0 irgendein gelb
 //180,0,0 irgendein rot
-u32 colorArray[5][3] = {{139,0,139},{0,0,180},{0,180,0},{180,180,0},{255,0,0}};
+u32 colorArray[5][3] = {{255,0,255},{0,0,255},{0,255,0},{255,255,0},{255,0,0}};
 static void rainbowAnimation(void)
 {
 	static u32 animationCount = 0;
