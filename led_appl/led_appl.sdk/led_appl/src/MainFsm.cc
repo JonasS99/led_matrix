@@ -35,7 +35,7 @@ void MainFsm_StateMachine(void)
 		case FSM_IDLE:
 		{
 //			DisplayDriver_HomeEnableButtons(true);
-			state = FSM_TETRIS;
+			state = FSM_DYNMAMIC_LED;
 			firstAccess = 1;
 			break;
 		}
@@ -43,7 +43,7 @@ void MainFsm_StateMachine(void)
 		{
 
 		//DynamicLed_animation(rainbow, firstAccess);
-		DynamicLed_animation(rainbow, firstAccess);
+		DynamicLed_animation(spiral, firstAccess);
 			firstAccess = 0;
 //			DisplayDriver_HomeDraw();
 //			button_touched = DispalyDriver_CheckButtons();
@@ -149,7 +149,7 @@ void MainFsm_StateMachine(void)
 
 		case FSM_DYNMAMIC_LED:
 		{
-			DynamicLed_animation(rainbow, firstAccess);
+			DynamicLed_animation(spiral, firstAccess);
 			firstAccess = 0;
 			break;
 		}
@@ -170,12 +170,9 @@ void MainFsm_StateMachine(void)
 		}
 
 		case FSM_TETRIS:{
-			u8 i = 1;
-			if(i==1){
-				Block_Smashboy(0, 3, 5);
-				i = 0;
-			}
-			Block_cicle();
+			Block_Clear_Array();
+			//Tetris cicle
+			Block_Set_Array();
 			break;
 		}
 	}

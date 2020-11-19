@@ -149,11 +149,11 @@ void LedMatrixDriver_CreateSquare(u8 startX, u8 startY, u8 size)
 	y = startY;
 	while(side<4)
 	{
-		for(u8 a=0 ; a<=size ; a++)
+		for(u8 a=0 ; a<size ; a++)
 		{
-			if(side==0) LedMatrixDriver_SetLed(x+a,startY,r,g,b);
-			else if(side==1) LedMatrixDriver_SetLed(x+size,y+a,r,g,b);
-			else if(side==2) LedMatrixDriver_SetLed(x+a,y+size,r,g,b);
+			if(side==0) LedMatrixDriver_SetLed(x+a,y,r,g,b);
+			else if(side==1) LedMatrixDriver_SetLed(x+size-1,y+a,r,g,b);
+			else if(side==2) LedMatrixDriver_SetLed(x+a,y+size-1,r,g,b);
 			else if(side==3) LedMatrixDriver_SetLed(x,y+a,r,g,b);
 		}
 		side++;
