@@ -139,6 +139,7 @@ static void spiralAnimation(void)
 					{
 						route = downward;
 						jumpCnt++;
+						step = 0;
 					}
 					step++;
 				}
@@ -155,6 +156,7 @@ static void spiralAnimation(void)
 					{
 						route = backward;
 						jumpCnt++;
+						step = 0;
 					}
 					step++;
 				}break;
@@ -171,6 +173,7 @@ static void spiralAnimation(void)
 					{
 						route = upward;
 						jumpCnt++;
+						step = 0;
 					}
 					step++;
 				}break;
@@ -180,6 +183,7 @@ static void spiralAnimation(void)
 					{
 						stepMax=stepMax-2;
 						jumpCnt = 0;
+						step = 0;
 					}
 					y = y + step;
 					LedMatrixDriver_SetLed(x,y,r,g,b);
@@ -187,6 +191,7 @@ static void spiralAnimation(void)
 					{
 						route = forward;
 						jumpCnt++;
+						step = 0;
 					}
 					step++;
 				}break;
