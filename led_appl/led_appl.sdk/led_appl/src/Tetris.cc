@@ -66,7 +66,7 @@ void Tetris_CycleCall(void)
 	{
 		DelayCounter++;
 	}
-	DelayCounter %= 100;
+	DelayCounter %= 101;
 
 }
 
@@ -78,7 +78,7 @@ void Tetris_Reset(void)
 void Tetris_InitBlock(BlockT* Block)
 {
 	Block->BlockType = BLOCK_SMASHBOY;
-	Block->PositionX = 10;
+	Block->PositionX = 9;
 	Block->PositionY = 2;
 	Block->Rotation = 0;
 }
