@@ -11,11 +11,13 @@
 #include "xil_types.h"
 #include "MyTypdefs.h"
 
-
-void Block_cicle();
+void Block_Set_Array();
+void Block_Clear_Array();
 void Block_Smashboy(u16 Rotation, u8 PositionX, u8 PositionY);
 void Block_Hero(u16 Rotation, u8 PositionX, u8 PositionY);
 void Block_Teewee(u16 Rotation, u8 PositionX, u8 PositionY);
+
+
 
 
 #endif /* SRC_BLOCK_H_ */

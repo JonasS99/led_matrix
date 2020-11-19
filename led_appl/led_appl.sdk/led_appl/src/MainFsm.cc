@@ -170,12 +170,9 @@ void MainFsm_StateMachine(void)
 		}
 
 		case FSM_TETRIS:{
-			Block_Smashboy(0, 2, 2);
-			Block_Hero(0, 10, 2);
-			Block_Teewee(0, 2, 8);
-			Block_Hero(90, 10, 8);
-			Block_Teewee(90, 2, 15);
-			Block_cicle();
+			Block_Clear_Array();
+			//Tetris cicle
+			Block_Set_Array();
 			break;
 		}
 	}
