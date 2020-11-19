@@ -107,9 +107,9 @@ typedef enum
 	backward,
 	upward
 }direction;
-direction route  = forward;
 static void spiralAnimation(void)
 {
+	static direction route  = forward;
 	static u8 r = 255;
 	static u8 g = 255;
 	static u8 b = 0;
