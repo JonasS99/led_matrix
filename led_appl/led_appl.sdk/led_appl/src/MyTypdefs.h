@@ -49,4 +49,10 @@ typedef enum {
 }dynamicLedMode_t;
 
 
+typedef enum{
+	BLOCK_SQUARE,
+	BLOCK_L,
+	BLOCK_I
+}TetrisBlockT;
+
 #endif /* SRC_MYTYPDEFS_H_ */
