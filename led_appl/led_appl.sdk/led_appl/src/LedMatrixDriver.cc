@@ -155,10 +155,11 @@ void LedMatrixDriver_CreateSquare(u8 startX, u8 startY, u8 size)
 			else if(side==2) LedMatrixDriver_SetLed(x+a,y+size-1,colorArray[colorCount][0],colorArray[colorCount][1],colorArray[colorCount][2]);
 			else if(side==3) LedMatrixDriver_SetLed(x,y+a,colorArray[colorCount][0],colorArray[colorCount][1],colorArray[colorCount][2]);
 		}
-		if(colorCount > 4) colorCount = 0;
-		else colorCount++;
+
 		side++;
 	}
+	if(colorCount > 4) colorCount = 0;
+	else colorCount++;
 }
 /*
  * change rgb color smoothly
