@@ -11,6 +11,7 @@
 class IBlock
 {
 public:
+	IBlock(){}
 	virtual void CycleCall() = 0;
 	virtual void ControlDown() = 0;
 	virtual void ControlLeft() = 0;

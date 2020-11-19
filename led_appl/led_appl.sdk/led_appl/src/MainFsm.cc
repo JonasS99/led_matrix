@@ -11,6 +11,11 @@
 #include "DisplayDriver.h"
 #include "LedMatrixDriver.h"
 #include "DynamicLed.h"
+#include "Tetris.h"
+#include "TetrisMatrix.h"
+
+TetrisMatrix TetrisMatrix_obj;
+Tetris Tetris_obj(&TetrisMatrix_obj);
 
 
 /* Function declaration */
@@ -22,6 +27,7 @@ void MainFsm_Init(void)
 {
 	DisplayDriver_Init();
 	LedMatrixDriver_Init();
+	Tetris_obj.Init();
 }
 
 void MainFsm_StateMachine(void)
@@ -41,8 +47,9 @@ void MainFsm_StateMachine(void)
 		}
 		case FSM_HOME:
 		{
-			DynamicLed_animation(rainbow, firstAccess);
-		    firstAccess = 0;
+			Tetris_obj.CycleCall();
+//			DynamicLed_animation(rainbow, firstAccess);
+//		    firstAccess = 0;
 //			DisplayDriver_HomeDraw();
 //			button_touched = DispalyDriver_CheckButtons();
 //

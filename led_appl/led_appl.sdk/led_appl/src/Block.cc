@@ -11,13 +11,12 @@
 #include "LedMatrixDriver.h"
 
 /************** SQUARE **************/
-Square::Square(TetrisMatrix* TetrisMatrix_obj, u32 posX, u32 posY, TetrisColorsT color)
+Square::Square(TetrisMatrix* TetrisMatrix_object, u32 posX, u32 posY, TetrisColorsT a_color)
 :positionX(posX),
  positionY(posY),
- color(color),
- TetrisMatrix_obj(TetrisMatrix_obj)
+ color(a_color),
+ TetrisMatrix_obj(TetrisMatrix_object)
 {
-
 }
 
 void Square::CycleCall(void)

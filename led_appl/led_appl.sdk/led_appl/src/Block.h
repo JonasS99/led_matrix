@@ -11,12 +11,13 @@
 #include "xil_types.h"
 #include "MyTypdefs.h"
 #include "IBlock.h"
-#include "Tetris.h"
+#include "TetrisMatrix.h"
 
 class Square : public IBlock
 {
 public:
-	Square(TetrisMatrix* TetrisMatrix_obj, u32 posX, u32 posY, TetrisColorsT color);
+	Square(){}
+	Square(TetrisMatrix* TetrisMatrix_object, u32 posX, u32 posY, TetrisColorsT a_color);
 	void CycleCall(void) 	override;
 	void ControlDown(void) 	override;
 	void ControlLeft(void) 	override;
