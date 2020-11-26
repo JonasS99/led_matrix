@@ -185,7 +185,7 @@ static void spiralAnimation(void)
 				{
 					if(jumpCnt==jumpLimit)
 					{
-						jumpLimit = 2;
+						//jumpLimit = 2;
 						stepMax=stepMax-2;
 						jumpCnt = 0;
 					}
