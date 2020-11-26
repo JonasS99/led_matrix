@@ -166,13 +166,50 @@ void LedMatrixDriver_CreateSquare(u8 startX, u8 startY, u8 size)
  */
 void LedMatrixDriver_ShiftColors(u8* r, u8* g, u8* b)
 {
-	if(*r<250) *r+=5;
-	else *r = 40;
-	if(*g<250) *g+=5;
-	else *g = 40;
-	if(*b<250) *b+=5;
-	else *b = 40;
+	if(*r==255 	&& *g<255 	&& *b==0)	*g+=1;
+	if(*r>0 	&& *g==255 	&& *b==0)	*r-=1;
+	if(*r==0 	&&*g==255 	&& *b<255)	*b+=1;
+	if(*r==0 	&& *g>0 	&& *b==255)	*g-=1;
+	if(*r<255 	&& *g==0 	&& *b==255)	*r+=1;
+	if(*r==255 	&& *g==0 	&&*b>0)		*b-=1;
+
+//	if(*r<250) *r+=5;
+//	else *r = 40;
+//	if(*g<250) *g+=1;
+//	else *g = 40;
+//	if(*b<250) *b+=5;
+//	else *b = 40;
 }
+
+//void ColorGradient(){
+//    SetWholeLEDStrip(255, 0, 0);
+//    static volatile uint32_t DelayTime = 100000;
+//    static volatile uint16_t i = 0;
+//    for(i = 0; i<=255; i++){
+//        SetWholeLEDStrip(255, i, 0);
+//        delay(DelayTime);
+//    }
+//    for(i = 255; i> 0; i--){
+//        SetWholeLEDStrip(i, 255, 0);
+//        delay(DelayTime);
+//    }
+//    for(i = 0; i<=255; i++){
+//        SetWholeLEDStrip(0, 255, i);
+//        delay(DelayTime);
+//    }
+//    for(i = 255; i> 0; i--){
+//        SetWholeLEDStrip(0, i, 255);
+//        delay(DelayTime);
+//    }
+//    for(i = 0; i<=255; i++){
+//        SetWholeLEDStrip(i, 0, 255);
+//        delay(DelayTime);
+//    }
+//    for(i = 255; i> 0; i--){
+//        SetWholeLEDStrip(255, 0, i);
+//        delay(DelayTime);
+//    }
+//}
 
 void LedMatrixDriver_SetLedsForLoop(u16 i1,u16 i2,u16 j1,u16 j2,u16 r,u16 g,u16 b){
 	for(u16 i=i1; i<=i2; i++) for(u16 j=j1; j<=j2; j++) LedMatrixDriver_SetLed(i, j, r, g, b);

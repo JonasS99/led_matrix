@@ -110,8 +110,8 @@ typedef enum
 static void spiralAnimation(void)
 {
 	static direction route  = forward;
-	static u8 r = 245;
-	static u8 g = 120;
+	static u8 r = 255;
+	static u8 g = 0;
 	static u8 b = 0;
 	static u8 jumpLimit = 3;
 	static u8 x = 0;
