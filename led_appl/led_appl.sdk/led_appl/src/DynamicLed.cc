@@ -113,7 +113,7 @@ static void spiralAnimation(void)
 	static u8 r = 255;
 	static u8 g = 255;
 	static u8 b = 0;
-	static u8 runLimit = 3;
+	static u8 jumpLimit = 3;
 	static u8 x = 0;
 	static u8 y = 0;
 	static u8 xTmp = 0;
@@ -130,7 +130,7 @@ static void spiralAnimation(void)
 			{
 				case(forward):
 				{
-					if(jumpCnt==runLimit)
+					if(jumpCnt==jumpLimit)
 					{
 						stepMax=stepMax-2;
 						jumpCnt = 0;
@@ -148,7 +148,7 @@ static void spiralAnimation(void)
 				break;
 				case(downward):
 				{
-					if(jumpCnt==runLimit)
+					if(jumpCnt==jumpLimit)
 					{
 						stepMax=stepMax-2;
 						jumpCnt = 0;
@@ -165,7 +165,7 @@ static void spiralAnimation(void)
 				}break;
 				case(backward):
 				{
-					if(jumpCnt==runLimit)
+					if(jumpCnt==jumpLimit)
 					{
 						stepMax=stepMax-2;
 						jumpCnt = 0;
@@ -183,9 +183,9 @@ static void spiralAnimation(void)
 				}break;
 				case(upward):
 				{
-					if(jumpCnt==runLimit)
+					if(jumpCnt==jumpLimit)
 					{
-						runLimit = 2;
+						jumpLimit = 2;
 						stepMax=stepMax-2;
 						jumpCnt = 0;
 					}
