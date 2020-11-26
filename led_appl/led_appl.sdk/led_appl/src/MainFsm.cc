@@ -36,7 +36,7 @@ void MainFsm_StateMachine(void)
 		case FSM_IDLE:
 		{
 //			DisplayDriver_HomeEnableButtons(true);
-			state = FSM_DYNMAMIC_LED;
+			state = FSM_TETRIS;
 			firstAccess = 1;
 			break;
 		}

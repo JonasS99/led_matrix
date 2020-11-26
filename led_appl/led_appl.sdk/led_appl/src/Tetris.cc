@@ -65,7 +65,7 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 		if(PlayerBlock != nullptr)
 		{
 
-			if(!Block_CollisionUnder(*PlayerBlock)) // TODO check if block collides with any other block */
+			if(Block_CollisionUnder(*PlayerBlock)) // TODO check if block collides with any other block */
 			{
 				PlayerBlock = nullptr;
 			}
