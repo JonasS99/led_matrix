@@ -94,7 +94,13 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 			break;
 		}
 		case TETRISBUTTON_RIGHT:
+		{
 			break;
+		}
+		case TETRISBUTTON_ROTATE_LEFT:
+		{
+			break;
+		}
 		}
 	}
 	TetrisButton_old = TetrisButton;

@@ -9,6 +9,7 @@
 
 #include "Block.h"
 #include "LedMatrixDriver.h"
+#include "Tetris.h"
 u8 pixel_Array[20][20][3] = {0};
 
 //Names for the Block: https://www.netzpanorama.de/tetris-bloecke-ein-altes-nintendo-handbuch-kennt-die-namen-der-7-tetriminos/
@@ -119,26 +120,137 @@ void Block_Teewee(u16 Rotation, u8 PositionX, u8 PositionY){
 }
 
 
+
 bool Block_CollisionLeft(BlockT TetrisBlock)
 {
-	TetrisBlock.BlockType
-	TetrisBlock.PositionX
-	TetrisBlock.PositionY
+//	TetrisBlock.BlockType
+//	TetrisBlock.PositionX
+//	TetrisBlock.PositionY
 
 }
 
 bool Block_CollisionRight(BlockT TetrisBlock)
 {
-	TetrisBlock.BlockType
-	TetrisBlock.PositionX
-	TetrisBlock.PositionY
+//	TetrisBlock.BlockType
+//	TetrisBlock.PositionX
+//	TetrisBlock.PositionY
 
 }
 
 bool Block_CollisionUnder(BlockT TetrisBlock)
 {
-	TetrisBlock.BlockType
-	TetrisBlock.PositionX
-	TetrisBlock.PositionY
+//	TetrisBlock.BlockType
+//	TetrisBlock.PositionX
+//	TetrisBlock.PositionY
+}
+void Block_Orange_Ricky(u16 Rotation, u8 PositionX, u8 PositionY){
+	switch(Rotation){
+		case 0:
+			pixel_Array[PositionX+2][PositionY][0] = 255;
+			pixel_Array[PositionX+2][PositionY][1] = 130;
+			pixel_Array[PositionX][PositionY+1][0] = 255;
+			pixel_Array[PositionX][PositionY+1][1] = 130;
+			pixel_Array[PositionX+1][PositionY+1][0] = 255;
+			pixel_Array[PositionX+1][PositionY+1][1] = 130;
+			pixel_Array[PositionX+2][PositionY+1][0] = 255;
+			pixel_Array[PositionX+2][PositionY+1][1] = 130;
+			break;
+		case 90:
+			pixel_Array[PositionX][PositionY][0] = 255;
+			pixel_Array[PositionX][PositionY][1] = 130;
+			pixel_Array[PositionX][PositionY+1][0] = 255;
+			pixel_Array[PositionX][PositionY+1][1] = 130;
+			pixel_Array[PositionX][PositionY+2][0] = 255;
+			pixel_Array[PositionX][PositionY+2][1] = 130;
+			pixel_Array[PositionX+1][PositionY+2][0] = 255;
+			pixel_Array[PositionX+1][PositionY+2][1] = 130;
+			break;
+		case 180:
+			pixel_Array[PositionX][PositionY][0] = 255;
+			pixel_Array[PositionX][PositionY][1] = 130;
+			pixel_Array[PositionX][PositionY+1][0] = 255;
+			pixel_Array[PositionX][PositionY+1][1] = 130;
+			pixel_Array[PositionX+1][PositionY][0] = 255;
+			pixel_Array[PositionX+1][PositionY][1] = 130;
+			pixel_Array[PositionX+2][PositionY][0] = 255;
+			pixel_Array[PositionX+2][PositionY][1] = 130;
+			break;
+		case 270:
+			pixel_Array[PositionX][PositionY][0] = 255;
+			pixel_Array[PositionX][PositionY][1] = 130;
+			pixel_Array[PositionX+1][PositionY][0] = 255;
+			pixel_Array[PositionX+1][PositionY][1] = 130;
+			pixel_Array[PositionX+1][PositionY+1][0] = 255;
+			pixel_Array[PositionX+1][PositionY+1][1] = 130;
+			pixel_Array[PositionX+1][PositionY+2][0] = 255;
+			pixel_Array[PositionX+1][PositionY+2][1] = 130;
+			break;
+	}
+}
 
+void Block_Blue_Ricky(u16 Rotation, u8 PositionX, u8 PositionY){
+	switch(Rotation){
+		case 0:
+			pixel_Array[PositionX][PositionY][2] = 255;
+			pixel_Array[PositionX][PositionY+1][2] = 255;
+			pixel_Array[PositionX+1][PositionY+1][2] = 255;
+			pixel_Array[PositionX+2][PositionY+1][2] = 255;
+			break;
+		case 90:
+			pixel_Array[PositionX][PositionY][2] = 255;
+			pixel_Array[PositionX+1][PositionY][2] = 255;
+			pixel_Array[PositionX][PositionY+1][2] = 255;
+			pixel_Array[PositionX][PositionY+2][2] = 255;
+			break;
+		case 180:
+			pixel_Array[PositionX][PositionY][2] = 255;
+			pixel_Array[PositionX+1][PositionY][2] = 255;
+			pixel_Array[PositionX+2][PositionY][2] = 255;
+			pixel_Array[PositionX+2][PositionY+1][2] = 255;
+			break;
+		case 270:
+			pixel_Array[PositionX][PositionY+2][2] = 255;
+			pixel_Array[PositionX+1][PositionY][2] = 255;
+			pixel_Array[PositionX+1][PositionY+1][2] = 255;
+			pixel_Array[PositionX+1][PositionY+2][2] = 255;
+			break;
+	}
+}
+
+void Block_Cleveland_Z(u16 Rotation, u8 PositionX, u8 PositionY){
+	switch(Rotation){
+		case 0:
+		case 180:
+			pixel_Array[PositionX][PositionY][0] = 255;
+			pixel_Array[PositionX+1][PositionY][0] = 255;
+			pixel_Array[PositionX+1][PositionY + 1][0] = 255;
+			pixel_Array[PositionX+1][PositionY + 1][0] = 255;
+			break;
+		case 90:
+		case 270:
+			pixel_Array[PositionX+1][PositionY][0] = 255;
+			pixel_Array[PositionX+1][PositionY+1][0] = 255;
+			pixel_Array[PositionX][PositionY+1][0] = 255;
+			pixel_Array[PositionX][PositionY+2][0] = 255;
+			break;
+	}
+}
+
+void Block_Rhode_Island_Z(u16 Rotation, u8 PositionX, u8 PositionY){
+	switch(Rotation){
+		case 0:
+		case 180:
+			pixel_Array[PositionX+1][PositionY][1] = 255;
+			pixel_Array[PositionX+2][PositionY][1] = 255;
+			pixel_Array[PositionX][PositionY+1][1] = 255;
+			pixel_Array[PositionX+1][PositionY+1][1] = 255;
+			break;
+		case 90:
+		case 270:
+			pixel_Array[PositionX][PositionY][1] = 255;
+			pixel_Array[PositionX][PositionY+1][1] = 255;
+			pixel_Array[PositionX+1][PositionY+1][1] = 255;
+			pixel_Array[PositionX+1][PositionY+2][1] = 255;
+			break;
+	}
 }

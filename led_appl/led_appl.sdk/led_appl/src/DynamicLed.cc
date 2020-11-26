@@ -9,6 +9,7 @@
 
 /* module global function declaration */
 static void rainbowAnimation(void);
+static void squareAnimation(void);
 static void spiralAnimation(void);
 static void stroboAnimation(void);
 static void weihnachtAnimation(void);
@@ -26,14 +27,14 @@ void DynamicLed_animation(dynamicLedMode_t animation, bool firstAccess)
 			rainbowAnimation();
 		}break;
 
+		case square:
+		{
+			squareAnimation();
+		}break;
+
 		case spiral:
 		{
 			spiralAnimation();
-		}break;
-
-		case strobo:
-		{
-			//stroboAnimation();
 		}break;
 
 		case weihnachtsanimation:
@@ -81,7 +82,7 @@ static void weihnachtAnimation(void)
 
 }
 
-static void spiralAnimation(void)
+static void squareAnimation(void)
 {
 	static u32 animationCount = 0;
 	u8 size = 20;
@@ -99,5 +100,115 @@ static void spiralAnimation(void)
 	animationCount++;
 }
 
+typedef enum
+{
+	forward=0,
+	downward,
+	backward,
+	upward
+}direction;
+static void spiralAnimation(void)
+{
+	static direction route  = forward;
+	static u8 r = 255;
+	static u8 g = 255;
+	static u8 b = 0;
+	static u8 runLimit = 3;
+	static u8 x = 0;
+	static u8 y = 0;
+	static u8 xTmp = 0;
+	static u8 yTmp= 0;
+	static u32 animationCount = 0;
+	static u8 step = 0;
+	static u8 stepMax = 19;
+	static u8 jumpCnt = 0;
+	if(animationCount>=150)
+	{
+			animationCount = 0;
+
+			switch(route)
+			{
+				case(forward):
+				{
+					if(jumpCnt==runLimit)
+					{
+						stepMax=stepMax-2;
+						jumpCnt = 0;
+					}
+					x = step;
+					LedMatrixDriver_SetLed(x,y,r,g,b);
+					if(step==stepMax)
+					{
+						route = downward;
+						jumpCnt++;
+						step = 0;
+					}
+					step++;
+				}
+				break;
+				case(downward):
+				{
+					if(jumpCnt==runLimit)
+					{
+						stepMax=stepMax-2;
+						jumpCnt = 0;
+					}
+					y = step;
+					LedMatrixDriver_SetLed(x,y,r,g,b);
+					if(step==stepMax)
+					{
+						route = backward;
+						jumpCnt++;
+						step = 0;
+					}
+					step++;
+				}break;
+				case(backward):
+				{
+					if(jumpCnt==runLimit)
+					{
+						stepMax=stepMax-2;
+						jumpCnt = 0;
+					}
+					xTmp = x - step;
+					LedMatrixDriver_SetLed(xTmp,y,r,g,b);
+					if(step==stepMax)
+					{
+						route = upward;
+						jumpCnt++;
+						step = 0;
+						x = xTmp;
+					}
+					step++;
+				}break;
+				case(upward):
+				{
+					if(jumpCnt==runLimit)
+					{
+						runLimit = 2;
+						stepMax=stepMax-2;
+						jumpCnt = 0;
+					}
+					yTmp = y - step;
+					LedMatrixDriver_SetLed(x,yTmp,r,g,b);
+					if(step==stepMax)
+					{
+						route = forward;
+						jumpCnt++;
+						step = 0;
+						y = yTmp;
+					}
+					step++;
+				}break;
+				default:
+				{
+					break;
+				}
+			}
+
+
+		}
+		animationCount++;
+}
 
 
