@@ -128,7 +128,7 @@ static void spiralAnimation(void)
     static u8 jumpCnt = 0;
 	static u8 xTmp, yTmp = 0;
 
-	if(animationCount>=20)
+	if(animationCount>=10)
 	{
 			animationCount = 0;
 			LedMatrixDriver_ShiftColors(&r,&g,&b);
