@@ -122,7 +122,7 @@ static void spiralAnimation(void)
 	static u8 step = 0;
 	static u8 stepMax = 20;
 	static u8 jumpCnt = 0;
-	if(animationCount>=30)
+	if(animationCount>=15)
 	{
 		u8 e;
 			animationCount = 0;
