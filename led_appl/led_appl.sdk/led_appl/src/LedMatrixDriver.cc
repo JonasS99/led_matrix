@@ -166,11 +166,11 @@ void LedMatrixDriver_CreateSquare(u8 startX, u8 startY, u8 size)
  */
 void LedMatrixDriver_ShiftColors(u8* r, u8* g, u8* b)
 {
-	if(*r<205) *r+=20;
+	if(*r<250) *r+=5;
 	else *r = 40;
-	if(*g<175) *g+=40;
+	if(*g<250) *g+=5;
 	else *g = 40;
-	if(*b<165) *b+=60;
+	if(*b<250) *b+=5;
 	else *b = 40;
 }
 
