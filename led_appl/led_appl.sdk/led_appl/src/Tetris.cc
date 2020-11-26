@@ -65,16 +65,13 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 		if(PlayerBlock != nullptr)
 		{
 
-			if(PlayerBlock->PositionY >=18)
+			if(!Block_CollisionUnder(*PlayerBlock)) // TODO check if block collides with any other block */
 			{
-				if(PlayerBlock->PositionY >=18) // TODO check if block collides with any other block */
-				{
-					PlayerBlock = nullptr;
-				}
-				else
-				{
-					PlayerBlock->PositionY += 1;
-				}
+				PlayerBlock = nullptr;
+			}
+			else
+			{
+				PlayerBlock->PositionY += 1;
 			}
 		}
 		DelayCounter++;
@@ -91,27 +88,49 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 	{
 		switch(TetrisButton)
 		{
-		case TETRISBUTTON_HARDDROP:
-		{
-			break;
-		}
-		case TETRISBUTTON_LEFT:
-		{
-			break;
-		}
-		case TETRISBUTTON_RIGHT:
-		{
-			break;
-		}
-		case TETRISBUTTON_ROTATE_LEFT:
-		{
-			break;
-		}
+			case TETRISBUTTON_HARDDROP:
+			{
+				while(!Block_CollisionUnder(*PlayerBlock))
+				{
+					PlayerBlock->PositionY += 1;
+				}
+				PlayerBlock = nullptr;
+				break;
+			}
+			case TETRISBUTTON_LEFT:
+			{
+				if(!Block_CollisionLeft(*PlayerBlock))
+				{
+					PlayerBlock->PositionX -= 1;
+				}
+				break;
+			}
+			case TETRISBUTTON_RIGHT:
+			{
+				if(!Block_CollisionRight(*PlayerBlock))
+				{
+					PlayerBlock->PositionX += 1;
+				}
+				break;
+			}
+			case TETRISBUTTON_ROTATE_LEFT:
+			{
+
+				break;
+			}
+			case TETRISBUTTON_ROTATE_RIGHT:
+			{
+				break;
+			}
+			default:
+			{
+				break;
+			}
 		}
 	}
+
 	TetrisButton_old = TetrisButton;
 
-	DelayCounter %= 51;
 
 
 }
