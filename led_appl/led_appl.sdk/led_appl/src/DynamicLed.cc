@@ -120,7 +120,7 @@ static void spiralAnimation(void)
 	static u8 yTmp= 0;
 	static u32 animationCount = 0;
 	static u8 step = 0;
-	static u8 stepMax = 19;
+	static u8 stepMax = 20;
 	static u8 jumpCnt = 0;
 	if(animationCount>=150)
 	{
@@ -136,6 +136,7 @@ static void spiralAnimation(void)
 						jumpCnt = 0;
 					}
 					xTmp = x + step;
+					step++;
 					LedMatrixDriver_SetLed(xTmp,y,r,g,b);
 					if(step==stepMax)
 					{
@@ -144,7 +145,6 @@ static void spiralAnimation(void)
 						step = 0;
 						x = xTmp;
 					}
-					step++;
 				}
 				break;
 				case(downward):
@@ -155,14 +155,15 @@ static void spiralAnimation(void)
 						jumpCnt = 0;
 					}
 					yTmp = y + step;
-					LedMatrixDriver_SetLed(x,y,r,g,b);
+					step++;
+					LedMatrixDriver_SetLed(x,yTmp,r,g,b);
 					if(step==stepMax)
 					{
 						route = backward;
 						jumpCnt++;
 						step = 0;
+						y = yTmp;
 					}
-					step++;
 				}break;
 				case(backward):
 				{
@@ -172,6 +173,7 @@ static void spiralAnimation(void)
 						jumpCnt = 0;
 					}
 					xTmp = x - step;
+					step++;
 					LedMatrixDriver_SetLed(xTmp,y,r,g,b);
 					if(step==stepMax)
 					{
@@ -180,17 +182,17 @@ static void spiralAnimation(void)
 						step = 0;
 						x = xTmp;
 					}
-					step++;
 				}break;
 				case(upward):
 				{
 					if(jumpCnt==jumpLimit)
 					{
-						//jumpLimit = 2;
+						jumpLimit = 2;
 						stepMax=stepMax-2;
 						jumpCnt = 0;
 					}
 					yTmp = y - step;
+					step++;
 					LedMatrixDriver_SetLed(x,yTmp,r,g,b);
 					if(step==stepMax)
 					{
@@ -200,7 +202,6 @@ static void spiralAnimation(void)
 						step = 0;
 						y = yTmp;
 					}
-					step++;
 				}break;
 				default:
 				{
@@ -212,5 +213,7 @@ static void spiralAnimation(void)
 		}
 		animationCount++;
 }
+
+
 
 
