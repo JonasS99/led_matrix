@@ -201,7 +201,7 @@ static void spiralAnimation(void)
 						jumpCnt++;
 						step = 0;
 						y = yTmp;
-						if(stepMax==2)
+						if(stepMax==2 && jumpCnt==1)
 						{
 							LedMatrixDriver_ClearAllLed();
 							route = forward;
