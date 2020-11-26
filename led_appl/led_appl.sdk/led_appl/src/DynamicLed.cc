@@ -17,6 +17,15 @@ static void weihnachtAnimation(void);
 /* variable declaration */
 static bool firstAccessCheck;
 
+typedef enum
+{
+	init=0,
+	forward,
+	downward,
+	backward,
+	upward
+}direction;
+
 void DynamicLed_animation(dynamicLedMode_t animation, bool firstAccess)
 {
 	firstAccessCheck = firstAccess;
@@ -55,6 +64,9 @@ static void rainbowAnimation(void)
 {
 	static u32 animationCount = 0;
 	static u8 colorCount = 0;
+	static u8 r = 255;
+	static u8 g = 0;
+	static u8 b = 0;
 	if(firstAccessCheck==1)
 	{
 		LedMatrixDriver_ClearAllLed();
@@ -63,8 +75,9 @@ static void rainbowAnimation(void)
 			colorCount = 0;
 			for(u8 x=0 ; x<20 ; x++)
 			{
-				LedMatrixDriver_SetLed(x,y,colorArray[colorCount][0],colorArray[colorCount][1],colorArray[colorCount][2]);
-				if(x==3 || x==7 || x==11 || x==15) colorCount++;
+				LedMatrixDriver_SetLed(x,y,r,g,b);//colorArray[colorCount][0],colorArray[colorCount][1],colorArray[colorCount][2]);
+				LedMatrixDriver_ShiftColors(&r,&g,&b);
+				//if(x==3 || x==7 || x==11 || x==15) colorCount++;
 			}
 		}
 	}
@@ -100,14 +113,7 @@ static void squareAnimation(void)
 	animationCount++;
 }
 
-typedef enum
-{
-	init=0,
-	forward,
-	downward,
-	backward,
-	upward
-}direction;
+
 static void spiralAnimation(void)
 {
 	static direction route  = init;
@@ -121,7 +127,6 @@ static void spiralAnimation(void)
     static u8 stepMax = 20;
     static u8 jumpCnt = 0;
 	static u8 xTmp, yTmp = 0;
-
 
 	if(animationCount>=20)
 	{
@@ -222,7 +227,6 @@ static void spiralAnimation(void)
 			}
 		}
 		animationCount++;
-
 }
 
 
