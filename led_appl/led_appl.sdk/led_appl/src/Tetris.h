@@ -22,8 +22,8 @@ typedef struct
 
 
 
-
-void Tetris_CycleCall(void);
+void Tetris_Init(void);
+void Tetris_CycleCall(TetrisButtonsT TetrisButton);
 
 
 

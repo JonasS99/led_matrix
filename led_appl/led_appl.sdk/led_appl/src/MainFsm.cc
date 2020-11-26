@@ -170,9 +170,10 @@ void MainFsm_StateMachine(void)
 			break;
 		}
 
-		case FSM_TETRIS:{
+		case FSM_TETRIS:
+		{
 			Block_Clear_Array();
-			Tetris_CycleCall();
+			Tetris_CycleCall(TETRISBUTTON_UNDEFINED);
 			Block_Set_Array();
 			break;
 		}

@@ -6,12 +6,13 @@
  */
 
 #include "Tetris.h"
-
+#include "xintc.h"
 
 /* variables */
-BlockT Block[1000];
+BlockT Block[100];
 u16 BlockCounter = 0;
 BlockT* PlayerBlock = nullptr;
+u32 DelayCounter = 0;
 
 /* functions */
 void Tetris_InitBlock(BlockT* Block);
@@ -21,13 +22,14 @@ void Tetris_InitBlock(BlockT* Block);
 
 void Tetris_Init(void)
 {
-
+	DelayCounter = 0;
 }
 
-void Tetris_CycleCall(void)
+void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 {
-	static u32 DelayCounter = 0;
+	static TetrisButtonsT TetrisButton_old = TETRISBUTTON_UNDEFINED;
 
+	/* if no Block selected for Player get next one in array */
 	if(PlayerBlock==nullptr)
 	{
 		PlayerBlock = &Block[BlockCounter];
@@ -35,6 +37,7 @@ void Tetris_CycleCall(void)
 		BlockCounter++;
 	}
 
+	/* Write all blocks into pixel array */
 	for(u8 i = 0; i<BlockCounter; i++)
 	{
 		switch(Block[i].BlockType)
@@ -55,16 +58,19 @@ void Tetris_CycleCall(void)
 		}
 	}
 
-
-	if(DelayCounter == 15000)
+	/* drop player block down by one if delay is expired */
+	if(DelayCounter == 500)
 	{
-		if(PlayerBlock->PositionY >=19)
+		if(PlayerBlock != nullptr)
 		{
-			PlayerBlock = nullptr;
-		}
-		else
-		{
-			PlayerBlock->PositionY += 1;
+			if(PlayerBlock->PositionY >=18) // TODO check if block collides with any other block */
+			{
+				PlayerBlock = nullptr;
+			}
+			else
+			{
+				PlayerBlock->PositionY += 1;
+			}
 		}
 		DelayCounter++;
 	}
@@ -72,7 +78,26 @@ void Tetris_CycleCall(void)
 	{
 		DelayCounter++;
 	}
-	DelayCounter %= 15001;
+	DelayCounter %= 501;
+
+	/* process Player input */
+	if((TetrisButton_old != TetrisButton)&&(TetrisButton != TETRISBUTTON_UNDEFINED))
+	{
+		switch(TetrisButton)
+		{
+		case TETRISBUTTON_HARDDROP:
+		{
+			break;
+		}
+		case TETRISBUTTON_LEFT:
+		{
+			break;
+		}
+		case TETRISBUTTON_RIGHT:
+			break;
+		}
+	}
+	TetrisButton_old = TetrisButton;
 
 }
 
@@ -83,7 +108,27 @@ void Tetris_Reset(void)
 
 void Tetris_InitBlock(BlockT* Block)
 {
-	Block->BlockType = BLOCK_SMASHBOY;
+	static u8 BlockTypeCounter = 0;
+	switch(BlockTypeCounter)
+	{
+		case 0:
+		{
+			Block->BlockType = BLOCK_SMASHBOY;
+			break;
+		}
+		case 1:
+		{
+			Block->BlockType = BLOCK_HERO;
+			break;
+		}
+		case 2:
+		{
+			Block->BlockType = BLOCK_TEEWEE;
+			break;
+		}
+	}
+	BlockTypeCounter++;
+	BlockTypeCounter %= 3;
 	Block->PositionX = 9;
 	Block->PositionY = 2;
 	Block->Rotation = 0;
