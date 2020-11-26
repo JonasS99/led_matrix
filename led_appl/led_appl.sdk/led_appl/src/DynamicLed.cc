@@ -122,7 +122,7 @@ static void spiralAnimation(void)
 	static u8 step = 0;
 	static u8 stepMax = 20;
 	static u8 jumpCnt = 0;
-	if(animationCount>=5)
+	if(animationCount>=20)
 	{
 			animationCount = 0;
 			LedMatrixDriver_ShiftColors(&r,&g,&b);
@@ -201,7 +201,7 @@ static void spiralAnimation(void)
 						jumpCnt++;
 						step = 0;
 						y = yTmp;
-						if(stepMax==2 && jumpCnt==1)
+						if(stepMax==2 && jumpCnt==2)
 						{
 							LedMatrixDriver_ClearAllLed();
 							route = forward;
