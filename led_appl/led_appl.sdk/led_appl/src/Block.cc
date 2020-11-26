@@ -117,3 +117,28 @@ void Block_Teewee(u16 Rotation, u8 PositionX, u8 PositionY){
 			break;
 	}
 }
+
+
+bool Block_CollisionLeft(BlockT TetrisBlock)
+{
+	TetrisBlock.BlockType
+	TetrisBlock.PositionX
+	TetrisBlock.PositionY
+
+}
+
+bool Block_CollisionRight(BlockT TetrisBlock)
+{
+	TetrisBlock.BlockType
+	TetrisBlock.PositionX
+	TetrisBlock.PositionY
+
+}
+
+bool Block_CollisionUnder(BlockT TetrisBlock)
+{
+	TetrisBlock.BlockType
+	TetrisBlock.PositionX
+	TetrisBlock.PositionY
+
+}
