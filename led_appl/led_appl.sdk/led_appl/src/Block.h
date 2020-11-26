@@ -10,6 +10,7 @@
 
 #include "xil_types.h"
 #include "MyTypdefs.h"
+#include "Tetris.h"
 
 
 typedef struct
@@ -29,6 +30,8 @@ void Block_Orange_Ricky(u16 Rotation, u8 PositionX, u8 PositionY);
 void Block_Blue_Ricky(u16 Rotation, u8 PositionX, u8 PositionY);
 void Block_Cleveland_Z(u16 Rotation, u8 PositionX, u8 PositionY);
 void Block_Rhode_Island_Z(u16 Rotation, u8 PositionX, u8 PositionY);
+bool Block_CollisionLeft(BlockT TetrisBlock);
+bool Block_CollisionRight(BlockT TetrisBlock);
 
 bool Block_CollisionUnder(BlockT TetrisBlock);
 bool Block_CollisionRight(BlockT TetrisBlock);

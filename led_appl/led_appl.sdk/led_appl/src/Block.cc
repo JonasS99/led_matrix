@@ -121,22 +121,8 @@ void Block_Teewee(u16 Rotation, u8 PositionX, u8 PositionY){
 
 
 
-bool Block_CollisionLeft(BlockT TetrisBlock)
-{
-//	TetrisBlock.BlockType
-//	TetrisBlock.PositionX
-//	TetrisBlock.PositionY
-	return false;
 
-}
 
-bool Block_CollisionRight(BlockT TetrisBlock)
-{
-//	TetrisBlock.BlockType
-//	TetrisBlock.PositionX
-//	TetrisBlock.PositionY
-	return false;
-}
 
 bool Block_CollisionUnder(BlockT TetrisBlock)
 {
@@ -305,3 +291,88 @@ void Block_Rhode_Island_Z(u16 Rotation, u8 PositionX, u8 PositionY){
 			break;
 	}
 }
+
+
+
+bool Block_CollisionLeft(BlockT TetrisBlock){
+	// Block Smashboy
+	if(TetrisBlock.BlockType == BLOCK_SMASHBOY){
+		if(TetrisBlock.PositionX==0){
+			return true;
+		}
+		if(pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY][0] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY][1] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY][2] != 0 ||
+		   pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+1][0] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+1][1] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+1][2] != 0){
+			return true;
+		}
+		return false;
+	}
+
+	// Block Teewee, without rotation
+	if(TetrisBlock.BlockType == BLOCK_TEEWEE){
+		if(TetrisBlock.PositionX==0){
+			return true;
+		}
+		if(pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY][0] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY][1] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY][2] != 0 ||
+		   pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+1][0] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+1][1] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+1][2] != 0){
+			return true;
+		}
+		return false;
+	}
+
+	// Block Hero, without rotation
+	if(TetrisBlock.BlockType == BLOCK_HERO){
+		if(TetrisBlock.PositionX==0){
+			return true;
+		}
+		if(pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY][0] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY][1] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY][2] != 0 ||
+		   pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+1][0] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+1][1] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+1][2] != 0 ||
+		   pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+2][0] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+2][1] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+2][2] != 0 ||
+		   pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+3][0] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+3][1] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+3][2] != 0){
+			return true;
+		}
+		return false;
+	}
+
+}
+
+bool Block_CollisionRight(BlockT TetrisBlock){
+	// Block Smashboy
+	if(TetrisBlock.BlockType == BLOCK_SMASHBOY){
+		if(TetrisBlock.PositionX==19){
+			return true;
+		}
+		if(pixel_Array[TetrisBlock.PositionX+1][TetrisBlock.PositionY][0] != 0 || pixel_Array[TetrisBlock.PositionX+1][TetrisBlock.PositionY][1] != 0 || pixel_Array[TetrisBlock.PositionX+1][TetrisBlock.PositionY][2] != 0 ||
+		   pixel_Array[TetrisBlock.PositionX+1][TetrisBlock.PositionY+1][0] != 0 || pixel_Array[TetrisBlock.PositionX+1][TetrisBlock.PositionY+1][1] != 0 || pixel_Array[TetrisBlock.PositionX+1][TetrisBlock.PositionY+1][2] != 0){
+			return true;
+		}
+		return false;
+	}
+
+	// Block Teewee, without rotation
+	if(TetrisBlock.BlockType == BLOCK_TEEWEE){
+		if(TetrisBlock.PositionX==0){
+			return true;
+		}
+		if(pixel_Array[TetrisBlock.PositionX+1][TetrisBlock.PositionY][0] != 0 || pixel_Array[TetrisBlock.PositionX+1][TetrisBlock.PositionY][1] != 0 || pixel_Array[TetrisBlock.PositionX+1][TetrisBlock.PositionY][2] != 0 ||
+		   pixel_Array[TetrisBlock.PositionX+1][TetrisBlock.PositionY+1][0] != 0 || pixel_Array[TetrisBlock.PositionX+1][TetrisBlock.PositionY+1][1] != 0 || pixel_Array[TetrisBlock.PositionX+1][TetrisBlock.PositionY+1][2] != 0){
+			return true;
+		}
+		return false;
+	}
+
+	// Block Hero, without rotation
+	if(TetrisBlock.BlockType == BLOCK_HERO){
+		if(TetrisBlock.PositionX==0){
+			return true;
+		}
+		if(pixel_Array[TetrisBlock.PositionX+1][TetrisBlock.PositionY][0] != 0 || pixel_Array[TetrisBlock.PositionX+1][TetrisBlock.PositionY][1] != 0 || pixel_Array[TetrisBlock.PositionX+1][TetrisBlock.PositionY][2] != 0 ||
+		   pixel_Array[TetrisBlock.PositionX+1][TetrisBlock.PositionY+1][0] != 0 || pixel_Array[TetrisBlock.PositionX+1][TetrisBlock.PositionY+1][1] != 0 || pixel_Array[TetrisBlock.PositionX+1][TetrisBlock.PositionY+1][2] != 0 ||
+		   pixel_Array[TetrisBlock.PositionX+1][TetrisBlock.PositionY+2][0] != 0 || pixel_Array[TetrisBlock.PositionX+1][TetrisBlock.PositionY+2][1] != 0 || pixel_Array[TetrisBlock.PositionX+1][TetrisBlock.PositionY+2][2] != 0 ||
+		   pixel_Array[TetrisBlock.PositionX+1][TetrisBlock.PositionY+3][0] != 0 || pixel_Array[TetrisBlock.PositionX+1][TetrisBlock.PositionY+3][1] != 0 || pixel_Array[TetrisBlock.PositionX+1][TetrisBlock.PositionY+3][2] != 0){
+			return true;
+		}
+		return false;
+	}
+}
+
+
