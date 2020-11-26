@@ -8,7 +8,7 @@
 #include "xintc.h"
 #include "xgpio.h"
 #include "MainFsm.h"
-
+#include "LedMatrixDriver.h"
 
 
 
@@ -22,6 +22,8 @@ int main()
 	while(1)
 	{
 		MainFsm_StateMachine();
+		LedMatrixDriver_Update();
+
 	}
 
 	/* Disable Cache */

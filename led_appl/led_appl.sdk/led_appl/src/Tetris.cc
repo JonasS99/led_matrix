@@ -58,18 +58,23 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 		}
 	}
 
+
 	/* drop player block down by one if delay is expired */
 	if(DelayCounter == 500)
 	{
 		if(PlayerBlock != nullptr)
 		{
-			if(PlayerBlock->PositionY >=18) // TODO check if block collides with any other block */
+
+			if(PlayerBlock->PositionY >=18)
 			{
-				PlayerBlock = nullptr;
-			}
-			else
-			{
-				PlayerBlock->PositionY += 1;
+				if(PlayerBlock->PositionY >=18) // TODO check if block collides with any other block */
+				{
+					PlayerBlock = nullptr;
+				}
+				else
+				{
+					PlayerBlock->PositionY += 1;
+				}
 			}
 		}
 		DelayCounter++;
@@ -78,6 +83,7 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 	{
 		DelayCounter++;
 	}
+
 	DelayCounter %= 501;
 
 	/* process Player input */
@@ -104,6 +110,9 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 		}
 	}
 	TetrisButton_old = TetrisButton;
+
+	DelayCounter %= 51;
+
 
 }
 
