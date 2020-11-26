@@ -102,32 +102,44 @@ static void squareAnimation(void)
 
 typedef enum
 {
-	forward=0,
+	init=0,
+	forward,
 	downward,
 	backward,
 	upward
 }direction;
 static void spiralAnimation(void)
 {
-	static direction route  = forward;
+	static direction route  = init;
 	static u8 r = 255;
 	static u8 g = 0;
 	static u8 b = 0;
-	static u8 jumpLimit = 3;
-	static u8 x = 0;
-	static u8 y = 0;
-	static u8 xTmp = 0;
-	static u8 yTmp= 0;
 	static u32 animationCount = 0;
-	static u8 step = 0;
-	static u8 stepMax = 20;
-	static u8 jumpCnt = 0;
+	static u8 jumpLimit = 3;
+    static u8 x,y = 0;
+    static u8 step = 0;
+    static u8 stepMax = 20;
+    static u8 jumpCnt = 0;
+	static u8 xTmp, yTmp = 0;
+
+
 	if(animationCount>=20)
 	{
 			animationCount = 0;
 			LedMatrixDriver_ShiftColors(&r,&g,&b);
 			switch(route)
 			{
+				case(init):
+				{
+					LedMatrixDriver_ClearAllLed();
+					jumpLimit = 3;
+					x = 0;
+				    y = 0;
+					step = 0;
+					stepMax = 20;
+					jumpCnt = 0;
+					route = forward;
+				}break;
 				case(forward):
 				{
 					if(jumpCnt==jumpLimit)
@@ -145,8 +157,7 @@ static void spiralAnimation(void)
 						step = 0;
 						x = xTmp;
 					}
-				}
-				break;
+				}break;
 				case(downward):
 				{
 					if(jumpCnt==jumpLimit)
@@ -203,20 +214,11 @@ static void spiralAnimation(void)
 						y = yTmp;
 						if(stepMax==2)
 						{
-							LedMatrixDriver_ClearAllLed();
-							route = forward;
-							stepMax = 20;
-							jumpCnt = 0;
-							jumpLimit = 3;
-							x = 0;
-							y = 0;
+							route = init;
 						}
 					}
 				}break;
-				default:
-				{
-					break;
-				}
+				default: break;
 			}
 		}
 		animationCount++;
