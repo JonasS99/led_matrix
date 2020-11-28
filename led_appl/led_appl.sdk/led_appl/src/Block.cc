@@ -292,7 +292,12 @@ void Block_Rhode_Island_Z(u16 Rotation, u8 PositionX, u8 PositionY){
 	}
 }
 
-
+bool Block_Field_Emty(u8 PositionX, u8 PositionY){
+	if(pixel_Array[PositionX][PositionY][0] != 0 ||pixel_Array[PositionX][PositionY][1] != 0 ||pixel_Array[PositionX][PositionY][1] != 0){
+		return true;
+	}
+	return false;
+}
 
 bool Block_CollisionLeft(BlockT TetrisBlock){
 	// Block Smashboy
@@ -300,8 +305,8 @@ bool Block_CollisionLeft(BlockT TetrisBlock){
 		if(TetrisBlock.PositionX==0){
 			return true;
 		}
-		if(pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY][0] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY][1] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY][2] != 0 ||
-		   pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+1][0] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+1][1] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+1][2] != 0){
+		if(Block_Field_Emty(TetrisBlock.PositionX-1, TetrisBlock.PositionY) ||
+	    	Block_Field_Emty(TetrisBlock.PositionX-1, TetrisBlock.PositionY+1)){
 			return true;
 		}
 		return false;
@@ -309,14 +314,28 @@ bool Block_CollisionLeft(BlockT TetrisBlock){
 
 	// Block Teewee, without rotation
 	if(TetrisBlock.BlockType == BLOCK_TEEWEE){
-		if(TetrisBlock.PositionX==0){
-			return true;
+		if(TetrisBlock.Rotation == 0){
+			if(TetrisBlock.PositionX==0){
+				return true;
+			}
+			if(pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY][0] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY][1] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY][2] != 0 ||
+			   pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+1][0] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+1][1] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+1][2] != 0){
+				return true;
+			}
+			return false;
 		}
-		if(pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY][0] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY][1] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY][2] != 0 ||
-		   pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+1][0] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+1][1] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+1][2] != 0){
-			return true;
+		if(TetrisBlock.Rotation == 90){
+			if(TetrisBlock.PositionX==0){
+				return true;
+			}
+			if(pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY][0] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY][1] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY][2] != 0 ||
+			   pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY][0] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY][1] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY][2] != 0 ||
+			   pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+1][0] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+1][1] != 0 || pixel_Array[TetrisBlock.PositionX-1][TetrisBlock.PositionY+1][2] != 0){
+				return true;
+			}
+			return false;
+
 		}
-		return false;
 	}
 
 	// Block Hero, without rotation
