@@ -10,7 +10,7 @@
 #include "Block.h"
 #include "LedMatrixDriver.h"
 
-u8 pixel_Array[20][20][3] = {0};
+u8 pixel_Array[20][100][3] = {0};
 bool Block_checkPixelOn(u8 posX, u8 posY);
 //Names for the Block: https://www.netzpanorama.de/tetris-bloecke-ein-altes-nintendo-handbuch-kennt-die-namen-der-7-tetriminos/
 
@@ -29,6 +29,18 @@ void Block_Clear_Array(){
 		}
 	}
 }
+
+bool Block_CheckRow(u8 row)
+{
+  bool ret = true;
+  for(u8 i = 0; i < 20; i++)
+  {
+	  if(!Block_Field_Emty(i, row))
+		  ret = false;
+  }
+  return ret;
+}
+
 
 void Block_Smashboy(u16 Rotation, u8 PositionX, u8 PositionY){
 	switch(Rotation){

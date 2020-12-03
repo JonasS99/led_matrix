@@ -7,6 +7,7 @@
 
 #include "Tetris.h"
 #include "xintc.h"
+#include "MainFsm.h"
 #define MAX_NUM_BLOCKS 100
 /* variables */
 BlockT Block[MAX_NUM_BLOCKS];
@@ -29,6 +30,7 @@ void Tetris_Init(void)
 
 void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 {
+
 	static TetrisButtonsT TetrisButton_old = TETRISBUTTON_UNDEFINED;
 
 	/* if no Block selected for Player get next one in array */
@@ -155,7 +157,7 @@ void Tetris_Reset(void)
 void Tetris_InitBlock(BlockT* Block)
 {
 	static u8 BlockTypeCounter = 0;
-	switch(BlockTypeCounter)
+	switch(rand0to2)
 	{
 		case 0:
 		{

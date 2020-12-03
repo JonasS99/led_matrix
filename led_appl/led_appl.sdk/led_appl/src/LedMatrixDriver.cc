@@ -267,7 +267,7 @@ void LEDMatrixDriver_Pixelmatrix(void){
 }
 
 
-void LEDMatrixDriver_Set_Pixel_Array(u8 Pixel_Array[20][20][3]){
+void LEDMatrixDriver_Set_Pixel_Array(u8 Pixel_Array[20][100][3]){
 	for(u8 i = 0 ; i<20 ; i++){
 		for(u8 j = 0 ; j<20 ; j++){
 			LedMatrixDriver_SetLed(i , j, Pixel_Array[i][j][0], Pixel_Array[i][j][1], Pixel_Array[i][j][2]);
