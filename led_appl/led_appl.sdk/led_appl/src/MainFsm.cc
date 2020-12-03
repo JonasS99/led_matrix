@@ -221,7 +221,7 @@ void MainFsm_StateMachine(void)
 					}
 			}
 			/* Application code begin */
-			
+			StaticLED_Shapes(StaticLED_state_Mario);
 			/* Application code end */
 			break;
 		}
@@ -249,9 +249,8 @@ void MainFsm_StateMachine(void)
 				}
 			}
 			/* Application code begin */
-
+			StaticLED_Shapes(StaticLED_state_ChristmasTree);
 			/* Application code end */
-
 			break;
 		}
 
