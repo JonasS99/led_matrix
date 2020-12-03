@@ -25,7 +25,6 @@ static bool firstAccess = 0;
 void MainFsm_Init(void)
 {
 	LedMatrixDriver_Init();
-	LedMatrixDriver_SetAllLed(0,0,0);
 	DisplayDriver_Init();
 }
 
@@ -35,6 +34,7 @@ void MainFsm_StateMachine(void)
 	button_id_t button_touched;
 	LedMatrixDriver_Update();
 	static bool first_entry = true;
+	mydisp.begin();
 
 	switch(state)
 	{
@@ -52,12 +52,14 @@ void MainFsm_StateMachine(void)
 		{
 			if (first_entry)
 			{
-								// First entry in Idle State
+				// First entry in state
 				first_entry = false;
 				DisplayDriver_ClearDisp();
 				DisplayDriver_DisableAllButtons();
 				DisplayDriver_HomeEnableButtons(true);
 				DisplayDriver_HomeDraw();
+				LedMatrixDriver_SetAllLed(0,0,0);
+
 			}
 			else
 			{
@@ -91,10 +93,6 @@ void MainFsm_StateMachine(void)
 					}
 				}
 			}
-			
-			//DynamicLed_animation(rainbow, firstAccess);
-		    DynamicLed_animation(square, firstAccess);
-			firstAccess = 0;
 			break;
 		}
 
@@ -108,6 +106,7 @@ void MainFsm_StateMachine(void)
 				DisplayDriver_DisableAllButtons();
 				DisplayDriver_StaticLedEnableButtons(true);
 				DisplayDriver_StaticLedDraw();
+				LedMatrixDriver_SetAllLed(0,0,0);
 			}
 			else
 			{
@@ -144,12 +143,14 @@ void MainFsm_StateMachine(void)
 		{
 			if (first_entry)
 			{
-				// First entry in Idle State
+				// First entry in state
 				first_entry = false;
 				DisplayDriver_ClearDisp();
 				DisplayDriver_DisableAllButtons();
 				DisplayDriver_DynamicLedEnableButtons(true);
 				DisplayDriver_DynamicLedDraw();
+				LedMatrixDriver_SetAllLed(0,0,0);
+				firstAccess = 1;
 			}
 			else
 			{
@@ -180,6 +181,7 @@ void MainFsm_StateMachine(void)
 				DisplayDriver_DisableAllButtons();
 				DisplayDriver_RegulatorEnableButtons(true);
 				DisplayDriver_RegulatorDraw();
+				LedMatrixDriver_SetAllLed(0,0,0);
 			}
 			else
 			{
@@ -209,6 +211,7 @@ void MainFsm_StateMachine(void)
 				DisplayDriver_DisableAllButtons();
 				DisplayDriver_FormEnableButtons(true);
 				DisplayDriver_FormDraw();
+				LedMatrixDriver_SetAllLed(0,0,0);
 			}
 			else
 			{
@@ -239,6 +242,7 @@ void MainFsm_StateMachine(void)
 				DisplayDriver_DisableAllButtons();
 				DisplayDriver_FPGAEnableButtons(true);
 				DisplayDriver_FPGADraw();
+				LedMatrixDriver_SetAllLed(0,0,0);
 			}
 			else
 			{
@@ -267,6 +271,7 @@ void MainFsm_StateMachine(void)
 				DisplayDriver_DisableAllButtons();
 				DisplayDriver_TetrisEnableButtons(true);
 				DisplayDriver_TetrisDraw();
+				LedMatrixDriver_SetAllLed(0,0,0);
 			}
 			else
 			{
