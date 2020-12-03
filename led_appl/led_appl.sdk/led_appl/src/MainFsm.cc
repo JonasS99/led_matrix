@@ -89,6 +89,7 @@ void MainFsm_StateMachine(void)
 						state = FSM_FPGA;
 						first_entry = true;
 					}
+				}
 			}
 			
 			//DynamicLed_animation(rainbow, firstAccess);
