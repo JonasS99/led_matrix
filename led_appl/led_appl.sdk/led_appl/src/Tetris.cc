@@ -69,7 +69,10 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 
 			if(Block_CollisionUnder(*PlayerBlock)) // TODO check if block collides with any other block */
 			{
-				PlayerBlock = nullptr;
+				if (PlayerBlock->PositionX == 9 && PlayerBlock->PositionY == 2)
+					Tetris_Init();
+				else
+					PlayerBlock = nullptr;
 			}
 			else
 			{
