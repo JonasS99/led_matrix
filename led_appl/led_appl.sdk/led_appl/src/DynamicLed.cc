@@ -70,15 +70,16 @@ static void rainbowAnimation(void)
 	if(firstAccessCheck==1)
 	{
 		LedMatrixDriver_ClearAllLed();
-		for(u8 y=0 ; y<20 ; y++)
+		for(u8 x=0 ; x<20 ; x++)
 		{
 			colorCount = 0;
-			for(u8 x=0 ; x<20 ; x++)
+			for(u8 y=0 ; y<20 ; y++)
 			{
 				LedMatrixDriver_SetLed(x,y,r,g,b);//colorArray[colorCount][0],colorArray[colorCount][1],colorArray[colorCount][2]);
-				LedMatrixDriver_ShiftColors(&r,&g,&b);
+
 				//if(x==3 || x==7 || x==11 || x==15) colorCount++;
 			}
+			LedMatrixDriver_ShiftColors(&r,&g,&b);
 		}
 	}
 	firstAccessCheck = 0;
