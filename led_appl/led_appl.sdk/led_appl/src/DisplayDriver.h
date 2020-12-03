@@ -25,10 +25,23 @@ typedef enum {
 void DisplayDriver_Init(void);
 void DisplayDriver_HomeDraw();
 void DisplayDriver_StaticLedDraw();
+void DisplayDriver_TetrisDraw();
+void DisplayDriver_DynamicLedDraw();
+void DisplayDriver_FPGADraw();
+void DisplayDriver_FormDraw();
+void DisplayDriver_RegulatorDraw();
+
 void DisplayDriver_HomeEnableButtons(bool ctrl);
 void DisplayDriver_StaticLedEnableButtons(bool ctrl);
+void DisplayDriver_TetrisEnableButtons(bool ctrl);
+void DisplayDriver_DynamicLedEnableButtons(bool ctrl);
+void DisplayDriver_FPGAEnableButtons(bool ctrl);
+void DisplayDriver_FormEnableButtons(bool ctrl);
+void DisplayDriver_RegulatorEnableButtons(bool ctrl);
+
 void DisplayDriver_ClearDisp(void);
 button_id_t DispalyDriver_CheckButtons(void);
+void DisplayDriver_DisableAllButtons(void);
 
 
 #endif /* SRC_DISPLAYDRIVER_H_ */
