@@ -121,9 +121,9 @@ void LedMatrixDriver_ClearAllLed(void)
 /*
  * Slide all led to the right
  */
-void LedMatrixDriver_SlideAllLed(void)
+void LedMatrixDriver_SlideAllLedRight(void)
 {
-	u32 last;
+	u16 last;
 	for(u8 y=0 ; y<20 ; y++)
 	{
 		last = ledMatrix[19][y];
@@ -135,6 +135,39 @@ void LedMatrixDriver_SlideAllLed(void)
 	}
 }
 
+/*
+ * Slide all led down
+ */
+void LedMatrixDriver_SlideAllLedDown(void)
+{
+	u16 last;
+	for(u8 x=0 ; x<20 ; x++)
+	{
+		last = ledMatrix[x][19];
+		for(u8 y=18 ; y>0 ; y--)
+		{
+			ledMatrix[x][y+1] = ledMatrix[x][y];
+		}
+		ledMatrix[x][0] = last;
+	}
+}
+
+/*
+ * Slide all led up
+ */
+void LedMatrixDriver_SlideAllLedUp(void)
+{
+	u16 last;
+	for(u8 x=0 ; x<20 ; x++)
+	{
+		last = ledMatrix[x][0];
+		for(u8 y=18 ; y>=0 ; y--)
+		{
+			ledMatrix[x][y] = ledMatrix[x][y+1];
+		}
+		ledMatrix[x][19] = last;
+	}
+}
 /*
  * create square
  */

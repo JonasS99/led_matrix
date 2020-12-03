@@ -82,9 +82,13 @@ static void rainbowAnimation(void)
 		}
 	}
 	firstAccessCheck = 0;
-	if(animationCount>=40)
+	if(animationCount==20)
 	{
-		LedMatrixDriver_SlideAllLed();
+		LedMatrixDriver_SlideAllLedUp();
+	}
+	else if(animationCount>=40)
+	{
+		LedMatrixDriver_SlideAllLedRight();
 		animationCount = 0;
 	}
 	animationCount++;
