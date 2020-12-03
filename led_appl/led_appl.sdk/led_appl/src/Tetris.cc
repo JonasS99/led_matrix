@@ -6,102 +6,167 @@
  */
 
 #include "Tetris.h"
-#include "LedMatrixDriver.h"
-#include "Block.h"
+#include "xintc.h"
 
-/************** PIXEL **************/
-void TetrisPixel::SetColor(TetrisColorsT color)
-{
-	switch(color)
-	{
-	case OFF:
-		colorR = 0x00;
-		colorG = 0x00;
-		colorB = 0x00;
-	default:
-		colorR = 0x0F;
-		colorG = 0x00;
-		colorB = 0x0F;
-		break;
-	}
-}
+/* variables */
+BlockT Block[100];
+u16 BlockCounter = 0;
+BlockT* PlayerBlock = nullptr;
+u32 DelayCounter = 0;
 
-u8 TetrisPixel::GetColorR(void)
-{
-	return colorR;
-}
-
-u8 TetrisPixel::GetColorG(void)
-{
-	return colorG;
-}
-
-u8 TetrisPixel::GetColorB(void)
-{
-	return colorR;
-}
-
-/************** PIXEL END **************/
-/************** MATRIX *****************/
-
-void TetrisMatrix::ClearAllPixel(void)
-{
-	for(u32 x = 0; x < 20; x++)
-	{
-		for(u32 y = 0; y < 20; y++)
-		{
-			Pixel_[x][y].SetColor(OFF);
-		}
-	}
-}
+/* functions */
+void Tetris_InitBlock(BlockT* Block);
 
 
-
-
-void TetrisMatrix::SetPixel(u32 posX, u32 posY, TetrisColorsT color)
-{
-	Pixel_[posX][posY].SetColor(color);
-}
-
-
-
-
-void TetrisMatrix::WritePixelToMatrix(void)
-{
-	for(u32 x = 0; x < 20; x++)
-	{
-		for(u32 y = 0; y < 20; y++)
-		{
-			LedMatrixDriver_SetLed(x,y,Pixel_[x][y].GetColorR(), Pixel_[x][y].GetColorG(), Pixel_[x][y].GetColorB());
-		}
-	}
-}
-
-
-/************** MATRIX END *************/
 /************** TETRIS *****************/
-void Tetris::Init(void)
+
+void Tetris_Init(void)
 {
-
-
+	DelayCounter = 0;
 }
 
-
-
-void Tetris::CycleCall(void)
+void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 {
-	TetrisMatrix_obj->ClearAllPixel();
-	for(u32 i; i <100; i++)
+	static TetrisButtonsT TetrisButton_old = TETRISBUTTON_UNDEFINED;
+
+	/* if no Block selected for Player get next one in array */
+	if(PlayerBlock==nullptr)
 	{
-		if(Blocks[i] != nullptr)
+		PlayerBlock = &Block[BlockCounter];
+		Tetris_InitBlock(PlayerBlock);
+		BlockCounter++;
+	}
+
+	/* Write all blocks into pixel array */
+	for(u8 i = 0; i<BlockCounter; i++)
+	{
+		switch(Block[i].BlockType)
 		{
-			Blocks[i]->CycleCall();
+			case BLOCK_HERO:
+				Block_Hero(Block[i].Rotation,Block[i].PositionX, Block[i].PositionY);
+				break;
+			case BLOCK_TEEWEE:
+				Block_Teewee(Block[i].Rotation,Block[i].PositionX, Block[i].PositionY);
+				break;
+
+			case BLOCK_SMASHBOY:
+				Block_Smashboy(Block[i].Rotation,Block[i].PositionX, Block[i].PositionY);
+				break;
+
+			default:
+				break;
 		}
 	}
-	TetrisMatrix_obj->WritePixelToMatrix();
+
+
+	/* drop player block down by one if delay is expired */
+	if(DelayCounter == 500)
+	{
+		if(PlayerBlock != nullptr)
+		{
+
+			if(Block_CollisionUnder(*PlayerBlock)) // TODO check if block collides with any other block */
+			{
+				PlayerBlock = nullptr;
+			}
+			else
+			{
+				PlayerBlock->PositionY += 1;
+			}
+		}
+		DelayCounter++;
+	}
+	else
+	{
+		DelayCounter++;
+	}
+
+	DelayCounter %= 501;
+
+	/* process Player input */
+	if((TetrisButton_old != TetrisButton)&&(TetrisButton != TETRISBUTTON_UNDEFINED))
+	{
+		switch(TetrisButton)
+		{
+			case TETRISBUTTON_HARDDROP:
+			{
+				while(!Block_CollisionUnder(*PlayerBlock))
+				{
+					PlayerBlock->PositionY += 1;
+				}
+				PlayerBlock = nullptr;
+				break;
+			}
+			case TETRISBUTTON_LEFT:
+			{
+				if(!Block_CollisionLeft(*PlayerBlock))
+				{
+					PlayerBlock->PositionX -= 1;
+				}
+				break;
+			}
+			case TETRISBUTTON_RIGHT:
+			{
+				if(!Block_CollisionRight(*PlayerBlock))
+				{
+					PlayerBlock->PositionX += 1;
+				}
+				break;
+			}
+			case TETRISBUTTON_ROTATE_LEFT:
+			{
+
+				break;
+			}
+			case TETRISBUTTON_ROTATE_RIGHT:
+			{
+				break;
+			}
+			default:
+			{
+				break;
+			}
+		}
+	}
+
+	TetrisButton_old = TetrisButton;
+
+
+
 }
 
+void Tetris_Reset(void)
+{
+	BlockCounter = 0;
+}
 
+void Tetris_InitBlock(BlockT* Block)
+{
+	static u8 BlockTypeCounter = 0;
+	switch(BlockTypeCounter)
+	{
+		case 0:
+		{
+			Block->BlockType = BLOCK_SMASHBOY;
+			break;
+		}
+		case 1:
+		{
+			Block->BlockType = BLOCK_HERO;
+			break;
+		}
+		case 2:
+		{
+			Block->BlockType = BLOCK_TEEWEE;
+			break;
+		}
+	}
+	BlockTypeCounter++;
+	BlockTypeCounter %= 3;
+	Block->PositionX = 9;
+	Block->PositionY = 2;
+	Block->Rotation = 0;
+}
 
 
 
