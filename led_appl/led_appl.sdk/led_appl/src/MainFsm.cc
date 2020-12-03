@@ -10,14 +10,11 @@
 #include "MyTypDefs.h"
 #include "DisplayDriver.h"
 #include "LedMatrixDriver.h"
-<<<<<<< HEAD
 #include <MyDisp.h>
 
 /* Function declaration */
-=======
 #include "DynamicLed.h"
 #include "Tetris.h"
->>>>>>> 6a766356e587c55e2b0444f2c8a0021ec906d710
 
 
 /* Function declaration */
@@ -43,69 +40,21 @@ void MainFsm_StateMachine(void)
 	{
 		case FSM_IDLE:
 		{
-<<<<<<< HEAD
 			// first entry in Idle State
 			state = FSM_HOME;
 			first_entry = true;
-=======
-//			DisplayDriver_HomeEnableButtons(true);
-			state = FSM_DYNMAMIC_LED;
+			
 			firstAccess = 1;
->>>>>>> 6a766356e587c55e2b0444f2c8a0021ec906d710
 			break;
 		}
+		
 		case FSM_HOME:
 		{
-<<<<<<< HEAD
 			if (first_entry)
-=======
-
-		//DynamicLed_animation(rainbow, firstAccess);
-		DynamicLed_animation(square, firstAccess);
-			firstAccess = 0;
-//			DisplayDriver_HomeDraw();
-//			button_touched = DispalyDriver_CheckButtons();
-//
-//			if (button_touched >= 0)
-//			{
-//				/* action if one button is pressed  */
-//				DisplayDriver_HomeEnableButtons(false);
-//				DisplayDriver_ClearDisp();
-//
-//				if (button_touched == BTN_ID_STATIC_LED)
-//				{
-//					/* Switch state to static led */
-//					DisplayDriver_StaticLedEnableButtons(true);
-//					state = FSM_STATIC_LED;
-//				}
-//				else if (button_touched == BTN_ID_TETRIS)
-//				{
-//					/* Switch state to tetris */
-//					state = FSM_TETRIS;
-//				}
-//				else if (button_touched == BTN_ID_DYNAMIC_LED)
-//				{
-//					/* Switch state to dynamic led */
-//					state = FSM_DYNMAMIC_LED;
-//					firstAccess = 1;
-//				}
-//				else if (button_touched == BTN_ID_WEL_FPGA)
-//				{
-//					/* Switch state to fpga */
-//					state = FSM_FPGA;
-//				}
-//			}
-
-			DisplayDriver_HomeDraw();
-			button_touched = DispalyDriver_CheckButtons();
-
-			if (button_touched >= 0)
->>>>>>> 6a766356e587c55e2b0444f2c8a0021ec906d710
 			{
-				// First entry in Idle State
+								// First entry in Idle State
 				first_entry = false;
 				DisplayDriver_ClearDisp();
-<<<<<<< HEAD
 				DisplayDriver_DisableAllButtons();
 				DisplayDriver_HomeEnableButtons(true);
 				DisplayDriver_HomeDraw();
@@ -140,48 +89,17 @@ void MainFsm_StateMachine(void)
 						state = FSM_FPGA;
 						first_entry = true;
 					}
-=======
-
-				if (button_touched == BTN_ID_STATIC_LED)
-				{
-					/* Switch state to static led */
-					DisplayDriver_StaticLedEnableButtons(true);
-					state = FSM_STATIC_LED;
-				}
-				else if (button_touched == BTN_ID_TETRIS)
-				{
-					/* Switch state to tetris */
-					state = FSM_TETRIS;
-				}
-				else if (button_touched == BTN_ID_DYNAMIC_LED)
-				{
-					/* Switch state to dynamic led */
-					state = FSM_DYNMAMIC_LED;
-					firstAccess = 1;
-				}
-				else if (button_touched == BTN_ID_WEL_FPGA)
-				{
-					/* Switch state to FPGA */
-					state = FSM_FPGA;
->>>>>>> 6a766356e587c55e2b0444f2c8a0021ec906d710
-				}
 			}
+			
+			//DynamicLed_animation(rainbow, firstAccess);
+		    DynamicLed_animation(square, firstAccess);
+			firstAccess = 0;
 			break;
 		}
 
 		case FSM_STATIC_LED:
 		{
-<<<<<<< HEAD
 			if (first_entry)
-=======
-			DisplayDriver_StaticLedDraw();
-			button_touched = DispalyDriver_CheckButtons();
-			//test program
-			StaticLED_Shapes(StaticLED_state_Minion);
-
-
-			if (button_touched >= 0)
->>>>>>> 6a766356e587c55e2b0444f2c8a0021ec906d710
 			{
 				// First entry in Idle State
 				first_entry = false;
@@ -216,12 +134,13 @@ void MainFsm_StateMachine(void)
 					}
 				}
 			}
+			
+			
 			break;
 		}
 
 		case FSM_DYNMAMIC_LED:
 		{
-<<<<<<< HEAD
 			if (first_entry)
 			{
 				// First entry in Idle State
@@ -245,10 +164,8 @@ void MainFsm_StateMachine(void)
 					}
 				}
 			}
-=======
 			DynamicLed_animation(rainbow, firstAccess);
 			firstAccess = 0;
->>>>>>> 6a766356e587c55e2b0444f2c8a0021ec906d710
 			break;
 		}
 
@@ -306,6 +223,8 @@ void MainFsm_StateMachine(void)
 					}
 				}
 			}
+			
+			StaticLED_Shapes(StaticLED_state_Minion);
 			break;
 		}
 
@@ -339,7 +258,6 @@ void MainFsm_StateMachine(void)
 
 		case FSM_TETRIS:
 		{
-<<<<<<< HEAD
 			if (first_entry)
 			{
 				// First entry in Idle State
@@ -363,11 +281,9 @@ void MainFsm_StateMachine(void)
 					}
 				}
 			}
-=======
 			Block_Clear_Array();
 			Tetris_CycleCall(TETRISBUTTON_UNDEFINED);
 			Block_Set_Array();
->>>>>>> 6a766356e587c55e2b0444f2c8a0021ec906d710
 			break;
 		}
 	}
