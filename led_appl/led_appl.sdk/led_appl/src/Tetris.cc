@@ -125,6 +125,13 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 			}
 			case TETRISBUTTON_ROTATE_RIGHT:
 			{
+				if (!Block_CollisionRotate(*PlayerBlock))
+				{
+					if(PlayerBlock->Rotation != 270)
+						PlayerBlock->Rotation += 90;
+					else
+						PlayerBlock->Rotation = 0;
+				}
 				break;
 			}
 			default:
