@@ -25,7 +25,3 @@ void StaticLED_Wait(u32 k);
 
 #endif /* SRC_STATICLED_H_ */
 
-
-
-
-

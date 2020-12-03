@@ -19,10 +19,10 @@ int main()
     Xil_DCacheEnable();
 
     MainFsm_Init();
+
 	while(1)
 	{
 		MainFsm_StateMachine();
-		LedMatrixDriver_Update();
 
 	}
 
