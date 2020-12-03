@@ -121,67 +121,6 @@ void Block_Teewee(u16 Rotation, u8 PositionX, u8 PositionY){
 
 
 
-
-/* Funktion unten neu definiert. Erweitert mit Rotation
-
-bool Block_CollisionUnder(BlockT TetrisBlock)
-{
-
-	switch(TetrisBlock.BlockType)
-	{
-	case BLOCK_SMASHBOY:
-	{
-		if(TetrisBlock.PositionY==18){
-				return true;
-			}
-		if(Block_checkPixelOn(TetrisBlock.PositionX, TetrisBlock.PositionY+2)||
-		   Block_checkPixelOn(TetrisBlock.PositionX+1, TetrisBlock.PositionY+2))
-		{
-			return true;
-		}
-
-		break;
-	}
-	case BLOCK_HERO:
-	{
-		if(TetrisBlock.PositionY==16){
-			return true;
-		}
-		if(Block_checkPixelOn(TetrisBlock.PositionX, TetrisBlock.PositionY+4))
-		{
-			return true;
-		}
-
-		break;
-	}
-	case BLOCK_TEEWEE:
-	{
-		if(TetrisBlock.PositionY==18){
-			return true;
-		}
-		if(Block_checkPixelOn(TetrisBlock.PositionX, TetrisBlock.PositionY+2)||
-		   Block_checkPixelOn(TetrisBlock.PositionX+1, TetrisBlock.PositionY+2)||
-		   Block_checkPixelOn(TetrisBlock.PositionX+2, TetrisBlock.PositionY+2))
-		{
-			return true;
-		}
-
-		break;
-	}
-
-	}
-	return false;
-
-
-}
-
-bool Block_checkPixelOn(u8 posX, u8 posY)
-{
-	return (pixel_Array[posX][posY][0] != 0 || pixel_Array[posX][posY][1] != 0 || pixel_Array[posX][posY][2] != 0);
-}
-
-*/
-
 void Block_Orange_Ricky(u16 Rotation, u8 PositionX, u8 PositionY){
 	switch(Rotation){
 		case 0:
@@ -391,6 +330,63 @@ bool Block_CollisionLeft(BlockT TetrisBlock){
 	}
 	return false;
 }
+
+
+bool Block_CollisionRotate(BlockT TetrisBlock){
+	switch(TetrisBlock.BlockType){
+		case BLOCK_TEEWEE:{
+			switch(TetrisBlock.Rotation){
+				case 0:
+					if(Block_Field_Emty(TetrisBlock.PositionX, TetrisBlock.PositionY) ||
+						Block_Field_Emty(TetrisBlock.PositionX+2, TetrisBlock.PositionY)){
+						return true;
+					}
+					break;
+				case 90:
+					if(Block_Field_Emty(TetrisBlock.PositionX+1, TetrisBlock.PositionY) ||
+						Block_Field_Emty(TetrisBlock.PositionX+2, TetrisBlock.PositionY)){
+						return true;
+					}
+					break;
+				case 180:
+					if(Block_Field_Emty(TetrisBlock.PositionX+1, TetrisBlock.PositionY) ||
+						Block_Field_Emty(TetrisBlock.PositionX+2, TetrisBlock.PositionY+1)){
+						return true;
+					}
+					break;
+				case 270:
+					if(Block_Field_Emty(TetrisBlock.PositionX+2, TetrisBlock.PositionY+1)){
+						return true;
+					}
+					break;
+			}
+			break;
+		}
+		case BLOCK_HERO:{
+			switch(TetrisBlock.Rotation){
+				case 0:
+				case 180:
+					if(Block_Field_Emty(TetrisBlock.PositionX+1, TetrisBlock.PositionY) ||
+						Block_Field_Emty(TetrisBlock.PositionX+2, TetrisBlock.PositionY) ||
+						Block_Field_Emty(TetrisBlock.PositionX+3, TetrisBlock.PositionY)){
+						return true;
+					}
+					break;
+				case 90:
+				case 270:
+					if(Block_Field_Emty(TetrisBlock.PositionX, TetrisBlock.PositionY+1) ||
+						Block_Field_Emty(TetrisBlock.PositionX, TetrisBlock.PositionY+2) ||
+						Block_Field_Emty(TetrisBlock.PositionX, TetrisBlock.PositionY+3)){
+						return true;
+					}
+					break;
+			}
+			break;
+		}
+	}
+	return false;
+}
+
 
 bool Block_CollisionRight(BlockT TetrisBlock){
 	switch(TetrisBlock.BlockType){
