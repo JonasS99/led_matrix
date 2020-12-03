@@ -7,9 +7,9 @@
 
 #include "Tetris.h"
 #include "xintc.h"
-
+#define MAX_NUM_BLOCKS 100
 /* variables */
-BlockT Block[100];
+BlockT Block[MAX_NUM_BLOCKS];
 u16 BlockCounter = 0;
 BlockT* PlayerBlock = nullptr;
 u32 DelayCounter = 0;
@@ -22,7 +22,9 @@ void Tetris_InitBlock(BlockT* Block);
 
 void Tetris_Init(void)
 {
+	BlockCounter = 0;
 	DelayCounter = 0;
+	PlayerBlock=nullptr;
 }
 
 void Tetris_CycleCall(TetrisButtonsT TetrisButton)

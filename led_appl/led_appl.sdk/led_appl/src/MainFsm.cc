@@ -265,6 +265,7 @@ void MainFsm_StateMachine(void)
 				DisplayDriver_ClearDisp();
 				DisplayDriver_TetrisEnableButtons(true);
 				LedMatrixDriver_SetAllLed(0,0,0);
+				Tetris_Init();
 			}
 			else
 			{
