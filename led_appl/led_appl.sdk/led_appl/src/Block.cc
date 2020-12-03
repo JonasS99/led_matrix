@@ -10,7 +10,7 @@
 #include "Block.h"
 #include "LedMatrixDriver.h"
 
-u8 pixel_Array[20][100][3] = {0};
+u8 pixel_Array[20][20][3] = {0};
 bool Block_checkPixelOn(u8 posX, u8 posY);
 //Names for the Block: https://www.netzpanorama.de/tetris-bloecke-ein-altes-nintendo-handbuch-kennt-die-namen-der-7-tetriminos/
 
