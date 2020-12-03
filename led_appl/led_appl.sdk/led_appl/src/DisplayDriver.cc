@@ -23,6 +23,11 @@ void DisplayDriver_Init()
 	mydisp.createButton(BTN_ID_FORMS,(char *)"Form.bmp",0,(82+99));
 
 	mydisp.createButton(BTN_ID_BACK,(char *)"back.bmp", 0,(82+99+99));
+
+	mydisp.createButton(BTN_ID_HARDDROP,(char *)"harddrop.bmp", 0,(82+99+99));
+	mydisp.createButton(BTN_ID_LEFT,(char *)"left.bmp", 0,(82+99+99));
+	mydisp.createButton(BTN_ID_RIGHT,(char *)"right.bmp", 0,(82+99+99));
+	mydisp.createButton(BTN_ID_ROTATE,(char *)"rotate.bmp", 0,(82+99+99));
 }
 
 void DisplayDriver_HomeDraw()
