@@ -205,13 +205,6 @@ void LedMatrixDriver_ShiftColors(u8* r, u8* g, u8* b)
 	if(*r==0 	&& *g>4		&& *b==255)	*g-=5;
 	if(*r<251 	&& *g==0 	&& *b==255)	*r+=5;
 	if(*r==255 	&& *g==0 	&&*b>4)		*b-=5;
-
-//	if(*r<250) *r+=5;
-//	else *r = 40;
-//	if(*g<250) *g+=1;
-//	else *g = 40;
-//	if(*b<250) *b+=5;
-//	else *b = 40;
 }
 
 //void ColorGradient(){
