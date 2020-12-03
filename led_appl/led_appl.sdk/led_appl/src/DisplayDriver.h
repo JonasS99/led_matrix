@@ -17,10 +17,14 @@ typedef enum {
 	BTN_ID_WEL_FPGA,
 	BTN_ID_REGULATOR,
 	BTN_ID_FORMS,
-	BTN_ID_BACK
+	BTN_ID_BACK,
+	BTN_ID_HARDDROP,
+	BTN_ID_LEFT,
+	BTN_ID_RIGHT,
+	BTN_ID_ROTATE
 } button_id_t;
 
-#define NUM_BUTTONS_USED 8
+#define NUM_BUTTONS_USED 12
 
 void DisplayDriver_Init(void);
 void DisplayDriver_HomeDraw();
