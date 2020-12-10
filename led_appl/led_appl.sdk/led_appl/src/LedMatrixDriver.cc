@@ -236,6 +236,24 @@ void LedMatrixDriver_ShiftColors(u8* r, u8* g, u8* b)
 //        delay(DelayTime);
 //    }
 //}
+/*shift all colors off pixel array*/
+void LedMatrixDriver_ShiftAllColors(void)
+{
+	u8 r,g,b;
+	for(u8 x = 0; x < 20 ; x++)
+	{
+		for (u8 y = 0; y < 20 ; y++)
+		{
+			if(!ledMatrix[x][y])
+			{
+				r = (u8)((ledMatrix[x][y]>>16));
+				g = (u8)((ledMatrix[x][y]>>8));
+				b = (u8)(ledMatrix[x][y]);
+				LedMatrixDriver_ShiftColors(&r,&g,&b);
+			}
+		}
+	}
+}
 
 void LedMatrixDriver_SetLedsForLoop(u16 i1,u16 i2,u16 j1,u16 j2,u16 r,u16 g,u16 b){
 	for(u16 i=i1; i<=i2; i++) for(u16 j=j1; j<=j2; j++) LedMatrixDriver_SetLed(i, j, r, g, b);
