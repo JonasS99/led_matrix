@@ -7,6 +7,6 @@
 	<item value="Auto Detect" key="design_led_appl_wrapper_hw_platform_0-device"/>
 	<item value="Local" key="design_led_appl_wrapper_hw_platform_0-target"/>
 	<item value="28f00am29ew-bpi-x16" key="design_led_appl_wrapper_hw_platform_0-flashType"/>
-	<item value="" key="design_led_appl_wrapper_hw_platform_0-imgFile"/>
+	<item value="C:\Users\Keller\Desktop\Harald\git_for_test\led_appl\led_appl.sdk\led_appl\Debug\led_appl.elf" key="design_led_appl_wrapper_hw_platform_0-imgFile"/>
 	<item value="" key="design_led_appl_wrapper_hw_platform_0-offSet"/>
 </section>
