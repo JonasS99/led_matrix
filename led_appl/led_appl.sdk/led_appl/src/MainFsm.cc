@@ -40,7 +40,7 @@ void MainFsm_StateMachine(void)
 		case FSM_IDLE:
 		{
 			/* First entry in Idle State */
-			state = FSM_HOME;
+			state = FSM_FPGA;
 			first_entry = true;
 			
 			firstAccess = 1;
@@ -307,7 +307,7 @@ void MainFsm_StateMachine(void)
 				first_entry = false;
 				DisplayDriver_ClearDisp();
 				DisplayDriver_FPGAEnableButtons(true);
-				LedMatrixDriver_SetAllLed(0,0,0);
+				LedMatrixDriver_SetAllLed(20,0,0);
 				firstAccess = 1;
 			}
 			else
@@ -378,6 +378,7 @@ void MainFsm_StateMachine(void)
 				}
 			}
 			/* Application code begin */
+
 			Tetris_CycleCall(TetrisButtonState);
 			/* Application code end */
 			break;
