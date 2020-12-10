@@ -64,6 +64,7 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 				}
 				else
 				{
+					Block_RemovePlayerBlockFromArray();
 					Block_Set_Block(PlayerBlock);
 					Block_Save_Array();
 					PlayerBlock = nullptr;
@@ -94,6 +95,7 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 				{
 					PlayerBlock->PositionY += 1;
 				}
+				Block_RemovePlayerBlockFromArray();
 				Block_Set_Block(PlayerBlock);
 				Block_Save_Array();
 				PlayerBlock = nullptr;
