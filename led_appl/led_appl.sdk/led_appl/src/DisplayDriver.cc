@@ -84,6 +84,7 @@ void DisplayDriver_FormDraw()
 
 void DisplayDriver_RegulatorDraw()
 {
+	mydisp.drawImage((char *)"Reg.bmp", 0, 100-15);
 	mydisp.drawImage((char *)"Regulator.bmp", 0, 0);
 	mydisp.drawButton(BTN_ID_BACK, BUTTON_UP);
 }

@@ -199,6 +199,8 @@ void MainFsm_StateMachine(void)
 
 		case FSM_REGULATOR:
 		{
+			static MDFNG finger_info;
+			static u8 r_val , g_val, b_val;
 			if (first_entry)
 			{
 				/* First entry in regulator state */
@@ -206,10 +208,16 @@ void MainFsm_StateMachine(void)
 				DisplayDriver_ClearDisp();
 				DisplayDriver_RegulatorEnableButtons(true);
 				LedMatrixDriver_SetAllLed(0,0,0);
+				finger_info.x = 0;
+				finger_info.y = 0;
+				r_val = 0;
+				g_val = 0;
+				b_val = 0;
 			}
 			else
 			{
 				mydisp.checkTouch();
+				mydisp.getFinger(0, &finger_info);
 				/* action if one button is pressed  */
 				if (mydisp.isTouched(BTN_ID_BACK) == BUTTON_DOWN)
 					{
@@ -220,7 +228,19 @@ void MainFsm_StateMachine(void)
 					}
 			}
 			/* Application code begin */
-			StaticLED_Shapes(StaticLED_state_Minion);
+			if ((finger_info.x > 5) && (finger_info.x <235) && (finger_info.y > 105) && (finger_info.y <153))
+			{
+				r_val = (u8)(255*((u16)(finger_info.x-5))/230);
+			}
+			else if ((finger_info.x > 5) && (finger_info.x <235) && (finger_info.y > 170) && (finger_info.y <215))
+			{
+				g_val = (u8)(255*((u16)(finger_info.x-5))/230);
+			}
+			else if ((finger_info.x > 5) && (finger_info.x <235) && (finger_info.y > 232) && (finger_info.y <277))
+			{
+				b_val = (u8)(255*((u16)(finger_info.x-5))/230);
+			}
+			 StaticLED_ColorController(r_val,g_val,b_val);
 			/* Application code end */
 			break;
 		}
