@@ -60,6 +60,9 @@ void DisplayDriver_TetrisDraw()
 void DisplayDriver_DynamicLedDraw()
 {
 	mydisp.drawImage((char *)"Dynamic_LED.bmp", 0, 0);
+	mydisp.drawButton(BTN_ID_SQUARE, BUTTON_UP);
+	mydisp.drawButton(BTN_ID_RAINBOW, BUTTON_UP);
+	mydisp.drawButton(BTN_ID_SPIRAL, BUTTON_UP);
 	mydisp.drawButton(BTN_ID_BACK, BUTTON_UP);
 }
 
@@ -73,6 +76,10 @@ void DisplayDriver_FormDraw()
 {
 	mydisp.drawImage((char *)"Form.bmp", 0, 0);
 	mydisp.drawButton(BTN_ID_BACK, BUTTON_UP);
+	mydisp.drawButton(BTN_ID_MINION, BUTTON_UP);
+	mydisp.drawButton(BTN_ID_MARIO, BUTTON_UP);
+	mydisp.drawButton(BTN_ID_SMILE, BUTTON_UP);
+	mydisp.drawButton(BTN_ID_CHRISTREE, BUTTON_UP);
 }
 
 void DisplayDriver_RegulatorDraw()
@@ -162,14 +169,23 @@ void DisplayDriver_DynamicLedEnableButtons(bool ctrl)
 	if (ctrl == true)
 	{
 		mydisp.createButton(BTN_ID_BACK,(char *)"back.bmp", 0,(82+99+99));
+		mydisp.createButton(BTN_ID_SQUARE,(char *)"Square.bmp", 5,100);
+		mydisp.createButton(BTN_ID_RAINBOW,(char *)"Rainbow.bmp",5+70+10,170);
+		mydisp.createButton(BTN_ID_SPIRAL,(char *)"Spiral.bmp", 5+70+10+70+10,240);
 
 		mydisp.enableButton(BTN_ID_BACK, ctrl);
+		mydisp.enableButton(BTN_ID_SQUARE, ctrl);
+		mydisp.enableButton(BTN_ID_RAINBOW, ctrl);
+		mydisp.enableButton(BTN_ID_SPIRAL, ctrl);
 
 		DisplayDriver_DynamicLedDraw();
 	}
 	else
 	{
 		mydisp.deleteButton(BTN_ID_BACK);
+		mydisp.deleteButton(BTN_ID_SQUARE);
+		mydisp.deleteButton(BTN_ID_RAINBOW);
+		mydisp.deleteButton(BTN_ID_SPIRAL);
 	}
 }
 
@@ -197,14 +213,26 @@ void DisplayDriver_FormEnableButtons(bool ctrl)
 	if (ctrl == true)
 	{
 		mydisp.createButton(BTN_ID_BACK,(char *)"back.bmp", 0,(82+99+99));
+		mydisp.createButton(BTN_ID_MINION,(char *)"Minion.bmp", 5,170);
+		mydisp.createButton(BTN_ID_MARIO,(char *)"Mario.bmp",5+70+10,240);
+		mydisp.createButton(BTN_ID_SMILE,(char *)"Smile.bmp", 5+70+10,100);
+		mydisp.createButton(BTN_ID_CHRISTREE,(char *)"ChrisTree.bmp", 5+70+10+70+10,170);
 
 		mydisp.enableButton(BTN_ID_BACK, ctrl);
+		mydisp.enableButton(BTN_ID_MINION, ctrl);
+		mydisp.enableButton(BTN_ID_MARIO, ctrl);
+		mydisp.enableButton(BTN_ID_SMILE, ctrl);
+		mydisp.enableButton(BTN_ID_CHRISTREE, ctrl);
 
 		DisplayDriver_FormDraw();
 	}
 	else
 	{
 		mydisp.deleteButton(BTN_ID_BACK);
+		mydisp.deleteButton(BTN_ID_MINION);
+		mydisp.deleteButton(BTN_ID_MARIO);
+		mydisp.deleteButton(BTN_ID_SMILE);
+		mydisp.deleteButton(BTN_ID_CHRISTREE);
 	}
 }
 

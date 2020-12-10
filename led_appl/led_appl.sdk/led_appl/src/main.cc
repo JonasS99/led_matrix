@@ -24,6 +24,7 @@ int main()
 	while(1)
 	{
 		rand0to2++;
+		rand0to2++;
 		rand0to2 %= 3;
 		MainFsm_StateMachine();
 

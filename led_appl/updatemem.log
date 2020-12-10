@@ -2,18 +2,18 @@
 # updatemem v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # 
-# Start of session at: Thu Oct 29 13:38:28 2020
-# Process ID: 9600
-# Current directory: C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl
-# Command line: updatemem.exe -mode batch -source C:/Xilinx/SDK/2019.1/scripts/updatemem/main.tcl -notrace -tclargs -meminfo C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.sdk/design_led_appl_wrapper_hw_platform_0/design_led_appl_wrapper.mmi -data C:/Xilinx/SDK/2019.1/data/embeddedsw/lib/microblaze/mb_bootloop_le.elf -proc design_led_appl_i/microblaze_0 -bit C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.sdk/design_led_appl_wrapper_hw_platform_0/design_led_appl_wrapper.bit -out C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.sdk/design_led_appl_wrapper_hw_platform_0/download.bit -force
-# Log file: C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/updatemem.log
-# Journal file: C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl\updatemem.jou
+# Start of session at: Thu Dec  3 14:21:02 2020
+# Process ID: 6012
+# Current directory: C:/Users/Keller/Desktop/Harald/git/led_appl
+# Command line: updatemem.exe -mode batch -source C:/Xilinx/SDK/2019.1/scripts/updatemem/main.tcl -notrace -tclargs -meminfo C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.sdk/design_led_appl_wrapper_hw_platform_0/design_led_appl_wrapper.mmi -data C:/Xilinx/SDK/2019.1/data/embeddedsw/lib/microblaze/mb_bootloop_le.elf -proc design_led_appl_i/microblaze_0 -bit C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.sdk/design_led_appl_wrapper_hw_platform_0/design_led_appl_wrapper.bit -out C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.sdk/design_led_appl_wrapper_hw_platform_0/download.bit -force
+# Log file: C:/Users/Keller/Desktop/Harald/git/led_appl/updatemem.log
+# Journal file: C:/Users/Keller/Desktop/Harald/git/led_appl\updatemem.jou
 #-----------------------------------------------------------
 source C:/Xilinx/SDK/2019.1/scripts/updatemem/main.tcl -notrace
- Loading bitfile C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.sdk/design_led_appl_wrapper_hw_platform_0/design_led_appl_wrapper.bit
+ Loading bitfile C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.sdk/design_led_appl_wrapper_hw_platform_0/design_led_appl_wrapper.bit
 Loading data files...
 Updating memory content...
 Creating bitstream...
-Writing bitstream C:/Users/Keller/Desktop/Harald/201022_Projekt_400_leds/led_appl/led_appl.sdk/design_led_appl_wrapper_hw_platform_0/download.bit...
-  update_mem: Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 535.531 ; gain = 443.973
-INFO: [Common 17-206] Exiting updatemem at Thu Oct 29 13:38:48 2020...
+Writing bitstream C:/Users/Keller/Desktop/Harald/git/led_appl/led_appl.sdk/design_led_appl_wrapper_hw_platform_0/download.bit...
+  update_mem: Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 534.523 ; gain = 443.023
+INFO: [Common 17-206] Exiting updatemem at Thu Dec  3 14:21:27 2020...

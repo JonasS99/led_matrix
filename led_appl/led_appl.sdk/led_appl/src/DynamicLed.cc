@@ -30,6 +30,11 @@ void DynamicLed_animation(dynamicLedMode_t animation, bool firstAccess)
 	firstAccessCheck = firstAccess;
 	switch(animation)
 	{
+		case idle:
+		{
+			//do nothing
+		}break;
+
 		case rainbow:
 		{
 			rainbowAnimation();
@@ -174,6 +179,10 @@ static void spiralAnimation(void)
     static u8 stepMax = 20;
     static u8 jumpCnt = 0;
 	static u8 xTmp, yTmp = 0;
+
+	if (firstAccessCheck)
+	 route = init;
+
 
 	if(animationCount>=10)
 	{

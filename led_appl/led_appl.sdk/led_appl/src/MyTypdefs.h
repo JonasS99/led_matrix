@@ -42,7 +42,8 @@ typedef enum {
 } shapes;
 
 typedef enum {
-	rainbow = 0,
+	idle = 0,
+	rainbow,
 	square,
 	spiral,
 	fpga,

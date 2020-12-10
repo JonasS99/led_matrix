@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item value="C:\Users\Keller\Desktop\Harald\git_for_test\led_appl\led_appl.sdk\led_appl\Debug" key="tcf_debug_app_selection"/>
 	<item value="C:\Users\Keller\Desktop\Harald\201022_Projekt_400_leds\led_appl\led_appl.sdk\design_led_appl_wrapper_hw_platform_4" key="debug_files_selection"/>
-	<item value="C:\Users\Keller\Desktop\Harald\201022_Projekt_400_leds\led_appl\led_appl.sdk\design_led_appl_wrapper_hw_platform_4" key="last_stored_selection"/>
+	<item value="C:\Users\Keller\Desktop\Harald\git_for_test\led_appl\led_appl.sdk\led_appl\Debug" key="zynq_flash_files_selection"/>
+	<item value="C:\Users\Keller\Desktop\Harald\git_for_test\led_appl\led_appl.sdk\led_appl\Debug" key="last_stored_selection"/>
 </section>
