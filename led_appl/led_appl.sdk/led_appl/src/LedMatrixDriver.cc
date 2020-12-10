@@ -161,9 +161,9 @@ void LedMatrixDriver_SlideAllLedUp(void)
 	for(u8 x=0 ; x<20 ; x++)
 	{
 		last = ledMatrix[x][0];
-		for(u8 y=18 ; y>=0 ; y--)
+		for(u8 y=18 ; y>0 ; y--)
 		{
-			ledMatrix[x][y] = ledMatrix[x][y+1];
+			ledMatrix[x][y-1] = ledMatrix[x][y];
 		}
 		ledMatrix[x][19] = last;
 	}
