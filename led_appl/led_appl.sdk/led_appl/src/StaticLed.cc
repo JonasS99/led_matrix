@@ -106,7 +106,7 @@ void StaticLED_EmojiSmile(void){
 }
 
 void StaticLED_EmojiSad(void){
-	//Set the Yellow circle for the Emoji (Yellow)
+/*	//Set the Yellow circle for the Emoji (Yellow)
 	LedMatrixDriver_SetLedsForLoop(7, 12, 0, 0, 255, 188, 0);
 	LedMatrixDriver_SetLedsForLoop(5, 14, 1, 1, 255, 188, 0);
 	LedMatrixDriver_SetLedsForLoop(4, 15, 2, 2, 255, 188, 0);
@@ -138,7 +138,7 @@ void StaticLED_EmojiSad(void){
 	LedMatrixDriver_SetLedsForLoop(13, 14, 14, 14, 255, 255, 255);
 
 	LedMatrixDriver_SetLedsForLoop(5, 5, 15, 15, 255, 255, 255);
-	LedMatrixDriver_SetLedsForLoop(14, 14, 15, 15, 255, 255, 255);
+	LedMatrixDriver_SetLedsForLoop(14, 14, 15, 15, 255, 255, 255);*/
 }
 
 void StaticLED_Mario(void){
