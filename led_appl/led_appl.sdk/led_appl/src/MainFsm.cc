@@ -38,15 +38,9 @@ void MainFsm_StateMachine(void)
 	{
 		case FSM_IDLE:
 		{
-<<<<<<< HEAD
-			/* First entry in Idle State */
-			state = FSM_FPGA;
-=======
 			// first entry in Idle State
 			state = FSM_HOME;
->>>>>>> 6dfe966dc45e7c749f460202c181ebda06be4758
 			first_entry = true;
-			
 			firstAccess = 1;
 			break;
 		}
@@ -206,7 +200,6 @@ void MainFsm_StateMachine(void)
 					}
 			}
 			/* Application code begin */
-<<<<<<< HEAD
 			if ((finger_info.x > 5) && (finger_info.x <235) && (finger_info.y > 105) && (finger_info.y <153))
 			{
 				r_val = (u8)(255*((u16)(finger_info.x-5))/230);
@@ -220,9 +213,6 @@ void MainFsm_StateMachine(void)
 				b_val = (u8)(255*((u16)(finger_info.x-5))/230);
 			}
 			 StaticLED_ColorController(r_val,g_val,b_val);
-=======
-
->>>>>>> 6dfe966dc45e7c749f460202c181ebda06be4758
 			/* Application code end */
 			break;
 		}
