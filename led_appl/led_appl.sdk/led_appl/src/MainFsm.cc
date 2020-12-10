@@ -21,7 +21,7 @@
 /* Variable declaration */
 static bool firstAccess = 0;
 
-/* Function*/
+/* Functions */
 void MainFsm_Init(void)
 {
 	LedMatrixDriver_Init();
@@ -34,11 +34,12 @@ void MainFsm_StateMachine(void)
 	LedMatrixDriver_Update();
 	static bool first_entry = true;
 
+
 	switch(state)
 	{
 		case FSM_IDLE:
 		{
-			// first entry in Idle State
+			/* First entry in Idle State */
 			state = FSM_HOME;
 			first_entry = true;
 			
@@ -50,7 +51,7 @@ void MainFsm_StateMachine(void)
 		{
 			if (first_entry)
 			{
-				// First entry in home state
+				/* First entry in home state */
 				first_entry = false;
 				DisplayDriver_ClearDisp();
 				DisplayDriver_HomeEnableButtons(true);
@@ -99,7 +100,7 @@ void MainFsm_StateMachine(void)
 		{
 			if (first_entry)
 			{
-				// First entry in static state
+				/* First entry in static state */
 				first_entry = false;
 				DisplayDriver_ClearDisp();
 				DisplayDriver_StaticLedEnableButtons(true);
@@ -139,14 +140,16 @@ void MainFsm_StateMachine(void)
 
 		case FSM_DYNMAMIC_LED:
 		{
+			static dynamicLedMode_t last_button_dyn = idle;
 			if (first_entry)
 			{
-				// First entry in dynamic led state
+				/* First entry in dynamic led state */
 				first_entry = false;
 				DisplayDriver_ClearDisp();
 				DisplayDriver_DynamicLedEnableButtons(true);
 				LedMatrixDriver_SetAllLed(0,0,0);
 				firstAccess = 1;
+				last_button_dyn = idle;
 			}
 			else
 			{
@@ -159,11 +162,35 @@ void MainFsm_StateMachine(void)
 					DisplayDriver_DynamicLedEnableButtons(false);
 					first_entry = true;
 				}
+				else if (mydisp.isTouched(BTN_ID_SQUARE) == BUTTON_DOWN)
+				{
+					/* Application code begin */
+					LedMatrixDriver_SetAllLed(0,0,0);
+					last_button_dyn = square;
+					firstAccess = 1;
+					/* Application code end */
+				}
+				else if (mydisp.isTouched(BTN_ID_RAINBOW) == BUTTON_DOWN)
+				{
+					/* Application code begin */
+					LedMatrixDriver_SetAllLed(0,0,0);
+					last_button_dyn = rainbow;
+					firstAccess = 1;
+					/* Application code end */
+				}
+				else if (mydisp.isTouched(BTN_ID_SPIRAL) == BUTTON_DOWN)
+				{
+					/* Application code begin */
+					LedMatrixDriver_SetAllLed(0,0,0);
+					last_button_dyn = spiral;
+					firstAccess = 1;
+					/* Application code end */
+				}
 
 			}
 
 			/* Application code begin */
-			DynamicLed_animation(rainbow, firstAccess);
+			DynamicLed_animation(last_button_dyn, firstAccess);
 			firstAccess = 0;
 			/* Application code end */
 
@@ -172,17 +199,25 @@ void MainFsm_StateMachine(void)
 
 		case FSM_REGULATOR:
 		{
+			static MDFNG finger_info;
+			static u8 r_val , g_val, b_val;
 			if (first_entry)
 			{
-				// First entry in regulator state
+				/* First entry in regulator state */
 				first_entry = false;
 				DisplayDriver_ClearDisp();
 				DisplayDriver_RegulatorEnableButtons(true);
 				LedMatrixDriver_SetAllLed(0,0,0);
+				finger_info.x = 0;
+				finger_info.y = 0;
+				r_val = 0;
+				g_val = 0;
+				b_val = 0;
 			}
 			else
 			{
 				mydisp.checkTouch();
+				mydisp.getFinger(0, &finger_info);
 				/* action if one button is pressed  */
 				if (mydisp.isTouched(BTN_ID_BACK) == BUTTON_DOWN)
 					{
@@ -193,20 +228,34 @@ void MainFsm_StateMachine(void)
 					}
 			}
 			/* Application code begin */
-
+			if ((finger_info.x > 5) && (finger_info.x <235) && (finger_info.y > 105) && (finger_info.y <153))
+			{
+				r_val = (u8)(255*((u16)(finger_info.x-5))/230);
+			}
+			else if ((finger_info.x > 5) && (finger_info.x <235) && (finger_info.y > 170) && (finger_info.y <215))
+			{
+				g_val = (u8)(255*((u16)(finger_info.x-5))/230);
+			}
+			else if ((finger_info.x > 5) && (finger_info.x <235) && (finger_info.y > 232) && (finger_info.y <277))
+			{
+				b_val = (u8)(255*((u16)(finger_info.x-5))/230);
+			}
+			 StaticLED_ColorController(r_val,g_val,b_val);
 			/* Application code end */
 			break;
 		}
 
 		case FSM_FORMS:
 		{
+			static shapes last_button_forms = StaticLED_state_IDLE;
 			if (first_entry)
 			{
-				// First entry in froms state
+				/* First entry in froms state */
 				first_entry = false;
 				DisplayDriver_ClearDisp();
 				DisplayDriver_FormEnableButtons(true);
 				LedMatrixDriver_SetAllLed(0,0,0);
+				last_button_forms = StaticLED_state_IDLE;
 			}
 			else
 			{
@@ -219,9 +268,33 @@ void MainFsm_StateMachine(void)
 						DisplayDriver_DynamicLedEnableButtons(false);
 						first_entry = true;
 					}
+				else if (mydisp.isTouched(BTN_ID_MINION) == BUTTON_DOWN)
+				{
+					/* Application code begin */
+					last_button_forms = StaticLED_state_Minion;
+					/* Application code end */
+				}
+				else if (mydisp.isTouched(BTN_ID_MARIO) == BUTTON_DOWN)
+				{
+					/* Application code begin */
+					last_button_forms = StaticLED_state_Mario;
+					/* Application code end */
+				}
+				else if (mydisp.isTouched(BTN_ID_SMILE) == BUTTON_DOWN)
+				{
+					/* Application code begin */
+					last_button_forms = StaticLED_state_EmojiSmile;
+					/* Application code end */
+				}
+				else if (mydisp.isTouched(BTN_ID_CHRISTREE) == BUTTON_DOWN)
+				{
+					/* Application code begin */
+					last_button_forms = StaticLED_state_ChristmasTree;
+					/* Application code end */
+				}
 			}
 			/* Application code begin */
-			StaticLED_Shapes(StaticLED_state_Mario);
+			StaticLED_Shapes(last_button_forms);
 			/* Application code end */
 			break;
 		}
@@ -230,11 +303,12 @@ void MainFsm_StateMachine(void)
 		{
 			if (first_entry)
 			{
-				// First entry in fpga state
+				/* First entry in fpga state */
 				first_entry = false;
 				DisplayDriver_ClearDisp();
 				DisplayDriver_FPGAEnableButtons(true);
-				LedMatrixDriver_SetAllLed(20,0,0);
+				LedMatrixDriver_SetAllLed(0,0,0);
+				firstAccess = 1;
 			}
 			else
 			{
@@ -249,7 +323,8 @@ void MainFsm_StateMachine(void)
 				}
 			}
 			/* Application code begin */
-			StaticLED_Shapes(StaticLED_state_ChristmasTree);
+			DynamicLed_animation(fpga, firstAccess);
+			firstAccess = 0;
 			/* Application code end */
 			break;
 		}
@@ -259,7 +334,7 @@ void MainFsm_StateMachine(void)
 			TetrisButtonsT TetrisButtonState = TETRISBUTTON_UNDEFINED;
 			if (first_entry)
 			{
-				// First entry in tetris state
+				/* First entry in tetris state */
 				first_entry = false;
 				DisplayDriver_ClearDisp();
 				DisplayDriver_TetrisEnableButtons(true);
@@ -279,25 +354,32 @@ void MainFsm_StateMachine(void)
 				}
 				else if (mydisp.isTouched(BTN_ID_LEFT) == BUTTON_DOWN)
 				{
+					/* Application code begin */
 					TetrisButtonState = TETRISBUTTON_LEFT;
+					/* Application code end */
 				}
 				else if (mydisp.isTouched(BTN_ID_HARDDROP) == BUTTON_DOWN)
 				{
+					/* Application code begin */
 					TetrisButtonState = TETRISBUTTON_HARDDROP;
+					/* Application code end */
 				}
 				else if (mydisp.isTouched(BTN_ID_ROTATE) == BUTTON_DOWN)
 				{
+					/* Application code begin */
 					TetrisButtonState = TETRISBUTTON_ROTATE_RIGHT;
+					/* Application code end */
 				}
 				else if (mydisp.isTouched(BTN_ID_RIGHT) == BUTTON_DOWN)
 				{
+					/* Application code begin */
 					TetrisButtonState = TETRISBUTTON_RIGHT;
+					/* Application code end */
 				}
 			}
 			/* Application code begin */
-//			Block_Clear_Array();
-			Tetris_CycleCall(TetrisButtonState);
 
+			Tetris_CycleCall(TetrisButtonState);
 			/* Application code end */
 			break;
 		}

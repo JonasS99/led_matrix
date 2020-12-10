@@ -18,6 +18,8 @@ extern u8 rand0to2;
 void MainFsm_Init(void);
 void MainFsm_StateMachine(void);
 
+/* Defines */
+
 
 
 #endif /* SRC_MAINFSM_H_ */

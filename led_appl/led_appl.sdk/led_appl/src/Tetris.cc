@@ -8,9 +8,9 @@
 #include "Tetris.h"
 #include "xintc.h"
 #include "MainFsm.h"
-#define MAX_NUM_BLOCKS 100
+#define MAX_NUM_BLOCKS 50
 /* variables */
-BlockT Block[MAX_NUM_BLOCKS];
+BlockT Block[2];
 u16 BlockCounter = 0;
 BlockT* PlayerBlock = nullptr;
 u32 DelayCounter = 0;
@@ -26,6 +26,7 @@ void Tetris_Init(void)
 	BlockCounter = 0;
 	DelayCounter = 0;
 	PlayerBlock=nullptr;
+	Block_Clear_Array();
 }
 
 void Tetris_CycleCall(TetrisButtonsT TetrisButton)
@@ -39,51 +40,16 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 		PlayerBlock = &Block[BlockCounter];
 		Tetris_InitBlock(PlayerBlock);
 		BlockCounter++;
+		BlockCounter %= 2;
 	}
 
-	/* Write all blocks into pixel array */
-//	for(u8 i = 0; i<BlockCounter; i++)
-//	{
-//		switch(Block[i].BlockType)
-//		{
-//			case BLOCK_HERO:
-//				Block_Hero(Block[i].Rotation,Block[i].PositionX, Block[i].PositionY);
-//				break;
-//			case BLOCK_TEEWEE:
-//				Block_Teewee(Block[i].Rotation,Block[i].PositionX, Block[i].PositionY);
-//				break;
-//
-//			case BLOCK_SMASHBOY:
-//				Block_Smashboy(Block[i].Rotation,Block[i].PositionX, Block[i].PositionY);
-//				break;
-//
-//			default:
-//				break;
-//		}
-//	}
 
 	Block_Save_Array();
 
-	switch(PlayerBlock->BlockType)
-	{
-		case BLOCK_HERO:
-			Block_Hero(PlayerBlock->Rotation,PlayerBlock->PositionX, PlayerBlock->PositionY);
-			break;
-
-		case BLOCK_TEEWEE:
-			Block_Teewee(PlayerBlock->Rotation,PlayerBlock->PositionX, PlayerBlock->PositionY);
-			break;
-
-		case BLOCK_SMASHBOY:
-			Block_Smashboy(PlayerBlock->Rotation,PlayerBlock->PositionX, PlayerBlock->PositionY);
-			break;
-
-		default:
-			break;
-	}
+	Block_Set_Block(PlayerBlock);
 
 	Block_Set_Array();
-	Block_RemovePlayerBlockFromArray();
+
 	/* drop player block down by one if delay is expired */
 	if(DelayCounter == 500)
 	{
@@ -93,9 +59,18 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 			if(Block_CollisionUnder(*PlayerBlock)) // TODO check if block collides with any other block */
 			{
 				if (PlayerBlock->PositionX == 9 && PlayerBlock->PositionY == 2)
+				{
 					Tetris_Init();
+				}
 				else
+				{
+					Block_RemovePlayerBlockFromArray();
+					Block_Set_Block(PlayerBlock);
+					Block_Save_Array();
 					PlayerBlock = nullptr;
+					//check if row is full
+					Block_CheckFullRow();
+				}
 			}
 			else
 			{
@@ -122,7 +97,12 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 				{
 					PlayerBlock->PositionY += 1;
 				}
+				Block_RemovePlayerBlockFromArray();
+				Block_Set_Block(PlayerBlock);
+				Block_Save_Array();
 				PlayerBlock = nullptr;
+				//check if row is full
+				Block_CheckFullRow();
 				break;
 			}
 			case TETRISBUTTON_LEFT:
@@ -163,6 +143,11 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 			}
 		}
 	}
+	if(PlayerBlock != nullptr)
+	{
+		Block_RemovePlayerBlockFromArray();
+	}
+
 
 	TetrisButton_old = TetrisButton;
 
@@ -170,10 +155,6 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 
 }
 
-void Tetris_Reset(void)
-{
-	BlockCounter = 0;
-}
 
 void Tetris_InitBlock(BlockT* Block)
 {
