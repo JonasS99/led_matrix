@@ -179,6 +179,10 @@ static void spiralAnimation(void)
     static u8 jumpCnt = 0;
 	static u8 xTmp, yTmp = 0;
 
+	if (firstAccessCheck)
+	 route = init;
+
+
 	if(animationCount>=10)
 	{
 			animationCount = 0;
