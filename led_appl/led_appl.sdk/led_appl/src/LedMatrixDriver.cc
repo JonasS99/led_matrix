@@ -250,6 +250,7 @@ void LedMatrixDriver_ShiftAllColors(void)
 				g = (u8)((ledMatrix[x][y]>>8));
 				b = (u8)(ledMatrix[x][y]);
 				LedMatrixDriver_ShiftColors(&r,&g,&b);
+				ledMatrix[x][y] = ((u32)r<<16) | ((u32)g<<8) | ((u32)b);
 			}
 		}
 	}

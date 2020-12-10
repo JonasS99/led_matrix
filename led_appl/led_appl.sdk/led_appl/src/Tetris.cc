@@ -42,27 +42,48 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 	}
 
 	/* Write all blocks into pixel array */
-	for(u8 i = 0; i<BlockCounter; i++)
+//	for(u8 i = 0; i<BlockCounter; i++)
+//	{
+//		switch(Block[i].BlockType)
+//		{
+//			case BLOCK_HERO:
+//				Block_Hero(Block[i].Rotation,Block[i].PositionX, Block[i].PositionY);
+//				break;
+//			case BLOCK_TEEWEE:
+//				Block_Teewee(Block[i].Rotation,Block[i].PositionX, Block[i].PositionY);
+//				break;
+//
+//			case BLOCK_SMASHBOY:
+//				Block_Smashboy(Block[i].Rotation,Block[i].PositionX, Block[i].PositionY);
+//				break;
+//
+//			default:
+//				break;
+//		}
+//	}
+
+	Block_Save_Array();
+
+	switch(PlayerBlock->BlockType)
 	{
-		switch(Block[i].BlockType)
-		{
-			case BLOCK_HERO:
-				Block_Hero(Block[i].Rotation,Block[i].PositionX, Block[i].PositionY);
-				break;
-			case BLOCK_TEEWEE:
-				Block_Teewee(Block[i].Rotation,Block[i].PositionX, Block[i].PositionY);
-				break;
+		case BLOCK_HERO:
+			Block_Hero(PlayerBlock->Rotation,PlayerBlock->PositionX, PlayerBlock->PositionY);
+			break;
 
-			case BLOCK_SMASHBOY:
-				Block_Smashboy(Block[i].Rotation,Block[i].PositionX, Block[i].PositionY);
-				break;
+		case BLOCK_TEEWEE:
+			Block_Teewee(PlayerBlock->Rotation,PlayerBlock->PositionX, PlayerBlock->PositionY);
+			break;
 
-			default:
-				break;
-		}
+		case BLOCK_SMASHBOY:
+			Block_Smashboy(PlayerBlock->Rotation,PlayerBlock->PositionX, PlayerBlock->PositionY);
+			break;
+
+		default:
+			break;
 	}
 
-
+	Block_Set_Array();
+	Block_RemovePlayerBlockFromArray();
 	/* drop player block down by one if delay is expired */
 	if(DelayCounter == 500)
 	{
