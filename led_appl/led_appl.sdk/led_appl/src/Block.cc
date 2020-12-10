@@ -35,11 +35,14 @@ void Block_RemoveRow(u8 row)
 		pixel_Array[i][row][1] = 0;
 		pixel_Array[i][row][2] = 0;
 	}
-	for(u8 i = row; row == 0; row--)
+	for(u8 i = row; i == 1; i--)
 	{
-		pixel_Array[i][row][0] = pixel_Array[i][row-1][0];
-		pixel_Array[i][row][1] = pixel_Array[i][row-1][1];
-		pixel_Array[i][row][2] = pixel_Array[i][row-1][2];
+		for(u8 x = 0; x < 20; x++)
+		{
+			pixel_Array[x][i][0] = pixel_Array[x][i-1][0];
+			pixel_Array[x][i][1] = pixel_Array[x][i-1][1];
+			pixel_Array[x][i][2] = pixel_Array[x][i-1][2];
+		}
 	}
 }
 
