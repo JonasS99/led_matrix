@@ -40,7 +40,7 @@ void MainFsm_StateMachine(void)
 		case FSM_IDLE:
 		{
 			/* First entry in Idle State */
-			state = FSM_HOME;
+			state = FSM_FPGA;
 			first_entry = true;
 			
 			firstAccess = 1;
@@ -288,6 +288,7 @@ void MainFsm_StateMachine(void)
 				DisplayDriver_ClearDisp();
 				DisplayDriver_FPGAEnableButtons(true);
 				LedMatrixDriver_SetAllLed(20,0,0);
+				firstAccess = 1;
 			}
 			else
 			{
@@ -302,7 +303,8 @@ void MainFsm_StateMachine(void)
 				}
 			}
 			/* Application code begin */
-			StaticLED_Shapes(StaticLED_state_ChristmasTree);
+			DynamicLed_animation(fpga, firstAccess);
+			firstAccess = 0;
 			/* Application code end */
 			break;
 		}
