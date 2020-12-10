@@ -22,7 +22,9 @@ typedef struct
 }BlockT;
 
 void Block_Set_Array();
+void Block_Save_Array();
 void Block_Clear_Array();
+void Block_RemovePlayerBlockFromArray();
 void Block_Smashboy(u16 Rotation, u8 PositionX, u8 PositionY);
 void Block_Hero(u16 Rotation, u8 PositionX, u8 PositionY);
 void Block_Teewee(u16 Rotation, u8 PositionX, u8 PositionY);

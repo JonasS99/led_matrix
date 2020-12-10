@@ -11,6 +11,7 @@
 #include "LedMatrixDriver.h"
 
 u8 pixel_Array[20][20][3] = {0};
+u8 pixel_ArrayWithoutPlayerBlock[20][20][3] = {0};
 bool Block_checkPixelOn(u8 posX, u8 posY);
 //Names for the Block: https://www.netzpanorama.de/tetris-bloecke-ein-altes-nintendo-handbuch-kennt-die-namen-der-7-tetriminos/
 
@@ -28,6 +29,22 @@ void Block_Clear_Array(){
 			pixel_Array[i][p][2] = 0;
 		}
 	}
+}
+
+void Block_Save_Array()
+{
+	for(u8 i = 0; i < 20; i++)
+		for(u8 p = 0; p < 20; p++)
+			for(u8 u = 0; u < 3; u++)
+				pixel_ArrayWithoutPlayerBlock[i][p][u] = pixel_Array[i][p][u];
+}
+
+void Block_RemovePlayerBlockFromArray()
+{
+	for(u8 i = 0; i < 20; i++)
+		for(u8 p = 0; p < 20; p++)
+			for(u8 u = 0; u < 3; u++)
+				pixel_Array[i][p][u] = pixel_ArrayWithoutPlayerBlock[i][p][u] ;
 }
 
 bool Block_CheckRow(u8 row)
