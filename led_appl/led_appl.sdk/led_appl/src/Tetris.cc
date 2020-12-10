@@ -26,6 +26,7 @@ void Tetris_Init(void)
 	BlockCounter = 0;
 	DelayCounter = 0;
 	PlayerBlock=nullptr;
+	Block_Clear_Array();
 }
 
 void Tetris_CycleCall(TetrisButtonsT TetrisButton)
@@ -45,23 +46,7 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 
 	Block_Save_Array();
 
-	switch(PlayerBlock->BlockType)
-	{
-		case BLOCK_HERO:
-			Block_Hero(PlayerBlock->Rotation,PlayerBlock->PositionX, PlayerBlock->PositionY);
-			break;
-
-		case BLOCK_TEEWEE:
-			Block_Teewee(PlayerBlock->Rotation,PlayerBlock->PositionX, PlayerBlock->PositionY);
-			break;
-
-		case BLOCK_SMASHBOY:
-			Block_Smashboy(PlayerBlock->Rotation,PlayerBlock->PositionX, PlayerBlock->PositionY);
-			break;
-
-		default:
-			break;
-	}
+	Block_Set_Block(PlayerBlock);
 
 	Block_Set_Array();
 
@@ -74,9 +59,15 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 			if(Block_CollisionUnder(*PlayerBlock)) // TODO check if block collides with any other block */
 			{
 				if (PlayerBlock->PositionX == 9 && PlayerBlock->PositionY == 2)
+				{
 					Tetris_Init();
+				}
 				else
+				{
+					Block_Set_Block(PlayerBlock);
+					Block_Save_Array();
 					PlayerBlock = nullptr;
+				}
 			}
 			else
 			{
@@ -103,6 +94,8 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 				{
 					PlayerBlock->PositionY += 1;
 				}
+				Block_Set_Block(PlayerBlock);
+				Block_Save_Array();
 				PlayerBlock = nullptr;
 				break;
 			}
@@ -155,10 +148,6 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 
 }
 
-void Tetris_Reset(void)
-{
-	BlockCounter = 0;
-}
 
 void Tetris_InitBlock(BlockT* Block)
 {

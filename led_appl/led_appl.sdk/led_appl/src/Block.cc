@@ -15,6 +15,28 @@ u8 pixel_ArrayWithoutPlayerBlock[20][20][3] = {0};
 bool Block_checkPixelOn(u8 posX, u8 posY);
 //Names for the Block: https://www.netzpanorama.de/tetris-bloecke-ein-altes-nintendo-handbuch-kennt-die-namen-der-7-tetriminos/
 
+
+void Block_Set_Block(BlockT* block)
+{
+	switch(block->BlockType)
+	{
+		case BLOCK_HERO:
+			Block_Hero(block->Rotation,block->PositionX, block->PositionY);
+			break;
+
+		case BLOCK_TEEWEE:
+			Block_Teewee(block->Rotation, block->PositionX, block->PositionY);
+			break;
+
+		case BLOCK_SMASHBOY:
+			Block_Smashboy(block->Rotation, block->PositionX, block->PositionY);
+			break;
+
+		default:
+			break;
+	}
+}
+
 void Block_Set_Array(){
 	LEDMatrixDriver_Set_Pixel_Array(pixel_Array);
 }
