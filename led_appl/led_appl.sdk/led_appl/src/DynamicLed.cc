@@ -134,7 +134,7 @@ static void fpgaAnimation(void)
 				 {
 					 if(fpga[x][y]==1)
 					 {
-						 LedMatrixDriver_SetLed(x,y,r,g,b);
+						 LedMatrixDriver_SetLed(y,x,r,g,b);
 						 LedMatrixDriver_ShiftColors(&r,&g,&b);
 					 }
 				 }
@@ -143,6 +143,7 @@ static void fpgaAnimation(void)
 			 for(u8 x=0 ; x < 20 ; x+=5)LedMatrixDriver_CreateSquare(x,19,4);
 		}
 		LedMatrixDriver_SlideAllLedRight();
+		LedMatrixDriver_ShiftAllColors();
 	}
 }
 
