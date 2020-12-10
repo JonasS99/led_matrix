@@ -8,9 +8,9 @@
 #include "Tetris.h"
 #include "xintc.h"
 #include "MainFsm.h"
-#define MAX_NUM_BLOCKS 100
+#define MAX_NUM_BLOCKS 50
 /* variables */
-BlockT Block[MAX_NUM_BLOCKS];
+BlockT Block[2];
 u16 BlockCounter = 0;
 BlockT* PlayerBlock = nullptr;
 u32 DelayCounter = 0;
@@ -39,28 +39,9 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 		PlayerBlock = &Block[BlockCounter];
 		Tetris_InitBlock(PlayerBlock);
 		BlockCounter++;
+		BlockCounter %= 2;
 	}
 
-	/* Write all blocks into pixel array */
-//	for(u8 i = 0; i<BlockCounter; i++)
-//	{
-//		switch(Block[i].BlockType)
-//		{
-//			case BLOCK_HERO:
-//				Block_Hero(Block[i].Rotation,Block[i].PositionX, Block[i].PositionY);
-//				break;
-//			case BLOCK_TEEWEE:
-//				Block_Teewee(Block[i].Rotation,Block[i].PositionX, Block[i].PositionY);
-//				break;
-//
-//			case BLOCK_SMASHBOY:
-//				Block_Smashboy(Block[i].Rotation,Block[i].PositionX, Block[i].PositionY);
-//				break;
-//
-//			default:
-//				break;
-//		}
-//	}
 
 	Block_Save_Array();
 
@@ -83,7 +64,7 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 	}
 
 	Block_Set_Array();
-	Block_RemovePlayerBlockFromArray();
+
 	/* drop player block down by one if delay is expired */
 	if(DelayCounter == 500)
 	{
@@ -162,6 +143,10 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 				break;
 			}
 		}
+	}
+	if(PlayerBlock != nullptr)
+	{
+		Block_RemovePlayerBlockFromArray();
 	}
 
 	TetrisButton_old = TetrisButton;

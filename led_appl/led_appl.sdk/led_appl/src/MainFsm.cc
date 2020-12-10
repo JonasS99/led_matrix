@@ -378,9 +378,8 @@ void MainFsm_StateMachine(void)
 				}
 			}
 			/* Application code begin */
-			Block_Clear_Array();
+
 			Tetris_CycleCall(TetrisButtonState);
-			Block_Set_Array();
 			/* Application code end */
 			break;
 		}
