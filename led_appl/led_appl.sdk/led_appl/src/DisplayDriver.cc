@@ -14,7 +14,7 @@ void DisplayDriver_Init()
 	mydisp.begin();
 
 	/* Create all used buttons */
-	mydisp.createButton(BTN_ID_STATIC_LED,(char *)"Static.bmp", 10, 90);
+/*	mydisp.createButton(BTN_ID_STATIC_LED,(char *)"Static.bmp", 10, 90);
 	mydisp.createButton(BTN_ID_TETRIS,(char *)"Tetris.bmp", 125, 90);
 	mydisp.createButton(BTN_ID_DYNAMIC_LED,(char *)"Dynamic.bmp", 10, 205);
 	mydisp.createButton(BTN_ID_WEL_FPGA,(char *)"FPGA.bmp", 125, 205);
@@ -24,10 +24,11 @@ void DisplayDriver_Init()
 
 	mydisp.createButton(BTN_ID_BACK,(char *)"back.bmp", 0,(82+99+99));
 
-	mydisp.createButton(BTN_ID_HARDDROP,(char *)"harddrop.bmp", 0,(82+99+99));
-	mydisp.createButton(BTN_ID_LEFT,(char *)"left.bmp", 0,(82+99+99));
-	mydisp.createButton(BTN_ID_RIGHT,(char *)"right.bmp", 0,(82+99+99));
-	mydisp.createButton(BTN_ID_ROTATE,(char *)"rotate.bmp", 0,(82+99+99));
+	mydisp.createButton(BTN_ID_LEFT,(char *)"left.bmp", 5,170);
+	mydisp.createButton(BTN_ID_HARDDROP,(char *)"harddrop.bmp",5+70+10,240);
+	mydisp.createButton(BTN_ID_ROTATE,(char *)"rotate.bmp", 5+70+10,100);
+	mydisp.createButton(BTN_ID_RIGHT,(char *)"right.bmp", 5+70+10+70+10,170);*/
+
 }
 
 void DisplayDriver_HomeDraw()
@@ -49,6 +50,10 @@ void DisplayDriver_StaticLedDraw()
 
 void DisplayDriver_TetrisDraw()
 {
+	mydisp.drawButton(BTN_ID_LEFT, BUTTON_UP);
+	mydisp.drawButton(BTN_ID_HARDDROP, BUTTON_UP);
+	mydisp.drawButton(BTN_ID_ROTATE, BUTTON_UP);
+	mydisp.drawButton(BTN_ID_RIGHT, BUTTON_UP);
 	mydisp.drawButton(BTN_ID_BACK, BUTTON_UP);
 }
 
@@ -78,73 +83,152 @@ void DisplayDriver_RegulatorDraw()
 
 void DisplayDriver_HomeEnableButtons(bool ctrl)
 {
-	mydisp.enableButton(BTN_ID_STATIC_LED, ctrl);
-	mydisp.enableButton(BTN_ID_TETRIS, ctrl);
-	mydisp.enableButton(BTN_ID_DYNAMIC_LED, ctrl);
-	mydisp.enableButton(BTN_ID_WEL_FPGA, ctrl);
+	if (ctrl == true)
+	{
+		mydisp.createButton(BTN_ID_STATIC_LED,(char *)"Static.bmp", 10, 90);
+		mydisp.createButton(BTN_ID_TETRIS,(char *)"Tetris.bmp", 125, 90);
+		mydisp.createButton(BTN_ID_DYNAMIC_LED,(char *)"Dynamic.bmp", 10, 205);
+		mydisp.createButton(BTN_ID_WEL_FPGA,(char *)"FPGA.bmp", 125, 205);
+
+		mydisp.enableButton(BTN_ID_STATIC_LED, ctrl);
+		mydisp.enableButton(BTN_ID_TETRIS, ctrl);
+		mydisp.enableButton(BTN_ID_DYNAMIC_LED, ctrl);
+		mydisp.enableButton(BTN_ID_WEL_FPGA, ctrl);
+
+		DisplayDriver_HomeDraw();
+	}
+	else
+	{
+		mydisp.deleteButton(BTN_ID_STATIC_LED);
+		mydisp.deleteButton(BTN_ID_TETRIS);
+		mydisp.deleteButton(BTN_ID_DYNAMIC_LED);
+		mydisp.deleteButton(BTN_ID_WEL_FPGA);
+	}
+
 }
 
 void DisplayDriver_StaticLedEnableButtons(bool ctrl)
 {
-	mydisp.enableButton(BTN_ID_REGULATOR, ctrl);
-	mydisp.enableButton(BTN_ID_FORMS, ctrl);
-	mydisp.enableButton(BTN_ID_BACK, ctrl);
+	if (ctrl == true)
+	{
+		mydisp.createButton(BTN_ID_REGULATOR,(char *)"Regulator.bmp",0,82);
+		mydisp.createButton(BTN_ID_FORMS,(char *)"Form.bmp",0,(82+99));
+		mydisp.createButton(BTN_ID_BACK,(char *)"back.bmp", 0,(82+99+99));
+
+		mydisp.enableButton(BTN_ID_REGULATOR, ctrl);
+		mydisp.enableButton(BTN_ID_FORMS, ctrl);
+		mydisp.enableButton(BTN_ID_BACK, ctrl);
+
+		DisplayDriver_StaticLedDraw();
+	}
+	else
+	{
+		mydisp.deleteButton(BTN_ID_REGULATOR);
+		mydisp.deleteButton(BTN_ID_FORMS);
+		mydisp.deleteButton(BTN_ID_BACK);
+	}
 }
 
 void DisplayDriver_TetrisEnableButtons(bool ctrl)
 {
-	mydisp.enableButton(BTN_ID_BACK, ctrl);
+	if (ctrl == true)
+	{
+		mydisp.createButton(BTN_ID_LEFT,(char *)"left.bmp", 5,170);
+		mydisp.createButton(BTN_ID_HARDDROP,(char *)"harddrop.bmp",5+70+10,240);
+		mydisp.createButton(BTN_ID_ROTATE,(char *)"rotate.bmp", 5+70+10,100);
+		mydisp.createButton(BTN_ID_RIGHT,(char *)"right.bmp", 5+70+10+70+10,170);
+		mydisp.createButton(BTN_ID_BACK,(char *)"back.bmp", 0,(82+99+99));
+
+		mydisp.enableButton(BTN_ID_LEFT, ctrl);
+		mydisp.enableButton(BTN_ID_HARDDROP, ctrl);
+		mydisp.enableButton(BTN_ID_ROTATE, ctrl);
+		mydisp.enableButton(BTN_ID_RIGHT, ctrl);
+		mydisp.enableButton(BTN_ID_BACK, ctrl);
+
+		DisplayDriver_TetrisDraw();
+	}
+	else
+	{
+		mydisp.deleteButton(BTN_ID_LEFT);
+		mydisp.deleteButton(BTN_ID_HARDDROP);
+		mydisp.deleteButton(BTN_ID_ROTATE);
+		mydisp.deleteButton(BTN_ID_RIGHT);
+		mydisp.deleteButton(BTN_ID_BACK);
+	}
 }
 
 void DisplayDriver_DynamicLedEnableButtons(bool ctrl)
 {
-	mydisp.enableButton(BTN_ID_BACK, ctrl);
+	if (ctrl == true)
+	{
+		mydisp.createButton(BTN_ID_BACK,(char *)"back.bmp", 0,(82+99+99));
+
+		mydisp.enableButton(BTN_ID_BACK, ctrl);
+
+		DisplayDriver_DynamicLedDraw();
+	}
+	else
+	{
+		mydisp.deleteButton(BTN_ID_BACK);
+	}
 }
 
 void DisplayDriver_FPGAEnableButtons(bool ctrl)
 {
-	mydisp.enableButton(BTN_ID_BACK, ctrl);
+
+	if (ctrl == true)
+	{
+		mydisp.createButton(BTN_ID_BACK,(char *)"back.bmp", 0,(82+99+99));
+
+		mydisp.enableButton(BTN_ID_BACK, ctrl);
+
+		DisplayDriver_FPGADraw();
+	}
+	else
+	{
+		mydisp.deleteButton(BTN_ID_BACK);
+
+	}
+
 }
 
 void DisplayDriver_FormEnableButtons(bool ctrl)
 {
-	mydisp.enableButton(BTN_ID_BACK, ctrl);
+	if (ctrl == true)
+	{
+		mydisp.createButton(BTN_ID_BACK,(char *)"back.bmp", 0,(82+99+99));
+
+		mydisp.enableButton(BTN_ID_BACK, ctrl);
+
+		DisplayDriver_FormDraw();
+	}
+	else
+	{
+		mydisp.deleteButton(BTN_ID_BACK);
+	}
 }
 
 void DisplayDriver_RegulatorEnableButtons(bool ctrl)
 {
-	mydisp.enableButton(BTN_ID_BACK, ctrl);
-}
+	if (ctrl == true)
+	{
+		mydisp.createButton(BTN_ID_BACK,(char *)"back.bmp", 0,(82+99+99));
 
+		mydisp.enableButton(BTN_ID_BACK, ctrl);
+
+		DisplayDriver_RegulatorDraw();
+	}
+	else
+	{
+		mydisp.deleteButton(BTN_ID_BACK);
+	}
+}
 
 void DisplayDriver_ClearDisp()
 {
 	mydisp.clearDisplay(clrBlack); /* Erase */
 }
 
-button_id_t DispalyDriver_CheckButtons(void)
-{
-	mydisp.checkTouch();
-	button_id_t button_touched = BTN_ID_NO_BTN;
-	for (u8 i = 0; i< NUM_BUTTONS_USED; i++)
-	{
-		if (mydisp.isTouched(i) == BUTTON_DOWN)
-		{
-			button_touched = (button_id_t)i;
-		}
-	}
-	return button_touched;
-}
-
-void DisplayDriver_DisableAllButtons(void)
-{
-	for (u8 i = 0; i< NUM_BUTTONS_USED; i++)
-	{
-		mydisp.enableButton(i, false);
-	}
-
-
-}
 
 
 

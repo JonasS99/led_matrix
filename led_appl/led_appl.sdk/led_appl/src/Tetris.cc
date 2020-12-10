@@ -7,9 +7,10 @@
 
 #include "Tetris.h"
 #include "xintc.h"
-
+#include "MainFsm.h"
+#define MAX_NUM_BLOCKS 100
 /* variables */
-BlockT Block[100];
+BlockT Block[MAX_NUM_BLOCKS];
 u16 BlockCounter = 0;
 BlockT* PlayerBlock = nullptr;
 u32 DelayCounter = 0;
@@ -22,11 +23,14 @@ void Tetris_InitBlock(BlockT* Block);
 
 void Tetris_Init(void)
 {
+	BlockCounter = 0;
 	DelayCounter = 0;
+	PlayerBlock=nullptr;
 }
 
 void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 {
+
 	static TetrisButtonsT TetrisButton_old = TETRISBUTTON_UNDEFINED;
 
 	/* if no Block selected for Player get next one in array */
@@ -67,7 +71,10 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 
 			if(Block_CollisionUnder(*PlayerBlock)) // TODO check if block collides with any other block */
 			{
-				PlayerBlock = nullptr;
+				if (PlayerBlock->PositionX == 9 && PlayerBlock->PositionY == 2)
+					Tetris_Init();
+				else
+					PlayerBlock = nullptr;
 			}
 			else
 			{
@@ -120,6 +127,13 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 			}
 			case TETRISBUTTON_ROTATE_RIGHT:
 			{
+				if (!Block_CollisionRotate(*PlayerBlock))
+				{
+					if(PlayerBlock->Rotation != 270)
+						PlayerBlock->Rotation += 90;
+					else
+						PlayerBlock->Rotation = 0;
+				}
 				break;
 			}
 			default:
@@ -143,7 +157,7 @@ void Tetris_Reset(void)
 void Tetris_InitBlock(BlockT* Block)
 {
 	static u8 BlockTypeCounter = 0;
-	switch(BlockTypeCounter)
+	switch(rand0to2)
 	{
 		case 0:
 		{

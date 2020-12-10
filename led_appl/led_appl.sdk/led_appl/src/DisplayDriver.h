@@ -24,8 +24,6 @@ typedef enum {
 	BTN_ID_ROTATE
 } button_id_t;
 
-#define NUM_BUTTONS_USED 12
-
 void DisplayDriver_Init(void);
 void DisplayDriver_HomeDraw();
 void DisplayDriver_StaticLedDraw();
@@ -44,8 +42,5 @@ void DisplayDriver_FormEnableButtons(bool ctrl);
 void DisplayDriver_RegulatorEnableButtons(bool ctrl);
 
 void DisplayDriver_ClearDisp(void);
-button_id_t DispalyDriver_CheckButtons(void);
-void DisplayDriver_DisableAllButtons(void);
-
 
 #endif /* SRC_DISPLAYDRIVER_H_ */

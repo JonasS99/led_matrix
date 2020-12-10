@@ -12,6 +12,8 @@
 #include "Block.h"
 
 
+extern u8 rand0to2;
+
 /* Function declaration */
 void MainFsm_Init(void);
 void MainFsm_StateMachine(void);
