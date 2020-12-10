@@ -21,7 +21,14 @@ typedef enum {
 	BTN_ID_HARDDROP,
 	BTN_ID_LEFT,
 	BTN_ID_RIGHT,
-	BTN_ID_ROTATE
+	BTN_ID_ROTATE,
+	BTN_ID_MINION,
+	BTN_ID_MARIO,
+	BTN_ID_SMILE,
+	BTN_ID_CHRISTREE,
+	BTN_ID_SQUARE,
+	BTN_ID_RAINBOW,
+	BTN_ID_SPIRAL
 } button_id_t;
 
 void DisplayDriver_Init(void);

@@ -31,6 +31,11 @@ void DynamicLed_animation(dynamicLedMode_t animation, bool firstAccess)
 	firstAccessCheck = firstAccess;
 	switch(animation)
 	{
+		case idle:
+		{
+			//do nothing
+		}break;
+
 		case rainbow:
 		{
 			rainbowAnimation();
