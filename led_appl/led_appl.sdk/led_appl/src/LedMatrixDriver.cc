@@ -244,7 +244,7 @@ void LedMatrixDriver_ShiftAllColors(void)
 	{
 		for (u8 y = 0; y < 20 ; y++)
 		{
-			if(!ledMatrix[x][y])
+			if(ledMatrix[x][y]!=0)
 			{
 				r = (u8)((ledMatrix[x][y]>>16));
 				g = (u8)((ledMatrix[x][y]>>8));

@@ -103,41 +103,42 @@ static void fpgaAnimation(void)
 	static u8 g = 0;
 	static u8 b = 0;
 	static u32 animationCount = 0;
-	if(animationCount > 30)
+	if(firstAccessCheck==1) //create "FPGA"
+	{
+		static uint32_t fpga[9]=
+		{(0b11110111101111011110),
+		(0b10000100101000010010),
+		(0b10000100101000010010),
+		(0b11100111101000011110),
+		(0b10000100001011010010),
+		(0b10000100001001010010),
+		(0b10000100001001010010),
+		(0b10000100001001010010),
+		(0b10000100001111010010)};
+
+		 for(u8 y = 0 ; y < 9 ; y++)
+		 {
+			 for (u8 x = 0 ; x <20 ; x++)
+			 {
+				 tmp = (fpga[y]>>x);
+				 tmp = tmp & 0b00000000000000000001;
+				 if(tmp==1)
+				 {
+					 LedMatrixDriver_SetLed(y+5,x,r,g,b);
+				 }
+			 }
+		 }
+		 for(u8 x=0 ; x < 20 ; x+=5)LedMatrixDriver_CreateSquare(x,0,4);
+		 for(u8 x=0 ; x < 20 ; x+=5)LedMatrixDriver_CreateSquare(x,16,4);
+	}
+	if(animationCount > 50)
 	{
 		animationCount = 0;
-		if(firstAccessCheck==1) //create "FPGA"
-		{
-			  static uint32_t fpga[9]=
-			  {(0b11110111101111011110),
-			   (0b10000100101000010010),
-			   (0b10000100101000010010),
-			   (0b11100111101000011110),
-			   (0b10000100001011010010),
-			   (0b10000100001001010010),
-			   (0b10000100001001010010),
-			   (0b10000100001001010010),
-			   (0b10000100001111010010)};
 
-			 for(u8 y = 0 ; y < 9 ; y++)
-			 {
-				 for (u8 x = 0 ; x <20 ; x++)
-				 {
-					 tmp = (fpga[y]>>x);
-					 tmp = tmp & 0b00000000000000000001;
-					 if(tmp==1)
-					 {
-						 LedMatrixDriver_SetLed(x,y+5,r,g,b);
-					 }
-				 }
-
-			 }
-			 for(u8 x=0 ; x < 20 ; x+=5)LedMatrixDriver_CreateSquare(x,0,4);
-			 for(u8 x=0 ; x < 20 ; x+=5)LedMatrixDriver_CreateSquare(x,19,4);
-		}
 		LedMatrixDriver_SlideAllLedRight();
 		LedMatrixDriver_ShiftAllColors();
 	}
+	animationCount++;
 }
 
 static void squareAnimation(void)
