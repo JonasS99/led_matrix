@@ -161,9 +161,9 @@ void LedMatrixDriver_SlideAllLedUp(void)
 	for(u8 x=0 ; x<20 ; x++)
 	{
 		last = ledMatrix[x][0];
-		for(u8 y=18 ; y>=0 ; y--)
+		for(u8 y=18 ; y>0 ; y--)
 		{
-			ledMatrix[x][y] = ledMatrix[x][y+1];
+			ledMatrix[x][y-1] = ledMatrix[x][y];
 		}
 		ledMatrix[x][19] = last;
 	}
@@ -205,13 +205,6 @@ void LedMatrixDriver_ShiftColors(u8* r, u8* g, u8* b)
 	if(*r==0 	&& *g>4		&& *b==255)	*g-=5;
 	if(*r<251 	&& *g==0 	&& *b==255)	*r+=5;
 	if(*r==255 	&& *g==0 	&&*b>4)		*b-=5;
-
-//	if(*r<250) *r+=5;
-//	else *r = 40;
-//	if(*g<250) *g+=1;
-//	else *g = 40;
-//	if(*b<250) *b+=5;
-//	else *b = 40;
 }
 
 //void ColorGradient(){

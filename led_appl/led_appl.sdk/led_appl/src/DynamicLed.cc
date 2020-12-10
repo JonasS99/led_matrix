@@ -11,8 +11,7 @@
 static void rainbowAnimation(void);
 static void squareAnimation(void);
 static void spiralAnimation(void);
-static void stroboAnimation(void);
-static void weihnachtAnimation(void);
+static void fpgaAnimation(void);
 
 /* variable declaration */
 static bool firstAccessCheck;
@@ -51,9 +50,9 @@ void DynamicLed_animation(dynamicLedMode_t animation, bool firstAccess)
 			spiralAnimation();
 		}break;
 
-		case weihnachtsanimation:
+		case fpga:
 		{
-//			weihnachtAnimation();
+			fpgaAnimation();
 		}break;
 		default: break;
 	}
@@ -77,32 +76,74 @@ static void rainbowAnimation(void)
 		LedMatrixDriver_ClearAllLed();
 		for(u8 x=0 ; x<20 ; x++)
 		{
-			colorCount = 0;
+			//colorCount = 0;
 			for(u8 y=0 ; y<20 ; y++)
 			{
-				LedMatrixDriver_SetLed(x,y,r,g,b);//colorArray[colorCount][0],colorArray[colorCount][1],colorArray[colorCount][2]);
-
+				LedMatrixDriver_SetLed(x,y,r,g,b);
+				LedMatrixDriver_ShiftColors(&r,&g,&b);
+				//colorArray[colorCount][0],colorArray[colorCount][1],colorArray[colorCount][2]);
 				//if(x==3 || x==7 || x==11 || x==15) colorCount++;
 			}
-			LedMatrixDriver_ShiftColors(&r,&g,&b);
 		}
 	}
 	firstAccessCheck = 0;
-	if(animationCount==20)
+	if(animationCount>=40)
 	{
 		LedMatrixDriver_SlideAllLedUp();
-	}
-	else if(animationCount>=40)
-	{
 		LedMatrixDriver_SlideAllLedRight();
 		animationCount = 0;
 	}
 	animationCount++;
 }
 
-static void weihnachtAnimation(void)
+static void fpgaAnimation(void)
 {
-
+	static u8 r = 255;
+	static u8 g = 0;
+	static u8 b = 0;
+	static u32 animationCount = 0;
+	if(animationCount > 30)
+	{
+		animationCount = 0;
+		if(firstAccessCheck==1) //create "FPGA"
+		{
+			 static uint8_t fpga[20][20]=
+			  {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+			   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+			   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+			   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+			   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+			   {1,1,1,1,0,1,1,1,1,0,1,1,1,1,0,1,1,1,1,0},
+			   {1,0,0,0,0,1,0,0,1,0,1,0,0,0,0,1,0,0,1,0},
+			   {1,0,0,0,0,1,0,0,1,0,1,0,0,0,0,1,0,0,1,0},
+			   {1,1,1,0,0,1,1,1,1,0,1,0,0,0,0,1,1,1,1,0},
+			   {1,0,0,0,0,1,0,0,0,0,1,0,1,1,0,1,0,0,1,0},
+			   {1,0,0,0,0,1,0,0,0,0,1,0,0,1,0,1,0,0,1,0},
+			   {1,0,0,0,0,1,0,0,0,0,1,0,0,1,0,1,0,0,1,0},
+			   {1,0,0,0,0,1,0,0,0,0,1,0,0,1,0,1,0,0,1,0},
+			   {1,0,0,0,0,1,0,0,0,0,1,1,1,1,0,1,0,0,1,0},
+			   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+			   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+			   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+			   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+			   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+			   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}};
+			 for(u8 y = 0 ; y < 20 ; y++)
+			 {
+				 for(u8 x = 0 ; x < 20 ; x++)
+				 {
+					 if(fpga[x][y]==1)
+					 {
+						 LedMatrixDriver_SetLed(x,y,r,g,b);
+						 LedMatrixDriver_ShiftColors(&r,&g,&b);
+					 }
+				 }
+			 }
+			 for(u8 x=0 ; x < 20 ; x+=5)LedMatrixDriver_CreateSquare(x,0,4);
+			 for(u8 x=0 ; x < 20 ; x+=5)LedMatrixDriver_CreateSquare(x,19,4);
+		}
+		LedMatrixDriver_SlideAllLedRight();
+	}
 }
 
 static void squareAnimation(void)

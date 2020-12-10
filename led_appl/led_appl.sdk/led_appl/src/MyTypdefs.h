@@ -46,7 +46,7 @@ typedef enum {
 	rainbow,
 	square,
 	spiral,
-	weihnachtsanimation,
+	fpga,
 	strobo
 }dynamicLedMode_t;
 
