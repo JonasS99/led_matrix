@@ -25,6 +25,7 @@ void Block_Set_Array();
 void Block_Save_Array();
 void Block_Clear_Array();
 void Block_Set_Block(BlockT* block);
+void Block_CheckFullRow(void);
 void Block_RemovePlayerBlockFromArray();
 void Block_Smashboy(u16 Rotation, u8 PositionX, u8 PositionY);
 void Block_Hero(u16 Rotation, u8 PositionX, u8 PositionY);

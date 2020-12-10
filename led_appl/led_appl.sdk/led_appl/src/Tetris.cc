@@ -68,6 +68,8 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 					Block_Set_Block(PlayerBlock);
 					Block_Save_Array();
 					PlayerBlock = nullptr;
+					//check if row is full
+					Block_CheckFullRow();
 				}
 			}
 			else
@@ -99,6 +101,8 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 				Block_Set_Block(PlayerBlock);
 				Block_Save_Array();
 				PlayerBlock = nullptr;
+				//check if row is full
+				Block_CheckFullRow();
 				break;
 			}
 			case TETRISBUTTON_LEFT:
@@ -143,6 +147,7 @@ void Tetris_CycleCall(TetrisButtonsT TetrisButton)
 	{
 		Block_RemovePlayerBlockFromArray();
 	}
+
 
 	TetrisButton_old = TetrisButton;
 

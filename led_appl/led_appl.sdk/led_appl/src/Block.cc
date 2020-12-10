@@ -16,6 +16,33 @@ bool Block_checkPixelOn(u8 posX, u8 posY);
 //Names for the Block: https://www.netzpanorama.de/tetris-bloecke-ein-altes-nintendo-handbuch-kennt-die-namen-der-7-tetriminos/
 
 
+void Block_CheckFullRow(void)
+{
+	for (u8 i = 0; i < 20; i++)
+	{
+		if(Block_CheckRow(i) == true)
+		{
+			Block_RemoveRow(i);
+		}
+	}
+}
+
+void Block_RemoveRow(u8 row)
+{
+	for(u8 i = 0; i < 20; i++)
+	{
+		pixel_Array[i][row][0] = 0;
+		pixel_Array[i][row][1] = 0;
+		pixel_Array[i][row][2] = 0;
+	}
+	for(i = row; row == 0; row--)
+	{
+		pixel_Array[i][row][0] = pixel_Array[i][row-1][0];
+		pixel_Array[i][row][1] = pixel_Array[i][row-1][1];
+		pixel_Array[i][row][2] = pixel_Array[i][row-1][2];
+	}
+}
+
 void Block_Set_Block(BlockT* block)
 {
 	switch(block->BlockType)
